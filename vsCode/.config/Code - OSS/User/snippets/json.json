@@ -1,0 +1,97 @@
+{
+	// Place your snippets for json here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+/*--------------------><-----------------------------*/
+	"Separardor-Texto":{                  										//[Nombre del Snippets]
+		"prefix":"separador",        											//[escribir la abreviacion]
+		"body":"/*--------------------><-----------------------------*/", //[escribir la extructura que aparecere]
+		"description":"Codigo Comentado"    									//[Una perqueña descripcion paraguiarse]
+	
+	},
+
+/*--------------------><-----------------------------*//*--------------------><-----------------------------*/
+	"Bloque-Json01":{
+		"prefix":"bloque01",
+		"body": [   								//[escribir la abreviacion]																		,
+					"\"$1\":{                    //[Nombre del Snippets]"						,
+					"    \"prefix\":\"$2\",        //[escribir la abreviacion]"					,        
+					"    \"body\":\"$3\",          //[escribir la extructura que aparecere]"	,        
+					"    \"description\":\"$4\"    //[Una perqueña descripcion paraguiarse]"	,
+					"",
+					"},"
+				],
+		"description": "Shorcute Json Un Snipper Automatizado",
+		
+	},    
+
+	"Bloque-Json02":{                    								//[Nombre del Snippets]
+		"prefix":"Bloque02",        									//[escribir la abreviacion]
+		"body":	[
+					"\"$1\":{                          //[Nombre del Snippets]"					,
+					"        \"prefix\":\"$2\",          //[escribir la abreviacion]"				,
+					"        \"body\": [             //[escribir la extructura que aparecere]"	,
+					"                    \"\",",
+					"                    \"\",",
+				    "                    \"\",",
+				    "                    \"\",",
+				    "                    \"\",",
+					"                ],"		 ,
+					"        \"description\":\"$3\"      //[Una perqueña descripcion para guiarse]",
+					""																		,
+					"},"
+				],          											//[escribir la extructura que aparecere]
+		"description":"Shortcute Json para Un Snipper Automatizado"    	//[Una perqueña descripcion paraguiarse]
+	
+	},
+
+"Estructura-Lenguajes":{                     //[Nombre del Snippets]
+		"prefix":"Estructura",          //[escribir la abreviacion]
+		"body": [             //[escribir la extructura que aparecere]
+					"\"Cadena-Orden\":{                "					,
+					"        \"prefix\":\"Estructura\",          "					,
+					"        \"body\": [   \"//Constantes\" ,\"$1\",    ",
+					"                    \"//Variables\"  ,\"$2\",     ",
+					"                    \"//Entrada\"    ,\"$3\",       ",
+					"                    \"//Proceso\"    ,\"$4\",       ",
+					"                    \"//Salida\"     ,\"$5\",        ",
+					"                ],"		 ,
+					"        \"description\":\"Estructura de Comentarios\"      "	,
+					""															,
+					"},"
+			],
+		"description":"Estructura Por Comentarios"      //[Una perqueña descripcion para guiarse]
+
+},
+
+"prueba":{
+	"prefix": "planta",
+	"body": "🌱",
+	"description": "una planta de prueba"
+}
+}
+
+
+
+
+	/*	"cadena orden":{
+			"prefix":"Estructura",
+			"body":[	"//Constantes",
+						"//Variables","",
+						"//Entrada"  ,"",
+						"//Proceso"  ,"",
+						"//Salida"   ,""
+					],
+			"description": "Estructura de comentario"
+	},*/
