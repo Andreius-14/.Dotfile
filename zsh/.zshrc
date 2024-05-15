@@ -171,7 +171,7 @@ alias file2="exa --icons --long --tree --level=1 -bghliS --sort=type"
 alias file3="exa --icons --long --tree --level=1 -bghl --sort=type --no-filesize"
 alias treefolder='tree -L 1'
 alias basura='gio trash'
-
+alias peso='dust -d 1 .'
 
 alias apagar='shutdown -h now'
 # DATOS DE PRUEBA / BASURA
