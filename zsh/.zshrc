@@ -166,8 +166,9 @@ alias bat="bat --paging=never --theme='Dracula'"
 # alias code="flatpak run com.visualstudio.code"
 
 alias ls="lsd"
-alias file="exa -abghHlS --tree --level=1"
-
+alias file1="exa -abghHlS --tree --level=1"
+alias file2="exa --icons --long --tree --level=1 -bghliS --sort=type"
+alias file3="exa --icons --long --tree --level=1 -bghl --sort=type --no-filesize"
 alias treefolder='tree -L 1'
 alias basura='gio trash'
 
