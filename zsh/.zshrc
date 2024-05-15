@@ -173,6 +173,7 @@ alias treefolder='tree -L 1'
 alias basura='gio trash'
 
 
+alias apagar='shutdown -h now'
 # DATOS DE PRUEBA / BASURA
 
 export NOMBRE='ANDRES PALOMINO'
