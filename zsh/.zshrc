@@ -78,9 +78,10 @@ plugins=(git
   zsh-autosuggestions
 	zsh-syntax-highlighting
   colored-man-pages
-  autojump
+  # autojump
 	history
 	# thefuck
+  zoxide
   you-should-use
 	copypath)
 
@@ -165,7 +166,7 @@ alias bat="bat --paging=never --theme='Dracula'"
 # EXTRA
 # alias code="flatpak run com.visualstudio.code"
 
-alias ls="lsd"
+# alias ls="lsd"
 alias file1="exa -abghHlS --tree --level=1"
 alias file2="exa --icons --long --tree --level=1 -bghliS --sort=type"
 alias file3="exa --icons --long --tree --level=1 -bghl --sort=type --no-filesize"
@@ -173,10 +174,10 @@ alias treefolder='tree -L 1'
 alias basura='gio trash'
 alias peso='dust -d 1 .'
 
-alias apagar='shutdown -h now'
+alias apagar='sudo shutdown -h now'
 # DATOS DE PRUEBA / BASURA
 
-export NOMBRE='ANDRES PALOMINO'
+# export NOMBRE='ANDRES PALOMINO'
 export PATH=$HOME/.cargo/bin:$PATH
 
 
@@ -184,7 +185,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/.nvm/nvm.sh
+# source ~/.nvm/nvm.sh
 
 export PATH=/var/lib/snapd/snap/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
