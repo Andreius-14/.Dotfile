@@ -180,6 +180,9 @@ alias apagar='sudo shutdown -h now'
 # export NOMBRE='ANDRES PALOMINO'
 export PATH=$HOME/.cargo/bin:$PATH
 
+alias q="exit"
+
+alias c="clear"
 
 # Configuracion
 # export NVM_DIR="$HOME/.nvm"
