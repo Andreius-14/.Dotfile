@@ -1,0 +1,75 @@
+
+
+# git
+alias gcl='git clone --depth 1'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+
+# Git LOG
+alias log1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
+alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
+
+
+# APP -- taskbook
+alias tb="taskbook"
+alias tb+='taskbook --task'
+alias tb-='taskbook -c'
+alias tbc='taskbook --clear'
+
+# APP -- scrcpy
+alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
+
+# APP -- ytfzf
+alias yt="ytfzf -t"
+alias yt-audio='ytfzf -dm'
+
+# APP -- ascii-image-converter
+alias ascii-real='ascii-image-converter -Cfg --color-bg '
+alias ascii1="ascii-image-converter -b -C"
+alias ascii2="ascii-image-converter -b --dither -C"
+alias ascii="ascii-image-converter"
+
+
+# ls - exa
+alias exa='exa --icons --sort=type '
+alias file1="exa -abghHlS --tree --level=1"
+alias file2="exa --long --tree --level=1 -bghliS "
+alias file3="exa --long --tree --level=1 -bghl --no-filesize"
+
+
+#=========================================================
+# EXTRA
+# alias code="flatpak run com.visualstudio.code"
+# alias treefolder='tree -L 1'
+# alias icat="kitty +kitten icat"
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+alias bat="bat --paging=never --theme='Dracula'"
+
+#=========================================================
+
+# Riesgo
+alias apagar='sudo shutdown -h now'
+
+# INFO
+alias peso='dust -d 1 .'
+
+# PRODUCTIVIDAD
+alias resumen='tldr'
+alias icat="kitten icat"
+alias copiar='xclip -sel clip '
+
+alias q="exit"
+alias c="clear"
+alias t='exa -T --level=1  '
+
+alias basura='gio trash'
+
+# PROGRAMACION
+alias phpserver="php -S localhost:8000"
+

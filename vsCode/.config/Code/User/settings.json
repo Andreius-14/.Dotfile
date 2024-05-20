@@ -124,9 +124,7 @@
     "jupyter.askForKernelRestart": false,
     "notebook.lineNumbers": "on",
     "terminal.integrated.env.linux": {},
-    "workbench.colorTheme": "One Dark Pro",
     "console-ninja.featureSet": "Community",
-    "workbench.iconTheme": "material-icon-theme",
     "workbench.sideBar.location": "right",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[csharp]": {

@@ -83,10 +83,13 @@ plugins=(git
 	# thefuck
   zoxide
   you-should-use
-	copypath)
+	copypath
+)
 
-  fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
 
 # User configuration
 
@@ -114,75 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-	# alias icat="kitty +kitten icat"
-
-# git
-alias gcl='git clone --depth 1'
-alias gi='git init'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push origin master'
-
-alias log1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-
-alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
-
-alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
-
-
-# alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%C(reset)%C(white)%s%C(reset)%C(dim white)\"%C(reset)' --all"
-# Alias taskbook
-alias tb="taskbook"
-alias tb+='taskbook --task'
-alias tb-='taskbook -c'
-alias tbclean='taskbook --clear'
-
-# Alias Importantes
-alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
-alias note='nvim /home/carlosa/Documentos/Notas/Notas-Rapidas.txt'
-
-# Alias Breves 
-alias yt="ytfzf -t"
-alias yt-audio='ytfzf -dm'
-
-alias phpserver="php -S localhost:8000"
-
-alias ascii-real='ascii-image-converter -Cfg --color-bg '
-alias ascii1="ascii-image-converter -b -C"
-alias ascii2="ascii-image-converter -b --dither -C"
-
-alias ascii="ascii-image-converter"
-
-alias resumen='tldr'
-
-alias icat="kitten icat"
-# EXTRA - DETALLEZ PROGRAMAS
-# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-
-
-alias bat="bat --paging=never --theme='Dracula'"
-# EXTRA
-# alias code="flatpak run com.visualstudio.code"
-
-# alias ls="lsd"
-alias file1="exa -abghHlS --tree --level=1"
-alias file2="exa --icons --long --tree --level=1 -bghliS --sort=type"
-alias file3="exa --icons --long --tree --level=1 -bghl --sort=type --no-filesize"
-alias treefolder='tree -L 1'
-alias basura='gio trash'
-alias peso='dust -d 1 .'
-
-alias apagar='sudo shutdown -h now'
 # DATOS DE PRUEBA / BASURA
 
 # export NOMBRE='ANDRES PALOMINO'
 export PATH=$HOME/.cargo/bin:$PATH
 
-alias q="exit"
-
-alias c="clear"
 
 # Configuracion
 # export NVM_DIR="$HOME/.nvm"
@@ -192,3 +131,5 @@ alias c="clear"
 
 export PATH=/var/lib/snapd/snap/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
+
+PATH=~/.console-ninja/.bin:$PATH
