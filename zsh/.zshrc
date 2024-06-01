@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
- # ZSH_THEME="starship"
+# ZSH_THEME="starship"
 eval "$(starship init zsh)"
 
 
@@ -84,6 +84,12 @@ plugins=(git
   zoxide
   you-should-use
 	copypath
+
+  bgnotify
+  z
+  zsh-fzf-history-search
+  
+
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -120,7 +126,6 @@ source $HOME/.aliaslaptop
 # DATOS DE PRUEBA / BASURA
 
 # export NOMBRE='ANDRES PALOMINO'
-export PATH=$HOME/.cargo/bin:$PATH
 
 
 # Configuracion
@@ -129,7 +134,37 @@ export PATH=$HOME/.cargo/bin:$PATH
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # source ~/.nvm/nvm.sh
 
-export PATH=/var/lib/snapd/snap/bin:$PATH
-export PATH=$PATH:$HOME/go/bin
 
-PATH=~/.console-ninja/.bin:$PATH
+
+if echo $HOME | grep -q termux; then
+  # Configuraciones de Termux
+  # print 'Hola mundo'
+  
+  # ZSH_THEME="la-round"
+
+  PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"
+  export PATH
+
+  LINK="https://github.com/mayTermux"
+  LINK_SSH="git@github.com:mayTermux"
+
+  export LINK_SSH
+  export LINK
+
+
+  export TERM=xterm-256color 
+
+  source $HOME/.config/lf/icons
+  source $HOME/.aliases
+  source $HOME/.autostart
+else 
+
+
+  export PATH=$HOME/.cargo/bin:$PATH
+
+  export PATH=/var/lib/snapd/snap/bin:$PATH
+
+  export PATH=$PATH:$HOME/go/bin
+
+  PATH=~/.console-ninja/.bin:$PATH
+fi
