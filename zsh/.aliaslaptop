@@ -35,11 +35,11 @@ alias ascii2="ascii-image-converter -b --dither -C"
 alias ascii="ascii-image-converter"
 
 
-# ls - exa
-alias exa='exa --icons --sort=type '
-alias file1="exa -abghHlS --tree --level=1"
-alias file2="exa --long --tree --level=1 -bghliS "
-alias file3="exa --long --tree --level=1 -bghl --no-filesize"
+# ls - eza
+alias eza='eza --icons --sort=type '
+alias file1="eza -abghHlS --tree --level=1"
+alias file2="eza --long --tree --level=1 -bghliS "
+alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 
 
 #=========================================================
@@ -61,12 +61,13 @@ alias peso='dust -d 1 .'
 
 # PRODUCTIVIDAD
 alias resumen='tldr'
+alias calculadora='expr'
 alias icat="kitten icat"
 alias copiar='xclip -sel clip '
 
 alias q="exit"
 alias c="clear"
-alias t='exa -T --level=1  '
+alias t='eza -T --level=1  '
 
 alias basura='gio trash'
 
