@@ -7,17 +7,14 @@ local options = {
     python = { "black" },
     bash = { "shfmt" },
   },
+
+  -- These options will be passed to conform.format()
   format_on_save = {
-    async = true,
-    lsp_fallback = false,
+     async = true,
+    timeout_ms = 10000,
+    lsp_fallback = true,
     quiet = true,
-    timeout_ms = 10500,
   },
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 5500,
-  --   lsp_fallback = true,
-  -- },
 }
 
 require("conform").setup(options)
