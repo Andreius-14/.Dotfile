@@ -68,6 +68,7 @@ alias copiar='xclip -sel clip '
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1  '
+alias i='sudo pacman -Sy' 
 
 alias basura='gio trash'
 
