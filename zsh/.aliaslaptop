@@ -60,6 +60,8 @@ alias apagar='sudo shutdown -h now'
 alias peso='dust -d 1 .'
 
 # PRODUCTIVIDAD
+alias wiki='wikit -l es '
+alias leer='speak-ng -ves '
 alias resumen='tldr'
 alias calculadora='expr'
 alias icat="kitten icat"
