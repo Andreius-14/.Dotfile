@@ -28,6 +28,9 @@ alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --wi
 alias yt="ytfzf -t"
 alias yt-audio='ytfzf -dm'
 
+# APP -- youtube-dl - yt-dlp
+alias ythd="yt-dlp -f bv*+ba  "
+
 # APP -- ascii-image-converter
 alias ascii-real='ascii-image-converter -Cfg --color-bg '
 alias ascii1="ascii-image-converter -b -C"
