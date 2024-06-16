@@ -29,7 +29,7 @@ alias yt="ytfzf -t"
 alias yt-audio='ytfzf -dm'
 
 # APP -- youtube-dl - yt-dlp
-alias ythd="yt-dlp -f bv*+ba  "
+alias ythd="yt-dlp -f bestvideo+bestaudio "
 
 # APP -- ascii-image-converter
 alias ascii-real='ascii-image-converter -Cfg --color-bg '
