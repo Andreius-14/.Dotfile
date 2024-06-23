@@ -70,6 +70,9 @@ alias calculadora='expr'
 alias icat="kitten icat"
 alias copiar='xclip -sel clip '
 
+
+alias kcode="kitty --session ~/.config/kitty/sessions/kcode.conf "
+
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1  '
