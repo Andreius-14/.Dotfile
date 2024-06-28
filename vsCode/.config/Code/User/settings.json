@@ -1,8 +1,10 @@
 {
+
+    //🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱
+
     // CONFIG BASIC
     "window.menuBarVisibility": "toggle",
     // "workbench.activityBar.visible": false,
-    "workbench.sideBar.fontSize": 16,
 
     //🌱 TERMINAL 
     "terminal.integrated.tabs.enabled": true,
@@ -12,9 +14,12 @@
     "editor.linkedEditing": true,
     "editor.mouseWheelZoom": true,
 
+    // Tamaño Software y Font
+    "window.zoomLevel": -1,
+    "editor.fontSize": 15,
 
     //🌱 Importante
-    "editor.fontFamily": "'Hack Nerd Font','Fira Code Nerd Font', monospace", // ,'Terminess Nerd Font','IBM Plex Mono',
+    "editor.fontFamily": "'Fira Code Nerd Font', monospace", // ,'Terminess Nerd Font','IBM Plex Mono',
     
     "editor.bracketPairColorization.enabled": true,     //Color
     "editor.guides.bracketPairs": true,                 //Color
@@ -30,7 +35,8 @@
     // "screencastMode.verticalOffset": 3,
 
     
-    /*================================================================================================================*/
+    //🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱🌱
+
 
     //🦄  Configuracion PHP 
     "php.validate.executablePath":"/usr/bin/php" ,
@@ -58,13 +64,13 @@
 
 
     // 🦄 Configuracion JS [Prettier Eslint] Inicio 
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
-    },
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "vscode.typescript-language-features"
+    // },
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll.eslint": "explicit"
+    // },
 
     
     // 🦄 Configuracion PY
@@ -121,6 +127,8 @@
     "mithrilEmmet.outputDefaultTagName": true,
 
     
+    // EDITOR + SOFWARE
+
     "jupyter.askForKernelRestart": false,
     "notebook.lineNumbers": "on",
     "terminal.integrated.env.linux": {},
@@ -136,7 +144,16 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "window.zoomLevel": 1,
+
+
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula Soft",
+    "breadcrumbs.enabled": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "expand",
+    "projectManager.git.baseFolders": [
+        "/run/media/carlosa/Disco/Doc_Programacion"
+    ],
     
 
 }
