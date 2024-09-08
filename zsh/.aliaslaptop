@@ -31,7 +31,7 @@ alias yt-audio='ytfzf -dm'
 # APP -- youtube-dl - yt-dlp
 alias dm="yt-dlp -x --audio-format mp3 "
 alias dmb="yt-dlp -x --audio-quality 0"
-alias dopus=""
+#alias dopus=""
 
 alias ythd="yt-dlp -f bestvideo+bestaudio "
 alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
