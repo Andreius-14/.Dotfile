@@ -20,7 +20,7 @@ alias phpserver="php -S localhost:8000"
 
 # Lenguaje Py
 
-alias pyEntorno='virtualenv venv'
+alias pyEntorno='virtualenv venv && . venv/bin/activate'
 alias pyEnter='. venv/bin/activate'
 alias pyExit='deactivate'
 
@@ -30,3 +30,7 @@ alias pyListRestaura='pip install -r requirements.txt'
 
 # Lenguaje Js
 alias jsEntorno='pnpm init && pnpm install standard -D && jq -i ". + {eslinConfig: {"extends": "standard"}}" package.json'
+
+
+# Lenguaje C#
+  alias CsEntorno='dotnet new sln && dotnet new console -o MyApp && dotnet sln add *'
