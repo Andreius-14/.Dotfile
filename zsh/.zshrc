@@ -35,7 +35,6 @@ eval "$(starship init zsh)"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
@@ -76,7 +75,7 @@ plugins=(git
   zsh-autosuggestions
 	zsh-syntax-highlighting
   colored-man-pages
-  # autojump
+  autojump
 	history
 	# thefuck
   zoxide
@@ -84,7 +83,7 @@ plugins=(git
 	copypath
 
   bgnotify
-  z
+  # zsh-z
   zsh-fzf-history-search
   
 )
@@ -101,8 +100,7 @@ plugins=(git
 #   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
-# fi
-
+# fizsh-z
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
