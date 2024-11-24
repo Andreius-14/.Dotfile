@@ -1,0 +1,32 @@
+# Control de Verciones
+
+alias gcl='git clone --depth 1'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+
+
+alias log1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
+alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
+
+
+# Lenguaje Php
+alias phpserver="php -S localhost:8000"
+
+
+# Lenguaje Py
+
+alias pyEntorno='virtualenv venv'
+alias pyEnter='. venv/bin/activate'
+alias pyExit='deactivate'
+
+alias pyList='pip freeze > requeriments.txt'
+alias pyListRestaura='pip install -r requirements.txt'
+
+
+# Lenguaje Js
+alias jsEntorno='pnpm init && pnpm install standard -D && jq -i ". + {eslinConfig: {"extends": "standard"}}" package.json'

@@ -128,7 +128,9 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 
-# ==========[Configuracion Predeterminada - Andreius]========== #
+
+# ==========[Configuracion - Andreius] [Inicio] ========== #
+
 
 
 # TERMUX
@@ -155,11 +157,18 @@ else
 
 fi
 
-# ==========[Configuracion Predeterminada - Global]========== #
 
-source $HOME/.aliaslaptop
+# ===> [Alias]
+source $HOME/.aliasLaptop
+source $HOME/.aliasProgramacion
 
+# ===> [Script]
+
+# ===> [Ejecutar]
 eval "$(fzf --zsh)"
+
+
+# ==========[Configuracion - Andreius] [Fin] ========== #
 
 
 # pnpm
