@@ -157,12 +157,13 @@ else
 
 fi
 
-
-# ===> [Alias]
+#=============================================
+# [Archivos Extra]
+#==============================================
 source $HOME/.aliasLaptop
 source $HOME/.aliasProgramacion
 
-# ===> [Script]
+source $HOME/.zsh__functions
 
 # ===> [Ejecutar]
 eval "$(fzf --zsh)"

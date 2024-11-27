@@ -1,51 +1,3 @@
-
-
-# APP -- taskbook
-alias tb="taskbook"
-alias tb+='taskbook --task'
-alias tb-='taskbook -c'
-alias tbc='taskbook --clear'
-
-# APP -- scrcpy
-alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
-
-# APP -- ytfzf
-alias yt="ytfzf -t"
-alias yt-audio='ytfzf -dm'
-
-# APP -- youtube-dl - yt-dlp
-alias dm="yt-dlp -x --audio-format mp3 "
-alias dmb="yt-dlp -x --audio-quality 0"
-#alias dopus=""
-
-alias ythd="yt-dlp -f bestvideo+bestaudio "
-alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
-alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
-# APP -- ascii-image-converter
-alias ascii-real='ascii-image-converter -Cfg --color-bg '
-alias ascii1="ascii-image-converter -b -C"
-alias ascii2="ascii-image-converter -b --dither -C"
-alias ascii="ascii-image-converter"
-
-
-# ls - eza
-alias eza='eza --icons --sort=type '
-alias file1="eza -abghHlS --tree --level=1"
-alias file2="eza --long --tree --level=1 -bghliS "
-alias file3="eza --long --tree --level=1 -bghl --no-filesize"
-
-
-#=========================================================
-# EXTRA
-# alias code="flatpak run com.visualstudio.code"
-# alias treefolder='tree -L 1'
-# alias icat="kitty +kitten icat"
-# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-alias bat="bat --paging=never --theme='Dracula'"
-
-#=========================================================
-
 # Riesgo
 alias apagar='sudo shutdown -h now'
 
@@ -60,9 +12,6 @@ alias calculadora='expr'
 alias icat="kitten icat"
 alias copiar='xclip -sel clip '
 
-
-alias kcode="kitty --session ~/.config/kitty/sessions/kcode.conf "
-
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1  '
@@ -71,3 +20,54 @@ alias i='sudo pacman -Sy'
 alias basura='gio trash'
 
 
+# [ARCHIVOS]
+
+alias bat="bat --paging=never --theme='Dracula'"
+
+alias eza='eza --icons --sort=type '
+alias file1="eza -abghHlS --tree --level=1"
+alias file2="eza --long --tree --level=1 -bghliS "
+alias file3="eza --long --tree --level=1 -bghl --no-filesize"
+
+
+# ==============================================[SOFTWARE]=========================================================
+
+# [taskbook]
+alias tb="taskbook"
+alias tb+='taskbook --task'
+alias tb-='taskbook -c'
+alias tbc='taskbook --clear'
+
+
+
+# ==============================================[TEMAS]=========================================================
+
+# [YOUTUBE]
+alias yt="ytfzf -t"
+alias yt-audio='ytfzf -dm'
+
+alias dm="yt-dlp -x --audio-format mp3 "
+alias dmb="yt-dlp -x --audio-quality 0"
+
+alias ythd="yt-dlp -f bestvideo+bestaudio "
+alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
+alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
+
+# [ASCII]
+alias ascii-real='ascii-image-converter -Cfg --color-bg '
+alias ascii1="ascii-image-converter -b -C"
+alias ascii2="ascii-image-converter -b --dither -C"
+alias ascii="ascii-image-converter"
+
+
+# [PHONE]
+alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
+
+
+# [EXTRA]
+# alias kcode="kitty --session ~/.config/kitty/sessions/kcode.conf "
+# alias code="flatpak run com.visualstudio.code"
+# alias treefolder='tree -L 1'
+# alias icat="kitty +kitten icat"
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"

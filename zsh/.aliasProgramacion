@@ -33,4 +33,4 @@ alias jsEntorno='pnpm init && pnpm install standard -D && jq -i ". + {eslinConfi
 
 
 # Lenguaje C#
-  alias CsEntorno='dotnet new sln && dotnet new console -o MyApp && dotnet sln add *'
+  alias CsEntorno='dotnet new sln && dotnet new console -o Main && dotnet sln add */'

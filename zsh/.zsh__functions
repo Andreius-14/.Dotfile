@@ -1,0 +1,39 @@
+FrameAscii() {
+
+  # Validar que se ha proporcionado un archivo GIF como argumento
+  readonly input_file="${1:?"Error: Ingrese el Archivo gif"}"
+
+  # Obtener el path_nombre del archivo sin la extensión
+  local base_name="$(basename "$input_file" .gif)"
+  local path_nombre="Frame_$base_name"
+  local folder="Ascii_$base_name"
+
+  Frame $input_file
+
+  mkdir -p $folder
+
+  ascii $path_nombre/*.png --save-txt $folder || Error "Imagen a Ascii"
+
+  rename "ascii-art" "" $folder/* && rename "-" "" $folder/*  || Error "Al Renombrar"
+
+  echo "Conversión completada"
+}
+
+Frame() {
+  readonly input_file="${1:?"Error: Ingrese el Archivo GIF como argumento."}"
+
+  # Obtener el nombre base y el directorio de salida
+  local base_name="$(basename "$input_file" .gif)"
+  local folder="Frame_$base_name"
+
+  mkdir -p $folder
+
+  ffmpeg -i "$input_file" "$folder/%03d.png" || Error "Extraccion Frames"
+
+  echo "Extracción completada. '$folder'."
+}
+
+Error(){
+  echo "Error: $1 "
+  return 1
+}
