@@ -33,10 +33,10 @@ alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 # ==============================================[SOFTWARE]=========================================================
 
 # [taskbook]
-alias tb="taskbook"
-alias tb+='taskbook --task'
-alias tb-='taskbook -c'
-alias tbc='taskbook --clear'
+alias tb="c && taskbook"
+alias tb+='c && taskbook --task'
+alias tb-='c &&taskbook -c'
+alias tbc='c && taskbook --clear'
 
 
 
