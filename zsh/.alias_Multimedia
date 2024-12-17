@@ -1,0 +1,18 @@
+# [YOUTUBE]
+alias yt="ytfzf -t"
+alias yt-audio='ytfzf -dm'
+
+alias dm="yt-dlp -x --audio-format mp3 "
+alias dmb="yt-dlp -x --audio-quality 0"
+
+alias ythd="yt-dlp -f bestvideo+bestaudio "
+alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
+alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
+
+# [ASCII]
+alias ascii-real='ascii-image-converter -Cfg --color-bg '
+alias ascii1="ascii-image-converter -b -C"
+alias ascii2="ascii-image-converter -b --dither -C"
+alias ascii="ascii-image-converter"
+
+

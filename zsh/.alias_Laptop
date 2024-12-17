@@ -2,22 +2,35 @@
 alias apagar='sudo shutdown -h now'
 
 # INFO
-alias peso='dust -d 1 .'
 
-# PRODUCTIVIDAD
-alias wiki='wikit -l es '
-alias leer='speak-ng -ves '
-alias resumen='tldr'
-alias calculadora='expr'
-alias icat="kitten icat"
-alias copiar='xclip -sel clip '
 
+alias windows=''
+
+
+#=============================
+#     [1][Letter]
+#=============================
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1  '
 alias i='sudo pacman -Sy' 
 
+#=============================
+# PRODUCTIVIDAD
+#=============================
+alias leer='speak-ng -ves '
+alias calculadora='expr'
+alias icat="kitten icat"
+alias copiar='xclip -sel clip '
 alias basura='gio trash'
+
+#=============================
+# INFORMACION
+#=============================
+alias wiki='wikit -l es '
+alias resumen='tldr'
+alias peso='dust -d 1 .'
+
 
 
 # [ARCHIVOS]
@@ -33,34 +46,16 @@ alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 # ==============================================[SOFTWARE]=========================================================
 
 # [taskbook]
+# Un Todo en la Terminal
+
 alias tb="c && taskbook"
 alias tb+='c && taskbook --task'
 alias tb-='c &&taskbook -c'
 alias tbc='c && taskbook --clear'
 
+# [SCRCPY] 
+# Pantalla de Movil a Laptop
 
-
-# ==============================================[TEMAS]=========================================================
-
-# [YOUTUBE]
-alias yt="ytfzf -t"
-alias yt-audio='ytfzf -dm'
-
-alias dm="yt-dlp -x --audio-format mp3 "
-alias dmb="yt-dlp -x --audio-quality 0"
-
-alias ythd="yt-dlp -f bestvideo+bestaudio "
-alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
-alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
-
-# [ASCII]
-alias ascii-real='ascii-image-converter -Cfg --color-bg '
-alias ascii1="ascii-image-converter -b -C"
-alias ascii2="ascii-image-converter -b --dither -C"
-alias ascii="ascii-image-converter"
-
-
-# [PHONE]
 alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
 
 

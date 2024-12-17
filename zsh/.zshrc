@@ -71,6 +71,12 @@ eval "$(starship init zsh)"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+
+#=============================
+# ZSH - PLUGINS
+#=============================
+
 plugins=(git
   zsh-autosuggestions
 	zsh-syntax-highlighting
@@ -127,13 +133,12 @@ plugins=(git
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
+#                       CONFIGURACION PERSONAL
+#═════════════════════════════════════════════════════════════════════╗ 
 
-
-# ==========[Configuracion - Andreius] [Inicio] ========== #
-
-
-
-# TERMUX
+#=============================
+# TERMUX CONFIGURACION
+#=============================
 if echo $HOME | grep -q termux; then
   
   # Variables de Entorno - Termux
@@ -154,23 +159,26 @@ else
 
   # Variables de Entorno - Laptop
 
-
 fi
 
-#=============================================
-# [Archivos Extra]
-#==============================================
-source $HOME/.aliasLaptop
-source $HOME/.aliasProgramacion
+
+#=============================
+# ARCHIVOS - ALIAS
+#=============================
+source $HOME/.alias_Laptop
+source $HOME/.alias_Programacion
+source $HOME/.alias_Multimedia
 
 source $HOME/.zsh__functions
 
-# ===> [Ejecutar]
+
+#=============================
+# EJECUTADOS
+#=============================
 eval "$(fzf --zsh)"
 
 
-# ==========[Configuracion - Andreius] [Fin] ========== #
-
+#═════════════════════════════════════════════════════════════════════╝
 
 # pnpm
 export PNPM_HOME="/home/carlosa/.local/share/pnpm"
