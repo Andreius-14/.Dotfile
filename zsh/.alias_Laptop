@@ -2,7 +2,7 @@
 # RIESGO
 #=============================
 alias apagar='sudo shutdown -h now'
-alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." && reboot'
+alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." && reboot' #sudo grep ^menuentry /boot/grub/grub.cfg
 
 
 #=============================
