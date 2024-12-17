@@ -1,10 +1,8 @@
-# Riesgo
+#=============================
+# RIESGO
+#=============================
 alias apagar='sudo shutdown -h now'
-
-# INFO
-
-
-alias windows=''
+alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." && reboot'
 
 
 #=============================
