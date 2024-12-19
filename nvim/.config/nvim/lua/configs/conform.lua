@@ -8,13 +8,12 @@ local options = {
     bash = { "shfmt" },
   },
 
-  -- These options will be passed to conform.format()
   format_on_save = {
-     async = true,
-    timeout_ms = 10000,
+    async = true,
+    timeout_ms = 1000,
     lsp_fallback = true,
     quiet = true,
   },
 }
 
-require("conform").setup(options)
+return options

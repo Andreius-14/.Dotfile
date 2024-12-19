@@ -1,12 +1,13 @@
--- EXAMPLE
-local on_attach = require("nvchad.configs.lspconfig").on_attach
-local on_init = require("nvchad.configs.lspconfig").on_init
-local capabilities = require("nvchad.configs.lspconfig").capabilities
+-- load defaults i.e lua_lsp
+require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
+
+-- EXAMPLE
 local servers = {
   -- Complemento
   "emmet_ls",
+
   "custom_elements_ls",
   "jsonls",
   -- Desarrollo Web
@@ -17,7 +18,7 @@ local servers = {
   -- Js
   "denols",
   "eslint",
-  "tsserver",
+  "ts_ls",
   -- C C++
   "clangd",
   -- Bash
@@ -25,59 +26,20 @@ local servers = {
   -- Lua
   "lua_ls",
 }
-
--- Instalado Manualmente
--- yay -S vscode-langservers-extracted
+local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
   }
 end
 
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-
--- typescript
--- lspconfig.tsserver.setup {
---   on_attach = on_attach,
---   on_init = on_init,
---   capabilities = capabilities,
--- }
-
--- lspconfig.denols.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
--- lspconfig.typst_lsp.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.pyright.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.custom_elements_ls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.emmet_ls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.eslint.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
---Bash
--- lspconfig.bashls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
+-- configuring single server, example: typescript
+-- lspconfig.ts_ls.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
 -- }
