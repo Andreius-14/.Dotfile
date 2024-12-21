@@ -1,0 +1,14 @@
+[user]
+	name = Andreius_14
+	email = @outlook.com
+[core]
+	editor = nvim
+[commit]
+	gpgsign = false
+[gpg]
+	program = gpg2
+[safe]
+  directory = /run/media/carlosa/Disco/*
+
+[alias]
+    log = log --no-pager

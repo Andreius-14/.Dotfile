@@ -1,14 +1,93 @@
 # BEGIN_KITTY_THEME
-# Tango Dark
+# bl1nk
 include current-theme.conf
 # END_KITTY_THEME
 
-background_opacity 0.95
+
+
+# =========================================================================
+# ESTILOS -- GENERAL
+# =========================================================================
+
+background_opacity 0.9
 foreground_opacity 1.0
 
+# border_radius 40
+remember_window_size  yes
+
+
+#Oculta Title Bar
+hide_window_decorations yes 
+# initial_window_width  340
+# initial_window_height 300
+
+# ================================[BORDES]
+
+# draw_minimal_borders yes
+# window_border_width 0   
+# active_border_color   #603FEF
+# inactive_border_color #CCCCCC
+# bell_border_color     #ff5a00
+window_padding_width  4 
+# draw_minimal_borders yes
+
+# ================================[Tabs]
+#tab_bar_style fade
+#tab_bar_style slant
+#tab_bar_style separator
+tab_bar_style powerline
+#tab_bar_style hidden
+
+
+# =========================================================================
+# MOUSE
+# =========================================================================
+mouse_hide_wait 3.0
+
+
+
+
+
+
+# =========================================================================
+# FONT
+# =========================================================================
 
 #Letras
-font_size 14.0
-font_family Fira Code Bold
+font_size 10.0
+font_family "JetBrainsMono Nerd Font"
 
-startup_session /home/carlosa/.config/kitty/sessions/kitty-startup.conf
+# FIRA
+
+# font_family Fira Code SemiBold Nerd Font Complete
+# font_family Fira Code Retina Nerd Font Complete
+# font_family Fira Code Regular Nerd Font Complete
+# font_family Fira Code Medium Nerd Font Complete
+# font_family Fira Code Light Nerd Font Complete
+# font_family Fira Code Bold Nerd Font Complete
+
+# HACK
+
+# font_family Hack Regular Nerd Font Complete
+# font_family Hack Italic Nerd Font Complete
+# font_family Hack Bold Nerd Font Complete
+# font_family Hack Bold Italic Nerd Font Complete
+
+# TERMINESS
+# font_family Terminess Nerd Font
+#font_family TerminessNerdFontPropo-Regular
+# font_family TerminessNerdFontPropo-Italic
+# font_family TerminessNerdFontPropo-BoldItalic
+# font_family TerminessNerdFontPropo-Bold
+# font_family Terminess Nerd Font Regular
+# font_family TerminessNerdFont-Italic
+# font_family TerminessNerdFont-BoldItalic
+# font_family TerminessNerdFont-Bold
+
+# =========================================================================
+# SESSION
+# =========================================================================
+startup_session ~/.config/kitty/sessions/kcode.conf
+# startup_session ~/.config/kitty/sessions/kitty-startup.conf
+
+
