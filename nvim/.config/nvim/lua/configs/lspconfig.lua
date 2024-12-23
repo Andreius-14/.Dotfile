@@ -4,28 +4,25 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = {
-  -- Complemento
-  "emmet_ls",
-
-  "custom_elements_ls",
-  "jsonls",
-  -- Desarrollo Web
-  "html",
-  "cssls",
-  -- Python
-  "pyright",
-  -- Js
-  "denols",
-  "eslint",
-  "ts_ls",
-  -- C C++
-  "clangd",
-  -- Bash
-  "bashls",
-  -- Lua
-  "lua_ls",
+local servers = { "html", "cssls",
+  	-- Complemento
+	-- "emmet-ls",
+	"custom_elements_ls",
+	"jsonls",
+	-- Python
+	"pyright",
+	-- Js
+	"denols",
+	"eslint",
+	"ts_ls",
+	-- C C++
+	"clangd",
+	-- Bash
+	"bashls",
+	-- Lua
+	"lua_ls",
 }
+
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config

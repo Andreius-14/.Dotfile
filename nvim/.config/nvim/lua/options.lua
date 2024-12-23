@@ -19,4 +19,3 @@ o.wrap = false
 
 o.guifont = "Times New Romans"
 -- o.foldmethod = "syntax"
-
