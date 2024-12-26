@@ -1,0 +1,66 @@
+{
+    "2": {
+        "_id": 2,
+        "_date": "Sat Dec 07 2024",
+        "_timestamp": 1733608710921,
+        "description": "SQL Basico - Repaso",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "4": {
+        "_id": 4,
+        "_date": "Sat Dec 07 2024",
+        "_timestamp": 1733609825765,
+        "description": "Rust vs C vs C++ vs Lua",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": false
+    },
+    "5": {
+        "_id": 5,
+        "_date": "Sat Dec 07 2024",
+        "_timestamp": 1733610328168,
+        "description": "DB - Dominar Fundamentos",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": false
+    },
+    "11": {
+        "_id": 11,
+        "_date": "Sun Dec 22 2024",
+        "_timestamp": 1734879690447,
+        "description": "Recoger Material PC",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "12": {
+        "_id": 12,
+        "_date": "Mon Dec 23 2024",
+        "_timestamp": 1734937270609,
+        "description": "Aprender LUA",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    }
+}
