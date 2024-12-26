@@ -155,6 +155,11 @@ if echo $HOME | grep -q termux; then
   source $HOME/.config/lf/icons
   source $HOME/.aliases
   source $HOME/.autostart
+  
+  export PNPM_HOME=$HOME/.pnpm
+  export PATH=$PNPM_HOME/bin:$PATH
+
+
 else 
 
   # Variables de Entorno - Laptop
