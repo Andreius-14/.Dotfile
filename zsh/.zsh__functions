@@ -37,3 +37,19 @@ Error(){
   echo "Error: $1 "
   return 1
 }
+
+#=============================
+#  LINUX -- AUTOMATIZACION 
+#=============================
+
+
+remove_path() {
+  if [[ -z "$1" ]]; then
+    echo "Debes proporcionar una ruta para eliminar del PATH."
+    return 1
+  fi
+
+  # Usar un patrón que elimine la ruta de forma segura
+  export PATH=$(echo "$PATH" | sed -e "s|^$1:||" -e "s|:$1:|:|" -e "s|:$1||" -e "s|^$1||")
+}
+
