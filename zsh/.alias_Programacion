@@ -1,4 +1,6 @@
-# Control de Verciones
+#=============================
+#  GIT
+#=============================
 
 alias gcl='git clone --depth 1'
 alias gi='git init'
@@ -13,12 +15,22 @@ alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
 alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
 
+function github() {
+    git add . && git commit -m "$1" && git push
+}
 
-# Lenguaje Php
+# alias github='git add . && git commit $@ && git push'
+
+
+#=============================
+#  PHP
+#=============================
+
 alias phpserver="php -S localhost:8000"
 
-
-# Lenguaje Py
+#=============================
+#  PY
+#=============================
 
 alias pyEntorno='virtualenv venv && . venv/bin/activate'
 alias pyEnter='. venv/bin/activate'
@@ -27,10 +39,14 @@ alias pyExit='deactivate'
 alias pyList='pip freeze > requeriments.txt'
 alias pyListRestaura='pip install -r requirements.txt'
 
+#=============================
+#  JS
+#=============================
 
-# Lenguaje Js
 alias jsEntorno='pnpm init && pnpm install standard -D && jq -i ". + {eslinConfig: {"extends": "standard"}}" package.json'
 
+#=============================
+#  C#
+#=============================
 
-# Lenguaje C#
-  alias CsEntorno='dotnet new sln && dotnet new console -o Main && dotnet sln add */'
+alias CsEntorno='dotnet new sln && dotnet new console -o Main && dotnet sln add */'

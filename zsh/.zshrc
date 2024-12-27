@@ -156,8 +156,8 @@ if echo $HOME | grep -q termux; then
   source $HOME/.aliases
   source $HOME/.autostart
   
-  export PNPM_HOME=$HOME/.pnpm
-  export PATH=$PNPM_HOME/bin:$PATH
+  # export PNPM_HOME=$HOME/.pnpm
+  # export PATH=$PNPM_HOME/bin:$PATH
 
 
 else 
