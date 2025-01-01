@@ -1,0 +1,17 @@
+ene 01 13:29:49 carlosa kernel: AMD-Vi: [Firmware Bug]: : IOAPIC[5] not in IVRS table
+ene 01 13:29:49 carlosa kernel: AMD-Vi: Disabling interrupt remapping
+ene 01 13:29:49 carlosa kernel: integrity: Problem loading X.509 certificate -65
+ene 01 13:29:49 carlosa kernel: integrity: Problem loading X.509 certificate -65
+ene 01 13:30:10 carlosa kernel: EXT4-fs error (device sda7): ext4_orphan_get:1422: comm mount: bad orphan inode 9437340
+ene 01 13:30:10 carlosa kernel: ext4_test_bit(bit=155, block=37748752) = 0
+ene 01 13:30:10 carlosa kernel: EXT4-fs error (device sda7): ext4_orphan_get:1422: comm mount: bad orphan inode 9464341
+ene 01 13:30:10 carlosa kernel: ext4_test_bit(bit=2580, block=37748755) = 0
+ene 01 13:30:10 carlosa kernel: EXT4-fs error (device sda7): ext4_orphan_get:1422: comm mount: bad orphan inode 10416765
+ene 01 13:30:10 carlosa kernel: ext4_test_bit(bit=4732, block=41418775) = 0
+ene 01 13:30:10 carlosa kernel: EXT4-fs error (device sda7): ext4_orphan_get:1422: comm mount: bad orphan inode 9464373
+ene 01 13:30:10 carlosa kernel: ext4_test_bit(bit=2612, block=37748755) = 0
+ene 01 13:30:10 carlosa kernel: EXT4-fs error (device sda7): ext4_orphan_get:1422: comm mount: bad orphan inode 11421038
+ene 01 13:30:10 carlosa kernel: ext4_test_bit(bit=1389, block=45613074) = 0
+ene 01 13:30:16 carlosa bluetoothd[657]: Failed to set mode: Failed (0x03)
+ene 01 13:31:18 carlosa gdm-password][1602]: gkr-pam: unable to locate daemon control file
+ene 01 13:31:24 carlosa systemd[1615]: Failed to start Application launched by gnome-session-binary.
