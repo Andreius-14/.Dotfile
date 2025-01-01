@@ -29,7 +29,7 @@ alias wiki='wikit -l es '
 alias resumen='tldr'
 alias peso='dust -d 1 .'
 
-
+alias wifi='nmcli device wifi list'
 
 # [ARCHIVOS]
 
@@ -41,7 +41,9 @@ alias file2="eza --long --tree --level=1 -bghliS "
 alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 
 
-# ==============================================[SOFTWARE]=========================================================
+# =======================================================================================================
+#  SOFTWARE - APP
+# =======================================================================================================
 
 # [taskbook]
 # Un Todo en la Terminal

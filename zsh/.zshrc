@@ -182,6 +182,11 @@ source $HOME/.zsh__functions
 #=============================
 eval "$(fzf --zsh)"
 
+ if [ -d /home/linuxbrew/.linuxbrew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+ fi
+ 
+
 
 #═════════════════════════════════════════════════════════════════════╝
 
