@@ -53,3 +53,25 @@ remove_path() {
   export PATH=$(echo "$PATH" | sed -e "s|^$1:||" -e "s|:$1:|:|" -e "s|:$1||" -e "s|^$1||")
 }
 
+#=============================
+#  LINUX -- Dotfiles
+#=============================
+
+
+dotfiles_gnome() {
+  # Ruta del directorio donde se guardará el archivo
+  target_dir=~/dotfile/Gnome
+  output_file="$target_dir/Gnome_Extensiones.txt"
+  
+  # Verificar si el directorio existe
+  if [[ -d "$target_dir" ]]; then
+    # Generar la lista de extensiones instaladas y guardarla en el archivo
+    gnome-extensions list > "$output_file"
+    echo "Lista de extensiones GNOME guardada en $output_file"
+  else
+    echo "El directorio $target_dir no existe."
+  fi
+}
+
+
+
