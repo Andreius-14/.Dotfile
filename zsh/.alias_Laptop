@@ -66,3 +66,14 @@ alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --wi
 # alias icat="kitty +kitten icat"
 # export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
+
+# ===================
+# &&
+# Combinaciones
+# ==================
+alias sound_mk='mpv --no-video "https://www.youtube.com/watch?v=KTt75BHtqV8" '
+
+alias pomodoro="countdown 25m && sound_mk && countdown 5m && sound_mk "
+alias pomodoro2="countdown 45m && sound_mk && countdown 15m && sound_mk "
+

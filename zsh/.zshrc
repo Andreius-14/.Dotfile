@@ -200,3 +200,4 @@ esac
 # pnpm end
 
 PATH=~/.console-ninja/.bin:$PATH
+export PATH=$PATH:/usr/lib/node_modules/.bin

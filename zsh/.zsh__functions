@@ -74,4 +74,21 @@ dotfiles_gnome() {
 }
 
 
+tabla_multiplicar() {
+  # Comprobar si se pasó un número como argumento
+  if [ -z "$1" ]; then
+    echo "Por favor, ingresa un número para mostrar su tabla de multiplicar."
+    return 1
+  fi
+
+  # Input
+  local numero=$1
+
+  # Imprimir la tabla de multiplicar con formato simple y alineado
+  echo -e "==============\n  Tabla: $numero\n==============" 
+  for i in {1..12}; do
+    # Asegurarse de que los números de un solo dígito tengan un 0 al principio
+    printf "%2d x %2d = %02d\n" "$numero" "$i" "$((numero * i))"
+  done
+}
 
