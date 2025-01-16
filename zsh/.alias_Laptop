@@ -48,10 +48,10 @@ alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 # [taskbook]
 # Un Todo en la Terminal
 
-alias tb="c && taskbook"
-alias tb+='c && taskbook --task'
-alias tb-='c &&taskbook -c'
-alias tbc='c && taskbook --clear'
+# alias tb="c && taskbook"
+alias tb+='c && tb --task'
+alias tb-='c && tb -c'
+alias tbc='c && tb --clear'
 
 # [SCRCPY] 
 # Pantalla de Movil a Laptop
