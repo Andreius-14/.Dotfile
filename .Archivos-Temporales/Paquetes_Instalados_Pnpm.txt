@@ -1,0 +1,6 @@
+Legend: production dependency, optional only, dev only
+
+/home/carlosa/.local/share/pnpm/global/5
+
+dependencies:
+nodemon 3.1.9

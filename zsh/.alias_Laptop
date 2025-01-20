@@ -11,16 +11,19 @@ alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." 
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1  '
-alias i='sudo pacman -Sy' 
+alias i='sudo pacman -S' 
 
 #=============================
 # PRODUCTIVIDAD
 #=============================
-alias leer='speak-ng -ves '
+alias update='sudo pacman -Syu'
+# alias leer='speak-ng -ves '
 alias calculadora='expr'
 alias icat="kitten icat"
 alias copiar='xclip -sel clip '
 alias basura='gio trash'
+alias open='xdg-open'
+alias silent_output='> /dev/null 2>&1'
 
 #=============================
 # INFORMACION
@@ -45,35 +48,48 @@ alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 #  SOFTWARE - APP
 # =======================================================================================================
 
+#================
 # [taskbook]
-# Un Todo en la Terminal
-
+#================
 alias tb="c && tb"
 alias tb+='c && tb --task'
 alias tb-='c && tb -c'
 alias tbc='c && tb --clear'
 
+#================
 # [SCRCPY] 
-# Pantalla de Movil a Laptop
-
+#================
 alias movil="scrcpy --always-on-top --disable-screensaver --turn-screen-off --window-borderless --window-x -1 --window-height 768"
 
+#================
+# [countdown]
+#================
+alias pomodoro="countdown 25m && sound_mk && countdown 5m && sound_mk "
+alias pomodoro2="countdown 45m && sound_mk && countdown 15m && sound_mk "
 
-# [EXTRA]
+
+
+
+
+
+
+# =======================================================================================================
+#  SOFTWARE - Extra
+# =======================================================================================================
+
+#================
+# [Sonidos]
+#================
+alias sound_mk='mpv --no-video "https://www.youtube.com/watch?v=KTt75BHtqV8" > /dev/null 2>&1'
+
+
+
+#================
+# [Basura]
+#================
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 # alias kcode="kitty --session ~/.config/kitty/sessions/kcode.conf "
 # alias code="flatpak run com.visualstudio.code"
 # alias treefolder='tree -L 1'
-# alias icat="kitty +kitten icat"
-# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-
-
-# ===================
-# &&
-# Combinaciones
-# ==================
-alias sound_mk='mpv --no-video "https://www.youtube.com/watch?v=KTt75BHtqV8" '
-
-alias pomodoro="countdown 25m && sound_mk && countdown 5m && sound_mk "
-alias pomodoro2="countdown 45m && sound_mk && countdown 15m && sound_mk "
 

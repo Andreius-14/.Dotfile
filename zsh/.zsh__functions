@@ -58,18 +58,30 @@ remove_path() {
 #=============================
 
 
-dotfiles_gnome() {
+dotfiles_paquetes() {
   # Ruta del directorio donde se guardará el archivo
-  target_dir=~/dotfile/Gnome
-  output_file="$target_dir/Gnome_Extensiones.txt"
+  Directorio_Principal=~/dotfile/.Archivos-Temporales
+
+  ruta1="$Directorio_Principal/Gnome_All_Extensiones.txt"
+  ruta2="$Directorio_Principal/Gnome_Enable_Extensiones.txt"
   
   # Verificar si el directorio existe
-  if [[ -d "$target_dir" ]]; then
-    # Generar la lista de extensiones instaladas y guardarla en el archivo
-    gnome-extensions list > "$output_file"
-    echo "Lista de extensiones GNOME guardada en $output_file"
+  if [[ -d "$Directorio_Principal" ]]; then
+
+    gnome-extensions list > "$ruta1"            || echo "Error_Gnome" >&2
+    gnome-extensions list --enabled > "$ruta2"   || echo "Error_Gnome" >&2
+
+    pacman -Qqe > "$Directorio_Principal/Paquetes_Instalados_Pacman.txt" || echo "Error_pacman" >&2
+    pamac list -qe >"$Directorio_Principal/Paquetes_Instalados_Pamac.txt" || echo "Error_pamac" >&2
+    npm list -g > "$Directorio_Principal/Paquetes_Instalados_Npm.txt"  || echo "Error_Npm" >&2
+    pnpm list -g > "$Directorio_Principal/Paquetes_Instalados_Pnpm.txt" || echo "Error_Pnpm" >&2
+    brew leaves >  "$Directorio_Principal/Paquetes_Instalados_Brew.txt" || echo "Error_Brew" >&2
+    flatpak list --columns=application --app > "$Directorio_Principal/Paquetes_Instalados_Flatpak.txt" || echo "Error_Flatpak"  >&2
+
+    echo "Listas de Paquetes -- Linux"
+    t $Directorio_Principal
   else
-    echo "El directorio $target_dir no existe."
+    echo "El directorio $Directorio_Principal no existe."
   fi
 }
 
@@ -90,5 +102,23 @@ tabla_multiplicar() {
     # Asegurarse de que los números de un solo dígito tengan un 0 al principio
     printf "%2d x %2d = %02d\n" "$numero" "$i" "$((numero * i))"
   done
+}
+
+
+function habilitar_scripts() {
+  local directorio="$HOME/.Scripts"
+  local permisos="755" # Ajusta los permisos según tus necesidades
+
+  if [[ -d "$directorio" ]]; then
+    echo "Buscando archivos .sh en $directorio..."
+    for archivo in "$directorio"/*.sh; do
+      if [[ -f "$archivo" ]]; then
+        chmod "$permisos" "$archivo"
+        echo "Se ha otorgado permiso de ejecución a: $archivo"
+      fi
+    done
+  else
+    echo "El directorio $directorio no existe."
+  fi
 }
 
