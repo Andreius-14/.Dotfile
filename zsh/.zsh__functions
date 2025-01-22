@@ -1,3 +1,23 @@
+
+#════════════════════════════════════════════════════════════════════════════════════════════╗ 
+#  [LINUX -- To Functions]
+#════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+Error() { 
+  # Colores: [31: Rojo] [32: Verde] [33: Amarillo] [34: Azul] [35: Magenta] [36: Cian] [37: Blanco]
+  local msm="$1"
+  local num_color="${2:-31}"  # Si no se pasa un color, usa rojo por defecto (31)
+
+  echo -e "\e[${num_color}mError: $msm\e[0m" >&2
+  return 1
+}
+
+  
+#════════════════════════════════════════════════════════════════════════════════════════════╗ 
+# Linux -- Hooby's 
+#════════════════════════════════════════════════════════════════════════════════════════════╝
+
 FrameAscii() {
 
   # Validar que se ha proporcionado un archivo GIF como argumento
@@ -33,18 +53,14 @@ Frame() {
   echo "Extracción completada. '$folder'."
 }
 
-Error(){
-  echo "Error: $1 "
-  return 1
-}
 
-#=============================
-#  LINUX -- AUTOMATIZACION 
-#=============================
+#════════════════════════════════════════════════════════════════════════════════════════════╗ 
+# Linux -- Automatizacion 
+#════════════════════════════════════════════════════════════════════════════════════════════╝
 
 
 remove_path() {
-  if [[ -z "$1" ]]; then
+  if [[ -z "$1" ]]; then  
     echo "Debes proporcionar una ruta para eliminar del PATH."
     return 1
   fi
@@ -58,18 +74,14 @@ remove_path() {
 #=============================
 
 
-dotfiles_paquetes() {
-  # Ruta del directorio donde se guardará el archivo
-  Directorio_Principal=~/dotfile/.Archivos-Temporales
+Dotfiles_paquetes() {
+  local Directorio_Principal=~/dotfile/.Archivos-Temporales
 
-  ruta1="$Directorio_Principal/Gnome_All_Extensiones.txt"
-  ruta2="$Directorio_Principal/Gnome_Enable_Extensiones.txt"
-  
   # Verificar si el directorio existe
   if [[ -d "$Directorio_Principal" ]]; then
 
-    gnome-extensions list > "$ruta1"            || echo "Error_Gnome" >&2
-    gnome-extensions list --enabled > "$ruta2"   || echo "Error_Gnome" >&2
+    gnome-extensions list > "$Directorio_Principal/Gnome_All_Extensiones.txt"            || echo "Error_Gnome" >&2
+    gnome-extensions list --enabled > "$Directorio_Principal/Gnome_Enable_Extensiones.txt"   || echo "Error_Gnome" >&2
 
     pacman -Qqe > "$Directorio_Principal/Paquetes_Instalados_Pacman.txt" || echo "Error_pacman" >&2
     pamac list -qe >"$Directorio_Principal/Paquetes_Instalados_Pamac.txt" || echo "Error_pamac" >&2
@@ -85,6 +97,27 @@ dotfiles_paquetes() {
   fi
 }
 
+Dotfiles_habilitar-scripts() {
+  local directorio="$HOME/.Scripts"
+  local permisos="755" # Ajusta los permisos según tus necesidades
+
+  if [[ -d "$directorio" ]]; then
+    echo "Buscando archivos .sh en $directorio..."
+    for archivo in "$directorio"/*.sh; do
+      if [[ -f "$archivo" ]]; then
+        chmod "$permisos" "$archivo"
+        echo "Se ha otorgado permiso de ejecución a: $archivo"
+      fi
+    done
+  else
+    echo "El directorio $directorio no existe."
+  fi
+}
+
+
+#=============================
+#  LINUX -- Matematica
+#=============================
 
 tabla_multiplicar() {
   # Comprobar si se pasó un número como argumento
@@ -105,20 +138,5 @@ tabla_multiplicar() {
 }
 
 
-function habilitar_scripts() {
-  local directorio="$HOME/.Scripts"
-  local permisos="755" # Ajusta los permisos según tus necesidades
 
-  if [[ -d "$directorio" ]]; then
-    echo "Buscando archivos .sh en $directorio..."
-    for archivo in "$directorio"/*.sh; do
-      if [[ -f "$archivo" ]]; then
-        chmod "$permisos" "$archivo"
-        echo "Se ha otorgado permiso de ejecución a: $archivo"
-      fi
-    done
-  else
-    echo "El directorio $directorio no existe."
-  fi
-}
 

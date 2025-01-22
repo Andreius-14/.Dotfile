@@ -19,3 +19,10 @@ o.wrap = false
 
 o.guifont = "Times New Romans"
 -- o.foldmethod = "syntax"
+
+
+-- ===========================
+-- Texto
+-- ===========================
+-- o.ignorecase = true
+
