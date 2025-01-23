@@ -68,9 +68,13 @@ alias pomodoro="countdown 25m && sound_mk && countdown 5m && sound_mk "
 alias pomodoro2="countdown 45m && sound_mk && countdown 15m && sound_mk "
 
 
+#================
+# [Kitty]
+#================
 
 
-
+alias kitty_Local=" kitty --session ~/.config/kitty/sessions/Kitty-Local.conf  > /dev/null 2>&1 & disown"
+alias kitty_Github="kitty --session ~/.config/kitty/sessions/Kitty-Github.conf > /dev/null 2>&1 & disown"
 
 
 # =======================================================================================================
@@ -89,7 +93,6 @@ alias sound_mk='mpv --no-video "https://www.youtube.com/watch?v=KTt75BHtqV8" > /
 #================
 # export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-# alias kcode="kitty --session ~/.config/kitty/sessions/kcode.conf "
 # alias code="flatpak run com.visualstudio.code"
 # alias treefolder='tree -L 1'
 
