@@ -97,7 +97,7 @@ Dotfiles_paquetes() {
   fi
 }
 
-Dotfiles_habilitar-scripts() {
+habilitar-scripts() {
   local directorio="$HOME/.Scripts"
   local permisos="755" # Ajusta los permisos según tus necesidades
 

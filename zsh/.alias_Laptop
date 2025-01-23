@@ -24,7 +24,7 @@ alias copiar='xclip -sel clip '
 alias basura='gio trash'
 alias open='xdg-open'
 alias silent_output='> /dev/null 2>&1'
-
+alias mkdir='mkdir -pv'  
 #=============================
 # INFORMACION
 #=============================
