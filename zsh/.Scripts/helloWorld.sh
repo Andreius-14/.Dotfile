@@ -1,6 +1,6 @@
 
 #!/bin/bash
-# Este es un simple script para imprimir "Hola Mundo"
+source Funciones_Compartidas.sh
 
 echo "Hola Mundo desde la terminal"
-t
+txt_color "Instalando Plugins" red

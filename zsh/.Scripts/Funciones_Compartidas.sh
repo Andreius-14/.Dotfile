@@ -1,10 +1,51 @@
-Error() { 
-  # Colores: [31: Rojo] [32: Verde] [33: Amarillo] [34: Azul] [35: Magenta] [36: Cian] [37: Blanco]
-  local msm="$1"
-  local num_color="${2:-31}"  # Si no se pasa un color, usa rojo por defecto (31)
 
-  echo -e "\e[${num_color}mError: $msm\e[0m" >&2
+Error() {
+  # Validar que se pase un mensaje
+  if [ -z "$1" ]; then
+    echo -e "\e[31mError: No se proporcionó ningún mensaje.\e[0m" >&2
+    return 1
+  fi
+
+  local msg="$1"             # Mensaje de error
+  local color="${2:-red}"    # Color en inglés, por defecto rojo
+
+  # Usar la función txt_color para manejar colores
+  txt_color "Error: $msg" "$color" >&2
   return 1
+}
+# ═══════════════════════════════
+# Informacion
+# [31: Rojo] 
+# [32: Verde] 
+# [33: Amarillo] 
+# [34: Azul] 
+# [35: Magenta] 
+# [36: Cian] 
+# [37: Blanco]
+
+
+txt_color() {
+  local msg="$1"         # El texto que será coloreado
+  local color="$2"       # El color en inglés
+  local num_color        # Código de color ANSI correspondiente
+
+  # Mapeo de colores a códigos ANSI
+  case "$color" in
+    "red") num_color=31 ;;
+    "green") num_color=32 ;;
+    "yellow") num_color=33 ;;
+    "blue") num_color=34 ;;
+    "magenta") num_color=35 ;;
+    "cyan") num_color=36 ;;
+    "white") num_color=37 ;;
+    *) 
+      echo "Color no reconocido. Usando rojo por defecto." >&2
+      num_color=31
+      ;;
+  esac
+
+  # Imprimir el texto con el color seleccionado
+  echo -e "\e[${num_color}m${msg}\e[0m"
 }
 
 
