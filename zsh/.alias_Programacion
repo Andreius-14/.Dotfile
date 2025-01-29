@@ -37,7 +37,9 @@ alias pyEnter='. venv/bin/activate'
 alias pyExit='deactivate'
 
 alias pyList='pip freeze > requeriments.txt'
-alias pyListRestaura='pip install -r requirements.txt'
+alias pyRestaurar='pip install -r requirements.txt'
+alias pyNodemon='nodemon --exec python ' #NameFile 
+
 
 #=============================
 #  JS

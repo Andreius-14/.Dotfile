@@ -78,6 +78,10 @@ habilitar-scripts() {
   fi
 }
 
+# habiliar-AppImages(){
+#   local directorio=""
+#
+# }
 
 #=============================
 #  LINUX -- Matematica
