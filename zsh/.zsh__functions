@@ -52,6 +52,7 @@ Dotfiles_paquetes() {
     npm list -g > "$Directorio_Principal/Paquetes_Instalados_Npm.txt"  || echo "Error_Npm" >&2
     pnpm list -g > "$Directorio_Principal/Paquetes_Instalados_Pnpm.txt" || echo "Error_Pnpm" >&2
     brew leaves >  "$Directorio_Principal/Paquetes_Instalados_Brew.txt" || echo "Error_Brew" >&2
+    code --list-extensions > "$Directorio_Principal/Paquetes_VsCode-Extensiones.txt" || echo "Error_Vscode" >&2
     flatpak list --columns=application --app > "$Directorio_Principal/Paquetes_Instalados_Flatpak.txt" || echo "Error_Flatpak"  >&2
 
     echo "Listas de Paquetes -- Linux"

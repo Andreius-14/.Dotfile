@@ -10,7 +10,8 @@ local servers = { "html", "cssls",
 	"custom_elements_ls",
 	"jsonls",
 	-- Python
-	"pyright",
+	-- "pyright",
+  "pylsp",
 	-- Js
 	"denols",
 	"eslint",

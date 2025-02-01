@@ -35,20 +35,6 @@
         ],
         "_isTask": false
     },
-    "11": {
-        "_id": 11,
-        "_date": "Sun Dec 22 2024",
-        "_timestamp": 1734879690447,
-        "description": "Recoger Material PC",
-        "isStarred": false,
-        "boards": [
-            "@Systematic"
-        ],
-        "_isTask": true,
-        "isComplete": true,
-        "inProgress": false,
-        "priority": 1
-    },
     "12": {
         "_id": 12,
         "_date": "Mon Dec 23 2024",
@@ -65,9 +51,9 @@
     },
     "13": {
         "_id": 13,
-        "_date": "Sat Dec 28 2024",
-        "_timestamp": 1735440070022,
-        "description": "Certificado a Nombre de Nacion",
+        "_date": "Sat Feb 01 2025",
+        "_timestamp": 1738449506734,
+        "description": "Cita: Systematic Errores [LUNES]",
         "isStarred": false,
         "boards": [
             "@Systematic"

@@ -147,13 +147,13 @@
 
 
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Dracula Soft",
     "breadcrumbs.enabled": false,
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorBlinking": "expand",
     "projectManager.git.baseFolders": [
         "/run/media/carlosa/Disco/Doc_Programacion"
     ],
+    "workbench.colorTheme": "Dracula Theme",
     
 
 }
