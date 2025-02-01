@@ -1,4 +1,5 @@
 user-theme@gnome-shell-extensions.gcampax.github.com
+hidetopbar@mathieu.bidon.ca
 day-progress@arcaege.github.io
 emoji-copy@felipeftn
 rounded-window-corners@fxgn

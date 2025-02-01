@@ -3,6 +3,7 @@ acpid
 adw-gtk-theme
 amd-ucode
 apparmor
+appimagelauncher
 autojump
 b43-fwcutter
 baobab
@@ -12,11 +13,14 @@ bat
 bc
 bibata-cursor-theme
 blender
+bluez-utils
 btrfs-progs
 btrfsmaintenance
 bzip2
+code
 collision
 coreutils
+cosmic-store
 cpupower
 cronie
 cryptsetup
@@ -28,6 +32,7 @@ dmraid
 dnsmasq
 dosfstools
 duf
+dust
 e2fsprogs
 ecryptfs-utils
 efibootmgr
@@ -36,6 +41,8 @@ evince
 exfatprogs
 eza
 f2fs-tools
+fastfetch
+feh
 ffmpeg-audio-thumbnailer
 ffmpegthumbnailer
 file-roller
@@ -150,6 +157,7 @@ manjaro-zsh-config
 mdadm
 memtest86+
 memtest86+-efi
+mesa-demos
 mesa-utils
 mhwd
 mhwd-db
@@ -177,6 +185,7 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 nss-mdns
+nsxiv
 ntfs-3g
 openresolv
 openssh
@@ -188,11 +197,13 @@ papirus-maia-icon-theme
 perl
 plymouth-theme-manjaro
 pnpm
+pokemon-colorscripts-git
 power-profiles-daemon
 qt5ct
 qt6ct
 quadrapassel
 radeontop
+ranger
 reiserfsprogs
 ripgrep
 rsync
@@ -211,6 +222,7 @@ sushi
 sysfsutils
 system-config-printer
 systemd
+telegram-desktop
 texinfo
 thunderbird
 timeshift
@@ -221,11 +233,14 @@ touche
 ttf-firacode-nerd
 ttf-hack
 ttf-indic-otf
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
 unace
 unrar
 update-grub
 usbutils
 vi
+viu
 vlc
 vulkan-intel
 vulkan-nouveau
