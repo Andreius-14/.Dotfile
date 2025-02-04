@@ -53,7 +53,7 @@
         "_id": 13,
         "_date": "Sat Feb 01 2025",
         "_timestamp": 1738449506734,
-        "description": "Cita: Systematic Errores [LUNES]",
+        "description": "Cita: Systematic Errores [MARTES]",
         "isStarred": false,
         "boards": [
             "@Systematic"
@@ -62,5 +62,84 @@
         "isComplete": false,
         "inProgress": false,
         "priority": 1
+    },
+    "14": {
+        "_id": 14,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630727816,
+        "description": "Curso: Pc y Laptop",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "15": {
+        "_id": 15,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630754360,
+        "description": "Curso: Power BI",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "16": {
+        "_id": 16,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630811312,
+        "description": "Cita: Systematic Certificados",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "17": {
+        "_id": 17,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630897908,
+        "description": "Task: Calcular Tiempo de Limpieza",
+        "isStarred": false,
+        "boards": [
+            "@Home"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "19": {
+        "_id": 19,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738631725078,
+        "description": "[06,07] Leer Mangas",
+        "isStarred": false,
+        "boards": [
+            "@Habit"
+        ],
+        "_isTask": false,
+        "priority": "1"
+    },
+    "21": {
+        "_id": 21,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738634011973,
+        "description": "[07,08] Leer epub,pdf,etc",
+        "isStarred": false,
+        "boards": [
+            "@Habit"
+        ],
+        "_isTask": false
     }
 }
