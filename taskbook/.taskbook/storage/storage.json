@@ -49,20 +49,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "13": {
-        "_id": 13,
-        "_date": "Sat Feb 01 2025",
-        "_timestamp": 1738449506734,
-        "description": "Cita: Systematic Errores [MARTES]",
-        "isStarred": false,
-        "boards": [
-            "@Systematic"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
     "14": {
         "_id": 14,
         "_date": "Mon Feb 03 2025",

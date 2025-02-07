@@ -45,8 +45,8 @@ alias pyNodemon='nodemon --exec python ' #NameFile
 #  JS
 #=============================
 
-alias jsEntorno='pnpm init && pnpm install standard -D && jq -i ". + {eslinConfig: {"extends": "standard"}}" package.json'
-
+alias jsEntorno='pnpm init && pnpm install standard -D' #&& jq -i ". + {eslinConfig: {"extends": "standard"}}" package.json'
+alias jsVanilla='pnpm create vite . --template vanilla'
 #=============================
 #  C#
 #=============================

@@ -376,5 +376,30 @@
         "isComplete": false,
         "inProgress": false,
         "priority": 1
+    },
+    "37": {
+        "_id": 37,
+        "_date": "Thu Feb 06 2025",
+        "_timestamp": 1738870477840,
+        "description": "[24,01] See Pics",
+        "isStarred": false,
+        "boards": [
+            "@Habit"
+        ],
+        "_isTask": false
+    },
+    "38": {
+        "_id": 38,
+        "_date": "Sat Feb 01 2025",
+        "_timestamp": 1738449506734,
+        "description": "Cita: Systematic Errores [MARTES]",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
     }
 }

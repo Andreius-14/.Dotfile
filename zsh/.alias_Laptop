@@ -11,6 +11,8 @@ alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." 
 alias q="exit"
 alias c="clear"
 alias t='eza -T --level=1 '
+alias t2='eza -T --level=2 '
+alias t3='eza -T --level=3 '
 alias i='sudo pacman -S' 
 
 #=============================
