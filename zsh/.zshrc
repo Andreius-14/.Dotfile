@@ -81,7 +81,7 @@ plugins=(git
   zsh-autosuggestions
 	zsh-syntax-highlighting
   colored-man-pages
-  autojump
+  # autojump
 	history
 	# thefuck
   zoxide
