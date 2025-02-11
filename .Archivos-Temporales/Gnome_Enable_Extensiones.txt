@@ -8,6 +8,7 @@ spotify-ad-block@danigm.net
 awesome-tiles@velitasali.com
 clipboard-indicator@tudmotu.com
 wifiqrcode@glerro.pm.me
+quick-settings-audio-panel@rayzeq.github.io
 appindicatorsupport@rgcjonas.gmail.com
 auto-move-windows@gnome-shell-extensions.gcampax.github.com
 dash-to-dock@micxgx.gmail.com
@@ -16,7 +17,6 @@ gnome-ui-tune@itstime.tech
 gsconnect@andyholmes.github.io
 gtk4-ding@smedius.gitlab.com
 legacyschemeautoswitcher@joshimukul29.gmail.com
-pamac-updates@manjaro.org
 places-menu@gnome-shell-extensions.gcampax.github.com
 screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com
 space-bar@luchrioh

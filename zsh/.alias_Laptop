@@ -54,9 +54,9 @@ alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 # [taskbook]
 #================
 alias tb="c && tb"
-alias tb+='c && tb --task && tb'
+alias tb+='c && tb --task'
 alias tb-='c && tb -c'
-alias tbc='c && tb --clear && tb'
+alias tbc='c && tb --clear'
 
 #================
 # [SCRCPY] 

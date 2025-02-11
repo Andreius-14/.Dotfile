@@ -24,17 +24,6 @@
         ],
         "_isTask": false
     },
-    "5": {
-        "_id": 5,
-        "_date": "Sat Dec 07 2024",
-        "_timestamp": 1733610328168,
-        "description": "DB - Dominar Fundamentos",
-        "isStarred": false,
-        "boards": [
-            "@Programacion"
-        ],
-        "_isTask": false
-    },
     "12": {
         "_id": 12,
         "_date": "Mon Dec 23 2024",
@@ -87,7 +76,7 @@
             "@Systematic"
         ],
         "_isTask": true,
-        "isComplete": false,
+        "isComplete": true,
         "inProgress": false,
         "priority": 1
     },
@@ -125,6 +114,31 @@
         "isStarred": false,
         "boards": [
             "@Habit"
+        ],
+        "_isTask": false
+    },
+    "22": {
+        "_id": 22,
+        "_date": "Sun Feb 09 2025",
+        "_timestamp": 1739113343006,
+        "description": "Cita: Recibir Certificado 45d",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "25": {
+        "_id": 25,
+        "_date": "Mon Feb 10 2025",
+        "_timestamp": 1739166396454,
+        "description": "Terminal - Habit Tracker",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
         ],
         "_isTask": false
     }

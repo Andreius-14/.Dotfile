@@ -13,6 +13,7 @@ whoami-topbar@mikemolina.github.io
 blur-my-shell@aunetx
 wifiqrcode@glerro.pm.me
 hide-minimized@danigm.net
+quick-settings-audio-panel@rayzeq.github.io
 appindicatorsupport@rgcjonas.gmail.com
 apps-menu@gnome-shell-extensions.gcampax.github.com
 arcmenu@arcmenu.com

@@ -4,7 +4,6 @@ adw-gtk-theme
 amd-ucode
 apparmor
 appimagelauncher
-autojump
 b43-fwcutter
 baobab
 base
@@ -17,6 +16,7 @@ bluez-utils
 btrfs-progs
 btrfsmaintenance
 bzip2
+cmus
 code
 collision
 coreutils
@@ -111,11 +111,13 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 htop
+hyprland
 iagno
 ibus
 inetutils
 inxi
 jfsutils
+jq
 kitty
 kvantum-manjaro
 less
@@ -190,7 +192,6 @@ ntfs-3g
 openresolv
 openssh
 os-prober
-p7zip
 pamac-gnome-integration
 pamac-gtk
 papirus-maia-icon-theme
@@ -199,6 +200,8 @@ plymouth-theme-manjaro
 pnpm
 pokemon-colorscripts-git
 power-profiles-daemon
+python-pip
+python-pipx
 qt5ct
 qt6ct
 quadrapassel
@@ -209,6 +212,7 @@ ripgrep
 rsync
 rygel
 s-nail
+scrcpy
 seahorse
 simple-scan
 snapshot
