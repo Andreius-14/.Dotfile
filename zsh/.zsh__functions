@@ -90,6 +90,10 @@ Dotfiles_paquetes() {
   fi
 }
 
+#=============================
+#  LINUX -- Scripts
+#=============================
+
 habilitar-scripts() {
   local directorio="$HOME/.Scripts"
   local permisos="755" # Ajusta los permisos según tus necesidades

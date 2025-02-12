@@ -28,11 +28,12 @@ Mostrar_Particiones() {
 #======================================
 
 Crear_Ubicacion_De_Montaje() {
-  local rutaBase="/mnt"
+  # local rutaBase="/mnt"
+  local rutaBase="/run/media/$(whoami)"
   local NombreCarpeta="$1"
   local rutaMontada="$rutaBase/$NombreCarpeta"
 
-  # mkdir -p "$rutaMontada"  &&  chmod 777 "$rutaMontada"
+  mkdir -p "$rutaMontada"  &&  chmod 777 "$rutaMontada"
   echo "$rutaMontada"
 }
 
