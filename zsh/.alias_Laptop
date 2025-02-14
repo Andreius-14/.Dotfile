@@ -13,7 +13,7 @@ alias c="clear"
 alias t='eza -T --level=1 '
 alias t2='eza -T --level=2 '
 alias t3='eza -T --level=3 '
-alias i='sudo pacman -S' 
+alias i='sudo pacman --asexplicit -S' 
 
 #=============================
 # PRODUCTIVIDAD

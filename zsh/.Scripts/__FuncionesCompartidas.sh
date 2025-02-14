@@ -25,6 +25,17 @@ __EstaInstalado() {
   fi
 }
 
+__DirectorioExiste(){
+  local directorio="$1"
+
+  [[ -d "$directorio" ]] && return 0
+
+  txt_color "💀 El directorio '$directorio' no existe." "red"
+  return 1
+}
+
+
+
 Error() {
   # Validar que se pase un mensaje
   if [ -z "$1" ]; then
@@ -43,6 +54,8 @@ Error() {
 # ═══════════════════════════════
 # Funciones - Grandes
 # ═══════════════════════════════
+
+# Psdt: Facilita Solicitar un Imput al Usuario, Formato Bucle Nose puede Salta Solo Ingresa el Formato Correcto
 input_validador() {
   local mensaje="$1"        # Mensaje que se muestra al usuario
   local tipo="$2"           # Tipo de validación (numeros, texto, mixto)

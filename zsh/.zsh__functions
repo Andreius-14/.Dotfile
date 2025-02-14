@@ -66,29 +66,7 @@ remove_path() {
 #=============================
 
 
-Dotfiles_paquetes() {
-  local Directorio_Principal=~/dotfile/.Archivos-Temporales
 
-  # Verificar si el directorio existe
-  if [[ -d "$Directorio_Principal" ]]; then
-
-    gnome-extensions list > "$Directorio_Principal/Gnome_All_Extensiones.txt"            || echo "Error_Gnome" >&2
-    gnome-extensions list --enabled > "$Directorio_Principal/Gnome_Enable_Extensiones.txt"   || echo "Error_Gnome" >&2
-
-    pacman -Qqe > "$Directorio_Principal/Paquetes_Instalados_Pacman.txt" || echo "Error_pacman" >&2
-    pamac list -qe >"$Directorio_Principal/Paquetes_Instalados_Pamac.txt" || echo "Error_pamac" >&2
-    npm list -g > "$Directorio_Principal/Paquetes_Instalados_Npm.txt"  || echo "Error_Npm" >&2
-    pnpm list -g > "$Directorio_Principal/Paquetes_Instalados_Pnpm.txt" || echo "Error_Pnpm" >&2
-    brew leaves >  "$Directorio_Principal/Paquetes_Instalados_Brew.txt" || echo "Error_Brew" >&2
-    code --list-extensions > "$Directorio_Principal/Paquetes_VsCode-Extensiones.txt" || echo "Error_Vscode" >&2
-    flatpak list --columns=application --app > "$Directorio_Principal/Paquetes_Instalados_Flatpak.txt" || echo "Error_Flatpak"  >&2
-
-    echo "Listas de Paquetes -- Linux"
-    t $Directorio_Principal
-  else
-    echo "El directorio $Directorio_Principal no existe."
-  fi
-}
 
 #=============================
 #  LINUX -- Scripts

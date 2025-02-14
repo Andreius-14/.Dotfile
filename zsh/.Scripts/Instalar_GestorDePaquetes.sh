@@ -1,6 +1,10 @@
 #!/bin/zsh
 source __FuncionesCompartidas.sh
 
+# ═══════════════════════════════
+#           Variables
+# ═══════════════════════════════
+
 local array=(
   yay         # AUR Helper
   npm         # Node.js Package Manager
@@ -15,7 +19,6 @@ local array=(
 # ═══════════════════════════════
 
 homeBrew() {
-
   __EstaInstalado brew && return 0    # Verificar [True/false]
 
   # Instalar Paquete
@@ -36,12 +39,16 @@ main() {
   homeBrew
 
   for gestor in "${array[@]}"; do
+
+    # Verificacion - Verifcamos Si el paquete ya esta instalado ,Saltamos si el caso
     if __EstaInstalado "$gestor"; then
       continue # Evita instalación innecesaria
     fi
 
+    # Ejecuta - Ejecutamos El comando de Instalacion
     txt_color "⏳ Instalando $gestor..." green
     sudo pacman -S --needed --noconfirm "$gestor"
+
   done
 }
 
