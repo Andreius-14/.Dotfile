@@ -11,14 +11,16 @@ salir() {
 # ═══════════════════════════════
 # Funciones - Medianas
 # ═══════════════════════════════
-comando_instalado() {
+
+# Psdt: Mensaje Personalizado si Esta Instalado O no el Comando
+__EstaInstalado() {
   local comando="$1" # El comando a verificar
 
-  if command -v "$comando" &>/dev/null; then
-    echo "$comando está instalado."
+  if command -v "$comando" &>/dev/null || pacman -Q "$comando" &>/dev/null; then
+    txt_color "🌱 $comando está instalado." blue
     return 0 # Éxito
   else
-    echo "$comando no está instalado."
+    txt_color "💀 $comando no está instalado." red
     return 1 # Fallo
   fi
 }
