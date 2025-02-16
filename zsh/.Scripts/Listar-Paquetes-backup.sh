@@ -5,13 +5,13 @@ source __FuncionesCompartidas.sh
 # ═══════════════════════════════
 #           Variables
 # ═══════════════════════════════
-Directorio_Principal="~/.Dotfile/.Archivos-Temporales" 
+Directorio_Principal="$HOME/.Dotfile/.Archivos-Temporales" 
 
 ejecutar=(
 "pacman -Qqe"
 "pamac list -qe"
-"npm list -g"
-"pnpm list -g"
+" npm list -g --json | jq -r '.dependencies | keys[]' "
+" pnpm list -g  --json | jq -r '.[].dependencies | keys[]' "
 "brew leaves"
 "flatpak list --columns=application --app"
 )
@@ -21,6 +21,8 @@ ejecutar=(
 
 Dotfiles_paquetes   () {
   # Verificar si el directorio existe
+    __EstaInstalado jq
+    __EstaInstalado eza
     __DirectorioExiste "$Directorio_Principal" || return 1
 
     # Ejecucion Personalizada
@@ -36,7 +38,7 @@ Dotfiles_paquetes   () {
 
     echo "Listas de Paquetes -- Linux"
 
-    t $Directorio_Principal
+    eza -T --level=1 $Directorio_Principal
 
 }
 
@@ -44,9 +46,7 @@ Dotfiles_paquetes   () {
 #             Main
 # ═══════════════════════════════
 main() {
-
   Dotfiles_paquetes
-
 }
 
 main

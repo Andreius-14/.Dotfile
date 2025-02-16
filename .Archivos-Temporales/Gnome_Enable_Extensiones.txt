@@ -1,0 +1,15 @@
+hidetopbar@mathieu.bidon.ca
+day-progress@arcaege.github.io
+emoji-copy@felipeftn
+rounded-window-corners@fxgn
+extension-list@tu.berry
+awesome-tiles@velitasali.com
+clipboard-indicator@tudmotu.com
+appindicatorsupport@rgcjonas.gmail.com
+dash-to-dock@micxgx.gmail.com
+drive-menu@gnome-shell-extensions.gcampax.github.com
+gnome-ui-tune@itstime.tech
+legacyschemeautoswitcher@joshimukul29.gmail.com
+pamac-updates@manjaro.org
+user-theme@gnome-shell-extensions.gcampax.github.com
+x11gestures@joseexposito.github.io

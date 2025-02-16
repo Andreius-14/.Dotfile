@@ -30,7 +30,7 @@ __DirectorioExiste(){
 
   [[ -d "$directorio" ]] && return 0
 
-  txt_color "💀 El directorio '$directorio' no existe." "red"
+  txt_color "\n 💀 El directorio '$directorio' no existe. \n" "red"
   return 1
 }
 

@@ -11,13 +11,10 @@ base-devel
 bat
 bc
 bibata-cursor-theme
-blender
 bluez-utils
 btrfs-progs
 btrfsmaintenance
 bzip2
-cmus
-code
 collision
 coreutils
 cosmic-store
@@ -111,7 +108,6 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 htop
-hyprland
 iagno
 ibus
 inetutils
@@ -121,19 +117,13 @@ jq
 kitty
 kvantum-manjaro
 less
-lib32-vulkan-intel
-lib32-vulkan-nouveau
-lib32-vulkan-radeon
 libdvdcss
 libpamac-flatpak-plugin
-linux66
-localsearch
 logrotate
 lolcat
 lollypop
 lrzip
 lvm2
-make
 malcontent
 man-db
 man-pages
@@ -159,7 +149,6 @@ manjaro-zsh-config
 mdadm
 memtest86+
 memtest86+-efi
-mesa-demos
 mesa-utils
 mhwd
 mhwd-db
@@ -197,8 +186,6 @@ pamac-gtk
 papirus-maia-icon-theme
 perl
 plymouth-theme-manjaro
-pnpm
-pokemon-colorscripts-git
 power-profiles-daemon
 python-pip
 python-pipx
@@ -226,7 +213,6 @@ sushi
 sysfsutils
 system-config-printer
 systemd
-telegram-desktop
 texinfo
 thunderbird
 timeshift
@@ -246,10 +232,6 @@ usbutils
 vi
 viu
 vlc
-vulkan-intel
-vulkan-nouveau
-vulkan-radeon
-vulkan-tools
 webapp-manager
 wget
 which
@@ -259,9 +241,6 @@ xclip
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
 xf86-video-amdgpu
-xf86-video-ati
-xf86-video-intel
-xf86-video-nouveau
 xfsprogs
 xorg-server
 xorg-xinit
