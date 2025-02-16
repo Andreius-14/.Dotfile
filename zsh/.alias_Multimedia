@@ -16,3 +16,6 @@ alias ascii2="ascii-image-converter -b --dither -C"
 alias ascii="ascii-image-converter"
 
 
+# [MPV]
+
+alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%'
