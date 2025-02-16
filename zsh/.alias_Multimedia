@@ -18,4 +18,5 @@ alias ascii="ascii-image-converter"
 
 # [MPV]
 
-alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%'
+alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%-20-20'
+alias mpv_media='mpv --geometry=25%-20-20'
