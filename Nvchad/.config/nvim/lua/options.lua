@@ -1,15 +1,15 @@
 require "nvchad.options"
 
+-- ═════════════════════════════════════
+--                Mis
+-- ═════════════════════════════════════
+
 -- add yours here!
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
-
---============================
--- MIS CONFIGURACIONES
---============================
+o.cursorlineopt ='both' -- to enable cursorline!
 
 local o = vim.o
+
 o.cursorlineopt = "both" -- to enable cursorline!
 
 o.foldmethod = "indent"  --Habilita Toggle
@@ -25,4 +25,3 @@ o.guifont = "Times New Romans"
 -- Texto
 -- ===========================
 -- o.ignorecase = true
-

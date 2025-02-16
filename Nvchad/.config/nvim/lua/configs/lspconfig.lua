@@ -4,8 +4,8 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls",
-  	-- Complemento
+local servers = { "html", "cssls",  	
+  -- Complemento
 	-- "emmet-ls",
 	"custom_elements_ls",
 	"jsonls",
@@ -21,8 +21,7 @@ local servers = { "html", "cssls",
 	-- Bash
 	"bashls",
 	-- Lua
-	"lua_ls",
-}
+	"lua_ls",}
 
 local nvlsp = require "nvchad.configs.lspconfig"
 
