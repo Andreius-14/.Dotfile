@@ -129,3 +129,27 @@ __preguntaDeConfirmacion() {
     esac  
   done
 }
+
+
+# ═══════════════════════════════
+#         Ejecutar
+# ═══════════════════════════════
+
+__instalarPaquete() {
+  local paquete="$1"
+
+  if __EstaInstalado "$paquete"; then
+    return 0  # Ya está instalado, no hace falta hacer nada
+  fi
+
+  if __EstaInstalado "pacman"; then
+    sudo pacman -S --needed "$paquete"
+  elif __EstaInstalado "pkg"; then
+    pkg install "$paquete"
+  else
+    txt_color "❌ No se encontró un gestor de paquetes compatible." red
+    return 1
+  fi
+}
+
+
