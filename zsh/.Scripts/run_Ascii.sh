@@ -1,5 +1,5 @@
 
-#!/bin/sh
+#!/bin/bash
 
 # Si no se pasa un argumento, usar la carpeta actual como ruta por defecto
 carpeta="${1:-$(pwd)}"

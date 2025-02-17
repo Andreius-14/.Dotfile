@@ -2,7 +2,7 @@
 # [ Import - Export ]
 #======================================
 
-#!/bin/zsh
+#!/bin/bash
 source __FuncionesCompartidas.sh
 
 #======================================

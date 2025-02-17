@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 source __FuncionesCompartidas.sh
 
 # ═══════════════════════════════
@@ -50,5 +50,3 @@ instalar_Plugindevicons
 txt_color "🚀 ¡Instalación y configuración completadas!" cyan
 
 # Copiar los archivos de configuración predeterminados de Ranger
-
-
