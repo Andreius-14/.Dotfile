@@ -1,4 +1,3 @@
-
 #!/bin/bash
 source __FuncionesCompartidas.sh
 
@@ -50,7 +49,7 @@ Menu_Seleccionable() {
   read -p "Seleccione una opción [1-3]:" Opcion_Elegida
 }
 
-Mostrar_Grupos(){
+Mostrar_Grupos() {
   txt_color "\nGrupo >>>> [Main]" red
   informando "${main[@]}"
   txt_color "\nGrupo >>>> [Github]" red
@@ -67,10 +66,9 @@ informando() {
   done
 }
 
-
 montarCarpetas() {
 
-  informando "$@" || return 1  # Si la función 'informando' falla, se sale
+  informando "$@" || return 1 # Si la función 'informando' falla, se sale
   __preguntaDeConfirmacion || return 1
 
   # Crear cada carpeta si el usuario confirma
@@ -80,7 +78,6 @@ montarCarpetas() {
 
 }
 
-
 # ═══════════════════════════════
 #        Menu - Seleccion
 # ═══════════════════════════════
@@ -89,9 +86,9 @@ while true; do
 
   # Opcion Elegida
   case "$Opcion_Elegida" in
-  1)  Mostrar_Grupos ;;
-  2)  montarCarpetas "${main[@]}" ;;
-  3)  montarCarpetas "${github[@]}";;
+  1) Mostrar_Grupos ;;
+  2) montarCarpetas "${main[@]}" ;;
+  3) montarCarpetas "${github[@]}" ;;
   404) __salir ;;
   *) txt_color "Opcion Incorrecta - Elija de Nuevo" green ;;
   esac
