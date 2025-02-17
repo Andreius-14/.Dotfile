@@ -77,7 +77,7 @@ while true; do
   case "$Opcion_Elegida" in
   1) Mostrar_Particiones ;;
   2) Main ;;
-  3) salir ;;
+  3) __salir ;;
   *) txt_color "Opcion Incorrecta - Elija de Nuevo" green ;;
   esac
 done

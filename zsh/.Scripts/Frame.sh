@@ -76,7 +76,7 @@ while true; do
     read -e archivo
     FrameAscii "$archivo"
     ;;
-  3) salir ;;
+  3) __salir ;;
   *)
     echo "Opción no válida. Intente de nuevo."
     ;;

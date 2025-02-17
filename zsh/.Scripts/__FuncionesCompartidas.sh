@@ -1,15 +1,11 @@
-# ═══════════════════════════════
-# Funciones - Pequeñas
-# ═══════════════════════════════
-
-# Uso: Mensaje de Finalizacion
-salir() {
+# Mensaje de Finalizacion
+__salir() {
   txt_color "Saliendo del programa. ¡Adiós!" green
   exit 0
 }
 
 # ═══════════════════════════════
-# Funciones - Medianas
+#         VERIFICADORES
 # ═══════════════════════════════
 
 # Psdt: Mensaje Personalizado si Esta Instalado O no el Comando
@@ -35,6 +31,34 @@ __DirectorioExiste(){
 }
 
 
+# ═══════════════════════════════
+#         MENSAJES
+# ═══════════════════════════════
+
+txt_color() {
+  local msg="$1"   # El texto que será coloreado
+  local color="$2" # El color en inglés
+  local num_color  # Código de color ANSI correspondiente
+
+  # Mapeo de colores a códigos ANSI
+  case "$color" in
+  "red") num_color=31 ;;
+  "green") num_color=32 ;;
+  "yellow") num_color=33 ;;
+  "blue") num_color=34 ;;
+  "magenta") num_color=35 ;;
+  "cyan") num_color=36 ;;
+  "white") num_color=37 ;;
+  *)
+    echo "Color no reconocido. Usando rojo por defecto." >&2
+    num_color=31
+    ;;
+  esac
+
+  # Imprimir el texto con el color seleccionado
+  echo -e "\e[${num_color}m${msg}\e[0m"
+}
+
 
 Error() {
   # Validar que se pase un mensaje
@@ -50,6 +74,7 @@ Error() {
   txt_color "Error: $msg" "$color" >&2
   return 1
 }
+
 
 # ═══════════════════════════════
 # Funciones - Grandes
@@ -84,26 +109,23 @@ input_validador() {
   echo "$input"
 }
 
-txt_color() {
-  local msg="$1"   # El texto que será coloreado
-  local color="$2" # El color en inglés
-  local num_color  # Código de color ANSI correspondiente
 
-  # Mapeo de colores a códigos ANSI
-  case "$color" in
-  "red") num_color=31 ;;
-  "green") num_color=32 ;;
-  "yellow") num_color=33 ;;
-  "blue") num_color=34 ;;
-  "magenta") num_color=35 ;;
-  "cyan") num_color=36 ;;
-  "white") num_color=37 ;;
-  *)
-    echo "Color no reconocido. Usando rojo por defecto." >&2
-    num_color=31
-    ;;
-  esac
+__preguntaDeConfirmacion() {
+  local pregunta="$1: ¿Deseas continuar?"
 
-  # Imprimir el texto con el color seleccionado
-  echo -e "\e[${num_color}m${msg}\e[0m"
+  # Solicitar confirmación
+  while true; do
+
+    read -p "$pregunta (yes/no): " respuesta
+
+    # Paso: Switch
+    case "$respuesta" in
+      [Yy]* | [Ss]*) return 0 ;;  # Acepta "yes", "y", "s", "si"
+      [Nn]*) 
+        echo "Operación cancelada."
+        return 1 ;;  # Cancela si es "no", "n"
+      *) 
+        echo "Por favor, responde 'yes' o 'no'." ;;
+    esac  
+  done
 }
