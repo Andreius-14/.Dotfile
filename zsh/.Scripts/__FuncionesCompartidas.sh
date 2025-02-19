@@ -160,7 +160,7 @@ __seleccionar_archivo() {
   # Mostrar opciones y permitir selección
   select archivo in "${archivos[@]}"; do
     if [ -n "$archivo" ]; then
-      echo "Seleccionaste el archivo: $archivo"
+      # echo "Seleccionaste el archivo: $archivo"
       echo "$archivo"
       break
     else
