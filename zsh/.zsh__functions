@@ -123,9 +123,15 @@ tabla_multiplicar() {
 #════════════════════════════════════════════════════════════════════════════════════════════╝
 
 info_ssh(){
+  echo -e "\nnota: Tener Instalado [openssh, nmap]"
+  echo -e "nota: El sistema debe tener Password"
+  echo -e "nota: El sistema debe tener Corriendo sshd\n"
+
   local inf_name=$(whoami)
-  local inf_ip=$(ip a | grep "192.168")
+  local inf_ip=$(ip a | grep "192.168" || echo "Error de Red")
 
   echo "Name -> $inf_name "
-  echo "IP   -> $inf_ip" 
+  echo "IP   -> $inf_ip   " 
+  echo -e "\n\nLos Puertos Habiertos ⮯"
+  ss -tuln
 }
