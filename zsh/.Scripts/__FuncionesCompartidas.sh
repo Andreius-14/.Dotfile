@@ -144,9 +144,9 @@ __instalarPaquete() {
   fi
 
   if __EstaInstalado "pacman"; then
-    sudo pacman -S --needed "$paquete"
+    sudo pacman -S --needed --noconfirm "$paquete"
   elif __EstaInstalado "pkg"; then
-    pkg install "$paquete"
+    pkg install -y "$paquete"
   else
     txt_color "❌ No se encontró un gestor de paquetes compatible." red
     return 1

@@ -47,7 +47,7 @@ main() {
 
     # Ejecuta - Ejecutamos El comando de Instalacion
     txt_color "⏳ Instalando $gestor..." green
-    sudo pacman -S --needed --noconfirm "$gestor"
+    __instalarPaquete "$gestor"
 
   done
 }
