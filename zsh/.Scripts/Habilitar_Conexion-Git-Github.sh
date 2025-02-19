@@ -14,7 +14,9 @@ cambiar-shell() {
 }
 
 creacion-De-Llave() {
-  __preguntaDeConfirmacion "¿Crear Llaves SSH?" || return 1
+  
+  local mensaje=${1:-"¿Desea Crear Nuevas Llaves SSH?"}
+  __preguntaDeConfirmacion "$mensaje" || return 1
   ssh-keygen -t ed25519 -C "$correo" || ssh-keygen -t rsa -b 4096 -C "$correo"
 
 }
@@ -22,7 +24,7 @@ creacion-De-Llave() {
 paso-sshAgent() {
   verifica-Llaves-Existente
 
-  txt_color "\nEl Archivo Puede Ser [id_ed25519 o id_rsa] (No lleva .pub)" green
+  txt_color "\nSeleccione el Archivo creado [id_ed25519 o id_rsa] (Sin .pub)" green
   local fileName=$(__seleccionar_archivo $ruta)
 
   if eval "$(ssh-agent -s)"; then
@@ -35,7 +37,6 @@ paso-sshAgent() {
 }
 
 verifica-Llaves-Existente() {
-
   local llaves=$(ls $ruta/id_* 2>/dev/null)
   txt_color "\n🔑 Las llaves SSH disponibles son:" blue
 
@@ -53,7 +54,13 @@ verifica-Llaves-Existente() {
 # ═══════════════════════════════
 
 cambiar-shell
-verifica-Llaves-Existente || creacion-De-Llave
+
+if ! verifica-Llaves-Existente; then
+  creacion-De-Llave
+else
+  creacion-De-Llave "¿Deseas Sobreescribir las Llaves Actuales?"
+fi
+
 paso-sshAgent
 
 txt_color "\nIngrese el siguiente llave a tu cuenta de Github\n" blue
