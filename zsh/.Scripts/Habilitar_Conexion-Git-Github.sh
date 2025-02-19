@@ -1,40 +1,42 @@
 #!/bin/bash
 source __FuncionesCompartidas.sh
 
-correo="$1"
+correo=$(input_validador "Ingrese Su Correo Para Ejecutar el Script" email)
 ruta="$HOME/.ssh"
 
-cambiar-shell(){
-__preguntaDeConfirmacion "¿Desea Cambiar tu SHELL a ZSH?" || return 1
+laShell=$(basename $SHELL 2>/dev/null)
 
-__instalarPaquete zsh 
-
-chsh -s zsh
+cambiar-shell() {
+  __preguntaDeConfirmacion "¿Desea cambiar Tu Shell de $laShell a Zsh?" || return 1
+  __instalarPaquete zsh
+  chsh -s zsh
+  laShell="zsh"
 }
 
 creacion-De-Llave() {
-  __preguntaDeConfirmacion "¿Desea Crear Llaves SSH?" || return 1
-
+  __preguntaDeConfirmacion "¿Crear Llaves SSH?" || return 1
   ssh-keygen -t ed25519 -C "$correo" || ssh-keygen -t rsa -b 4096 -C "$correo"
+
 }
 
 paso-sshAgent() {
+  verifica-Llaves-Existente
+
+  txt_color "\nEl Archivo Puede Ser [id_ed25519 o id_rsa] (No lleva .pub)" green
+  local fileName=$(__seleccionar_archivo $ruta)
+
   if eval "$(ssh-agent -s)"; then
     txt_color "✔ Agente SSH iniciado correctamente" green
   else
-    txt_color "❌ Error al iniciar el agente SSH" red
-    txt_color "Ejecute manualmente uno de los siguientes comandos:" red
-    txt_color "  exec ssh-agent bash" cyan
-    txt_color "  exec ssh-agent zsh" cyan
-    txt_color "En tu caso, el shell actual es: $SHELL" yellow
-    return 1
+    exec ssh-agent $laShell
   fi
+
+  ssh-add $ruta/$fileName
 }
 
 verifica-Llaves-Existente() {
 
-  local llaves=$(ls -l ~/.ssh/id_* 2>/dev/null)
-
+  local llaves=$(ls $ruta/id_* 2>/dev/null)
   txt_color "\n🔑 Las llaves SSH disponibles son:" blue
 
   if [[ -n "$llaves" ]]; then
@@ -49,8 +51,10 @@ verifica-Llaves-Existente() {
 # ═══════════════════════════════
 #         Main
 # ═══════════════════════════════
+
 cambiar-shell
 verifica-Llaves-Existente || creacion-De-Llave
+paso-sshAgent
 
 txt_color "\nIngrese el siguiente llave a tu cuenta de Github\n" blue
-cat "${ruta}/id_*.pub"
+cat $ruta/id_*.pub

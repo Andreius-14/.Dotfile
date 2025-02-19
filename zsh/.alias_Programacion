@@ -15,9 +15,37 @@ alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
 alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
 
-function github() {
-    git add . && git commit -m "$1" && git push
+function git_GeneraCommit(){
+    git add . && git commit -m "$1"
 }
+function github() {
+    git_GeneraCommit "$1" && git push
+}
+
+function git_inicio (){
+  git init -b main
+}
+
+function git_EnlaceRemoto(){
+
+  [[ -z "$1" ]] && { echo "No se ha ingresado URL"; return 1; }
+
+  local urlRemoto="$1"
+
+  # Enlace
+  git remote add origin "$1"
+  echo "Enlazado: " && git remote -v
+
+  # Posible MD
+  git pull origin main 
+
+  # Commit
+  git_GeneraCommit "Enlace Remoto a Github" 
+  
+  # Remoto 
+  git push origin main || echo "Enpuje Fallido"
+}
+
 
 # alias github='git add . && git commit $@ && git push'
 

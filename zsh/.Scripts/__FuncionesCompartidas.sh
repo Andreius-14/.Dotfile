@@ -90,6 +90,7 @@ input_validador() {
   case "$tipo" in
   "numeros") validado="^[0-9]+$" ;;
   "texto") validado="^[a-zA-Z]+$" ;;
+  "email" | "correo") validado="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" ;;
   *)
     #"Cualquier Input Valido"
     validado="^[a-zA-Z0-9]+$"
@@ -111,7 +112,7 @@ input_validador() {
 
 
 __preguntaDeConfirmacion() {
-  local pregunta="$1: ¿Deseas continuar?"
+  local pregunta="${1:-¿Deseas continuar?}"
 
   # Solicitar confirmación
   while true; do
@@ -152,4 +153,18 @@ __instalarPaquete() {
   fi
 }
 
-
+__seleccionar_archivo() {
+  local carpeta="$1"
+  local archivos=($(ls "$carpeta"))
+  
+  # Mostrar opciones y permitir selección
+  select archivo in "${archivos[@]}"; do
+    if [ -n "$archivo" ]; then
+      echo "Seleccionaste el archivo: $archivo"
+      echo "$archivo"
+      break
+    else
+      echo "Selección no válida, intenta nuevamente."
+    fi
+  done
+}
