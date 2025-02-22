@@ -19,4 +19,13 @@ alias ascii="ascii-image-converter"
 # [MPV]
 
 alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%-20-20'
-alias mpv_media='mpv --geometry=25%-20-20'
+alias mpv_media='mpv --geometry=25%-20+20'
+
+mpv_media_pl() {
+  local url="$1"
+  local start="${2:-1}"
+  mpv_media --save-position-on-quit --playlist-start="$start" "$url"
+}
+
+# [ANIMES]
+alias Berserk="mpv_media_pl 'https://youtube.com/playlist?list=PLHaR5nU-RvtR3fx9t5h-cokPnxupdObxo&si=NFV-Xhu9Qw0vLqkm' "
