@@ -1,0 +1,9 @@
+corepack
+cowsay
+figlet
+node-gyp
+nopt
+npm
+pnpm
+semver
+taskbook
