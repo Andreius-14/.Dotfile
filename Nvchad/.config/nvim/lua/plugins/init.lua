@@ -4,8 +4,8 @@ return {
   --              Mis
   -- ═════════════════════════════════════
 
-  { "nvzone/volt", lazy = false },
-
+  { "nvzone/volt", lazy = true },
+  { "nvzone/menu", lazy = true },
   {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
@@ -45,14 +45,13 @@ return {
   --       end,
   --     },
   --
-  --     -- ai based completion
-  --     {
-  --       "jcdickinson/codeium.nvim",
-  --       config = function()
-  --         require("codeium").setup {}
-  --       end,
-  --     },
-  --   },
+  -- ai based completion
+  -- {
+  --   "jcdickinson/codeium.nvim",
+  --   config = function()
+  --     require("codeium").setup {}
+  --   end,
   -- },
-
+  -- },
+  -- },
 }
