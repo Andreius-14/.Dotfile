@@ -19,7 +19,7 @@ M.base46 = {
   -- transparency = true
 }
 
-M.nvdash = { load_on_startup = false }
+M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {
 --          lazyload = false
