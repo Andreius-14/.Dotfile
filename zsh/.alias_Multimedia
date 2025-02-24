@@ -39,6 +39,6 @@ sync_Android-Spotify-Playlist(){
     local ruta_Android="~/storage/music/Spotify_Playlist/"
     
     # Ejecucion
-    rsync -avz -e "ssh" Android:"$ruta_Android" "$ruta_Laptop"  
+    rsync -avz -e "ssh" "Android:$ruta_Android" "$ruta_Laptop"  
 }
 
