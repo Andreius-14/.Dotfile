@@ -29,3 +29,16 @@ mpv_media_pl() {
 
 # [ANIMES]
 alias Berserk="mpv_media_pl 'https://youtube.com/playlist?list=PLHaR5nU-RvtR3fx9t5h-cokPnxupdObxo&si=NFV-Xhu9Qw0vLqkm' "
+
+
+# [MUSICA]
+sync_Android-Spotify-Playlist(){
+
+    # Rutas
+    local ruta_Laptop="/run/media/carlosa/Disco/📁 Musica/Spotify"
+    local ruta_Android="~/storage/music/Spotify_Playlist/"
+    
+    # Ejecucion
+    rsync -avz -e "ssh" Android:"$ruta_Android" "$ruta_Laptop"  
+}
+
