@@ -36,6 +36,8 @@ alias peso='dust -d 1 .'
 
 alias wifi='nmcli device wifi list'
 
+alias i-kernel='figlet $(uname -r) | lolcat '
+
 # [ARCHIVOS]
 
 alias bat="bat --paging=never --theme='Dracula'"
