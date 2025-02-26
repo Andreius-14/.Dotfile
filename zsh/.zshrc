@@ -180,13 +180,13 @@ source $HOME/.zsh__functions
 #=============================
 # EJECUTADOS
 #=============================
-eval "$(fzf --zsh)"
 
  if [ -d /home/linuxbrew/.linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
  fi
  
 
+eval "$(fzf --zsh)"
 
 #═════════════════════════════════════════════════════════════════════╝
 # Sh
