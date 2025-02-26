@@ -1,12 +1,12 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-		css = { "prettier" },
-		html = { "prettier" },
-		lua = { "stylua" },
-		javascript = { "standardjs" },
-		python = { "black" },
-		bash = { "shfmt" },
+    css = { "prettier" },
+    html = { "prettier" },
+    lua = { "stylua" },
+    javascript = { "standardjs" },
+    python = { "black" },
+    bash = { "shfmt" },
   },
 
   -- format_on_save = {
