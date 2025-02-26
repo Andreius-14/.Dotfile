@@ -176,7 +176,7 @@ source $HOME/.alias_Multimedia
 
 source $HOME/.zsh__functions
 
-
+source $HOME/.alias_WSL
 #=============================
 # EJECUTADOS
 #=============================
