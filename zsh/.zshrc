@@ -133,12 +133,12 @@ plugins=(git
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
-#                       CONFIGURACION PERSONAL
+#                       CONTENEDORES
 #═════════════════════════════════════════════════════════════════════╗ 
 
-#=============================
-# TERMUX CONFIGURACION
-#=============================
+#=========
+# TERMUX 
+#=========
 if echo $HOME | grep -q termux; then
   
   # Variables de Entorno - Termux
@@ -159,13 +159,23 @@ if echo $HOME | grep -q termux; then
   # export PNPM_HOME=$HOME/.pnpm
   # export PATH=$PNPM_HOME/bin:$PATH
 
-
-else 
-
-  # Variables de Entorno - Laptop
-
 fi
 
+#=========
+# WSL
+#=========
+
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+fi
+
+#═════════════════════════════════════════════════════════════════════╝
+
+
+
+
+#                       CONFIGURACION PERSONAL
+#═════════════════════════════════════════════════════════════════════╗ 
 
 #=============================
 # ARCHIVOS - ALIAS
