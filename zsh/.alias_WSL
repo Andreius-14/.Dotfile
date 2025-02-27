@@ -4,3 +4,19 @@
 
 alias win='cd /mnt/c/Users/Admin/Desktop'
 alias winD='cd /mnt/d'
+
+function cure() {
+    # Verifisi existe la carpeta .git en la ruta actual
+    if [[ -d .git ]]; then
+        # Cambia los permisos de la carpeta .git y su contenido
+        echo "Corrigiendo permisos en .git..."
+        chmod -R 755 .git/
+    else
+        echo "No se encontró la carpeta .git en el directorio actual."
+    fi
+    
+    # Cambia los permisos de todos los archivos y directorios en la ruta actual a 755 (solo si es seguro)
+    # echo "Corrigiendo permisos en archivos/directorios..."
+    # find . -type f -exec chmod 644 {} \;  # Archivos a 644
+    # find . -type d -exec chmod 755 {} \;  # Directorios a 755
+}

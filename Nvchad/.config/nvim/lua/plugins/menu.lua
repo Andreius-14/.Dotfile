@@ -4,8 +4,7 @@ return {
 		lazy = false, -- Carga el plugin al iniciar Neovim
 		dependencies = { "nvzone/volt" }, -- Dependencia requerida
 		config = function()
-
-            -- ######################## CONFIGURACION ################################
+			-- ######################## CONFIGURACION ################################
 
 			-- Keyboard users
 			vim.keymap.set("n", "<C-t>", function()
@@ -25,7 +24,7 @@ return {
 				require("menu").open(options, { mouse = true })
 			end, {})
 
-            -- ######################## CONFIGURACION ################################
+			-- ######################## CONFIGURACION ################################
 		end,
 	},
 }

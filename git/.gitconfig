@@ -9,7 +9,7 @@
 	program = gpg2
 [safe]
   directory = /run/media/carlosa/Disco/*
-  directory = /mnt/d/*
+	directory = /mnt/d/*
 
 [alias]
     log = log --no-pager
