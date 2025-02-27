@@ -167,6 +167,8 @@ fi
 
 if [ -n "$WSL_DISTRO_NAME" ]; then
     export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+
+    source $HOME/.alias_WSL
 fi
 
 #═════════════════════════════════════════════════════════════════════╝
@@ -178,7 +180,7 @@ fi
 #═════════════════════════════════════════════════════════════════════╗ 
 
 #=============================
-# ARCHIVOS - ALIAS
+# ALIAS
 #=============================
 source $HOME/.alias_Laptop
 source $HOME/.alias_Programacion
@@ -186,15 +188,13 @@ source $HOME/.alias_Multimedia
 
 source $HOME/.zsh__functions
 
-source $HOME/.alias_WSL
 #=============================
 # EJECUTADOS
 #=============================
 
- if [ -d /home/linuxbrew/.linuxbrew ]; then
+if [ -d /home/linuxbrew/.linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
- fi
- 
+fi
 
 eval "$(fzf --zsh)"
 
