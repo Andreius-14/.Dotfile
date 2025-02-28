@@ -69,5 +69,8 @@ return {
 				"zig",
 			},
 		},
+		config = function()
+			require("configs.treesitter")
+		end,
 	},
 }
