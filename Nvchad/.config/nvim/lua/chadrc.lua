@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "bearded-arc",
+	theme = "material-deep-ocean",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -19,6 +19,11 @@ M.base46 = {
 	-- transparency = true
 }
 
+M.nvimtree = {
+  view = {
+    side = "right", -- Mueve el árbol a la derecha
+  },
+}
 -- M.nvdash = {
 -- 	header = {
 -- 		"           ▄ ▄                   ",

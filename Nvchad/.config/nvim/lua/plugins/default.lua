@@ -19,6 +19,7 @@ return {
   },
 
   {
+    -- Colores a Sintaxis
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
