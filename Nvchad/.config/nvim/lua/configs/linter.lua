@@ -1,26 +1,20 @@
-local present, lint = pcall(require, "linter")
+local nvimlint = require("lint")
 
-if not present then
-  return
-end
-
-local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = lint_augroup,
-  callback = function()
-    lint.try_lint()
-  end,
-})
-
-lint.linters_by_ft = {
-  lua = { "luacheck" },
-  yaml = {
-    "yamllint",
-    "actionlint",
-  },
-  codespell = { "codespell" },
-  javascript = { "standardjs" },
-  typescript = { "eslint_d" },
-  javascriptreact = { "eslint_d" },
-  typescriptreact = { "eslint_d" },
+nvimlint.linters_by_ft = {
+	-- lua = { "luacheck" },
+	-- yaml = {
+	--   "yamllint",
+	--   "actionlint",
+	-- },
+	-- codespell = { "codespell" },
+	javascript = { "standardjs" }
+	-- typescript = { "eslint_d" },
+	-- javascriptreact = { "eslint_d" },
+	-- typescriptreact = { "eslint_d" },
 }
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	callback = function()
+		nvimlint.try_lint()
+	end,
+})
