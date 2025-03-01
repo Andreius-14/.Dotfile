@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "material-deep-ocean",
+	theme = "horizon",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
@@ -16,14 +16,14 @@ M.base46 = {
 	-- ═════════════════════════════════════
 	--                Mis
 	-- ═════════════════════════════════════
-	-- transparency = true
+	transparency = true
 }
 
-M.nvimtree = {
-  view = {
-    side = "right", -- Mueve el árbol a la derecha
-  },
-}
+-- M.nvimtree = {
+-- 	view = {
+-- 		side = "right", -- Mueve el árbol a la derecha
+-- 	},
+-- }
 -- M.nvdash = {
 -- 	header = {
 -- 		"           ▄ ▄                   ",

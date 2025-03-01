@@ -1,10 +1,13 @@
+-- ┌───────────────────────────────────┐
+-- │           FORMATTER               │
+-- └───────────────────────────────────┘
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "prettier" },
     html = { "prettier" },
-    lua = { "stylua" },
     javascript = { "standardjs" },
+    -- javascript = { "prettier" },
     python = { "black" },
     bash = { "shfmt" },
   },

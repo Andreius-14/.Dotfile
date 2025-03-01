@@ -70,4 +70,16 @@ return {
 			},
 		},
 	},
+
+    {
+    "mfussenegger/nvim-lint",
+    dependencies = { "rshkarin/mason-nvim-lint" },
+    event = {
+      "BufReadPre",
+      "BufNewFile",
+    },
+    config = function()
+      require "configs.linter"
+    end,
+  },
 }

@@ -13,7 +13,7 @@ local servers = { "html", "cssls",
 	-- "pyright",
   "pylsp",
 	-- Js
-	"denols",
+	-- "denols",
 	"eslint",
 	"ts_ls",
 	-- C C++
