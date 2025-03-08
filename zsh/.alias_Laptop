@@ -10,35 +10,44 @@ alias windows='sudo grub-reboot 1 && read -p "Presiona Enter para reiniciar..." 
 #=============================
 alias q="exit"
 alias c="clear"
-alias t='eza -T --level=1 '
-alias t2='eza -T --level=2 '
-alias t3='eza -T --level=3 '
-alias i='sudo pacman --asexplicit -S' 
+
+#=============================
+# DISTROS
+#=============================
+
+alias i='sudo pacman --asexplicit -S | sudo apt install' 
+alias update='sudo pacman -Syu'
+
 
 #=============================
 # PRODUCTIVIDAD
 #=============================
-alias update='sudo pacman -Syu'
+
 # alias leer='speak-ng -ves '
 alias calculadora='expr'
-alias icat="kitten icat"
 alias copiar='xclip -sel clip '
 alias basura='gio trash'
 alias open='xdg-open'
-# alias silent_output='> /dev/null 2>&1'
 alias mkdir='mkdir -pv'  
+
+
+
 #=============================
 # INFORMACION
 #=============================
 alias wiki='wikit -l es '
 alias resumen='tldr'
 alias peso='dust -d 1 .'
-
 alias wifi='nmcli device wifi list'
 
 alias i-kernel='figlet $(uname -r) | lolcat '
 
-# [ARCHIVOS]
+#=============================
+# ARCHIVOS
+#=============================
+alias t='eza -T --level=1 '
+alias t2='eza -T --level=2 '
+alias t3='eza -T --level=3 '
 
 alias bat="bat --paging=never --theme='Dracula'"
 
@@ -77,7 +86,7 @@ alias pomodoro2="countdown 45m && sound_mk && countdown 15m && sound_mk "
 # [Kitty]
 #================
 
-
+alias icat="kitten icat"
 alias kitty_Local=" kitty --session ~/.config/kitty/sessions/Kitty-Local.conf  > /dev/null 2>&1 & disown"
 alias kitty_Github="kitty --session ~/.config/kitty/sessions/Kitty-Github.conf > /dev/null 2>&1 & disown"
 alias kitty_Emogis="kitty +kitten unicode_input"

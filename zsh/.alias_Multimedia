@@ -42,3 +42,11 @@ sync_Android-Spotify-Playlist(){
     rsync -avz -e "ssh" "Android:$ruta_Android" "$ruta_Laptop"  
 }
 
+
+# [SHOW IMAGENES]
+
+show_img(){
+
+    viu "$1"
+}
+
