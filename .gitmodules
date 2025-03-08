@@ -1,0 +1,3 @@
+[submodule "zsh/404__ShellScript"]
+	path = zsh/404__ShellScript
+	url = git@github.com:Andreius-14/404__ShellScript.git
