@@ -1,3 +1,9 @@
 [submodule "zsh/404__ShellScript"]
 	path = zsh/404__ShellScript
 	url = git@github.com:Andreius-14/404__ShellScript.git
+[submodule "zsh/404__Scripts"]
+	path = zsh/404__Scripts
+	url = git@github.com:Andreius-14/404__Scripts.git
+[submodule "zsh/404__Bookmarklets"]
+	path = zsh/404__Bookmarklets
+	url = git@github.com:Andreius-14/404__Bookmarklets.git
