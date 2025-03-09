@@ -73,7 +73,7 @@ remove_path() {
 #=============================
 
 habilitar-scripts() {
-  local directorio="$HOME/.Andreius-Scripts"
+  local directorio="$HOME/404__ShellScript"
   local permisos="755" # Ajusta los permisos según tus necesidades
 
   if [[ -d "$directorio" ]]; then

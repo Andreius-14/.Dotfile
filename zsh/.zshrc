@@ -200,7 +200,7 @@ eval "$(fzf --zsh)"
 
 #═════════════════════════════════════════════════════════════════════╝
 # Sh
-export PATH="$HOME/.Andreius-Scripts:$PATH"
+export PATH="$HOME/404__ShellScript:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"

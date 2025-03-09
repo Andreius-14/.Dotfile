@@ -15,6 +15,10 @@ alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
 alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
 
+#=============================
+#  GIT FUNCTION
+#=============================
+
 function git_GeneraCommit(){
     git add . && git commit -m "$1"
 }
