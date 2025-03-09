@@ -202,6 +202,9 @@ eval "$(fzf --zsh)"
 # Sh
 export PATH="$HOME/404__ShellScript:$PATH"
 
+# Pip
+export PATH="$HOME/.local/bin:$PATH"
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 
