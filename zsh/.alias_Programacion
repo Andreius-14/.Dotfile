@@ -19,18 +19,26 @@ alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)
 #  GIT FUNCTION
 #=============================
 
-function git_GeneraCommit(){
+function g_GeneraCommit(){
     git add . && git commit -m "$1"
 }
 function github() {
-    git_GeneraCommit "$1" && git push
+    g_GeneraCommit "$1" && git push
 }
 
-function git_inicio (){
+function g_inicio (){
   git init -b main
 }
 
-function git_EnlaceRemoto(){
+function init_Submodulo(){
+    git submodule init
+    git submodule update
+
+    # Si podemos actualizar al hacer pull al repo Padre Ejecutar
+    # git pull --recurse-submodules
+}
+
+function g_EnlaceRemoto(){
 
   [[ -z "$1" ]] && { echo "No se ha ingresado URL"; return 1; }
 
@@ -44,14 +52,11 @@ function git_EnlaceRemoto(){
   git pull origin main 
 
   # Commit
-  git_GeneraCommit "Enlace Remoto a Github" 
+  g_GeneraCommit "Enlace Remoto a Github" 
   
   # Remoto 
   git push origin main || echo "Enpuje Fallido"
 }
-
-
-# alias github='git add . && git commit $@ && git push'
 
 
 #=============================
