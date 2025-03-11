@@ -14,12 +14,14 @@
     "editor.linkedEditing": true,
     "editor.mouseWheelZoom": true,
 
-    // Tamaño Software y Font
-    "window.zoomLevel": -1,
-    "editor.fontSize": 15,
+   // Tamaño Software y Font
+    //"window.zoomLevel": -1,
+    "editor.fontSize": 12,
+    "editor.letterSpacing": 0.2,
 
     //🌱 Importante
-    "editor.fontFamily": "'Fira Code Nerd Font', monospace", // ,'Terminess Nerd Font','IBM Plex Mono',
+    "editor.fontFamily": "'JetBrains Mono'", // ,'Terminess Nerd Font','IBM Plex Mono',
+    "editor.fontLigatures": true,
     
     "editor.bracketPairColorization.enabled": true,     //Color
     "editor.guides.bracketPairs": true,                 //Color
