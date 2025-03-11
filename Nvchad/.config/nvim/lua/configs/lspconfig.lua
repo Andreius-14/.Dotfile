@@ -22,7 +22,7 @@ local servers = {
 	-- ┃      JAVASCRIPT       ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	"denols",
-	"ts_ls",
+	-- "ts_ls",
 	-- "eslint-lsp", Inservible
 
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
