@@ -20,3 +20,10 @@ function cure() {
     # find . -type f -exec chmod 644 {} \;  # Archivos a 644
     # find . -type d -exec chmod 755 {} \;  # Directorios a 755
 }
+
+Dotfile_Vscode_Window(){
+    local vsCode_Win="/mnt/c/Users/Admin/AppData/Roaming/Code/User/"
+    local vsCode_Wsl="$HOME/.Dotfile/vsCode/.config/Code - OSS/User"
+
+    cp -r "$vsCode_Wsl"/* "$vsCode_Win"
+}
