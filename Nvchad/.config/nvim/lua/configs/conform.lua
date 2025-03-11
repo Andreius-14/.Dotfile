@@ -13,7 +13,8 @@ local options = {
 	},
 
 	format_on_save = {
-		timeout_ms = 5000, -- Aumenta el tiempo de espera a 3000 ms (3 segundos)
+		async = false,
+		timeout_ms = 10000,
 		lsp_fallback = true,
 	},
 }
