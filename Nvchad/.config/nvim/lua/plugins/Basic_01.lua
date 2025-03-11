@@ -16,20 +16,20 @@ return {
 
 	{
 		"stevearc/conform.nvim",
-		-- event = 'BufWritePre', -- uncomment for format on save
+		event = 'BufWritePre', -- uncomment for format on save
 		opts = require("configs.conform"),
 	},
 	-- ═════════════════════════════════════
 	--            Linter
 	-- ═════════════════════════════════════
-	{
-		"mfussenegger/nvim-lint",
-		dependencies = { "rshkarin/mason-nvim-lint" },
-		event = { "BufReadPost", "BufNewFile" },
-		config = function()
-			require("configs.linter")
-		end,
-	},
+	-- {
+	-- 	"mfussenegger/nvim-lint",
+	-- 	dependencies = { "rshkarin/mason-nvim-lint" },
+	-- 	event = { "BufReadPost", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("configs.linter")
+	-- 	end,
+	-- },
 	-- ═════════════════════════════════════
 	--  Gestor [LSP - Formatter - Linter - Dap]
 	-- ═════════════════════════════════════
