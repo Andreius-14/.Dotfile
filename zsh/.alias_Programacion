@@ -42,19 +42,32 @@ function g_EnlaceRemoto(){
 
   [[ -z "$1" ]] && { echo "No se ha ingresado URL"; return 1; }
 
-  local urlRemoto="$1"
+  [[ ! -d .git ]] && {
+      echo -e "\e[32m[Inicializando Git]\e[0m"
+      g_inicio || echo "Fallo Init" ;return 1
+  }
 
-  # Enlace
-  git remote add origin "$1"
-  echo "Enlazado: " && git remote -v
+  #Enlace Remoto
+  echo -e "\e[32m[Añadiendo Enlace Remoto]\e[0m"
+  git remote add origin "$1" || git remote set-url origin "$1" || return 1
 
-  # Posible MD
-  git pull origin main 
+  # Verificar Cambios
+  if git fetch; then
+    echo -e "\e[32m[Pull a Repositorio Remoto]\e[0m"
+    if git pull origin main; then
+      g_GeneraCommit "Enlace Remoto a Github"
+    else
+      read -p "❓ ¿Desea ejecutar un Rebase? (yes/no): " valor
+      if [[ "$valor" == "yes" ]]; then
+        git pull --rebase origin main && g_GeneraCommit "Enlace Remoto - Situación de REBASE" || { echo "Falló el rebase."; return 1; }
+      else
+        return 1  # Si no quiere rebase, salir con error
+      fi
+    fi
+  fi
 
-  # Commit
-  g_GeneraCommit "Enlace Remoto a Github" 
-  
   # Remoto 
+  echo -e "\e[32m[Enviando Cambios a Repositorio Remoto]\e[0m"
   git push origin main || echo "Enpuje Fallido"
 }
 
