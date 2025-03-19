@@ -47,10 +47,13 @@ function g_EnlaceRemoto(){
 
   #Enlace Remoto
   echo -e "\e[32m[Agregando Enlace Remoto]\e[0m"
-  git remote add origin "$1" || git remote set-url origin "$1"
+  git remote add origin "$1" 2>/dev/null || git remote set-url origin "$1"
 
   # Verificar Cambios
     if ! git pull origin main 2>/dev/null; then
+        
+        echo -e "\e[32m[Pasos de Rebase]\e[0m"
+
         read -p "¿Desea intentar con rebase? (s/n): " respuesta
         if [[ "$respuesta" =~ ^[Ss]$ ]]; then
             git pull origin main --rebase || {
@@ -61,7 +64,9 @@ function g_EnlaceRemoto(){
             echo "Advertencia: No se sincronizó con el remoto."
         fi
     fi
-  
+
+  echo -e "\e[32m[Generando Commit]\e[0m"
+
   g_GeneraCommit "Enlace Remoto a Github"
 
   # Remoto 
