@@ -17,7 +17,8 @@ vim.keymap.set({ "n", "t" }, "<F9>", function()
 
 		-- Modo [01] -- Post Colega
 		id = "code-runner",
-		pos = "sp",
+		-- pos = "sp",
+		pos = "vsp",
 		-- pos = "float",
 
 		cmd = function()
