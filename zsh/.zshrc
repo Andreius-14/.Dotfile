@@ -205,6 +205,9 @@ export PATH="$HOME/404__ShellScript:$PATH"
 # Pip
 export PATH="$HOME/.local/bin:$PATH"
 
+# Dotnet 
+export PATH="$HOME/.dotnet/tools:$PATH"
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 
