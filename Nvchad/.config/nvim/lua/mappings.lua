@@ -31,7 +31,7 @@ vim.keymap.set({ "n", "t" }, "<F9>", function()
         python = "python " .. file,
         cpp = "g++ -std=c++17 -O2 -DHynDuf " .. file .. " -o " .. file_wo_ext,
         lua = "lua " .. file,
-        cs = "dotnet script" .. file,
+        cs = "dotnet script " .. file,
 
         javascript = "node " .. file, -- Comando para JavaScript
         java = "javac " .. file .. " && java " .. file_wo_ext, -- Comando para Java
