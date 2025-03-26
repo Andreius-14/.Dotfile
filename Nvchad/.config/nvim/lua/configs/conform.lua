@@ -10,6 +10,7 @@ local options = {
 		javascript = { "prettier" },
 		python = { "black" },
 		bash = { "shfmt" },
+		cs = { "csharpier" },
 	},
 
 	format_on_save = {

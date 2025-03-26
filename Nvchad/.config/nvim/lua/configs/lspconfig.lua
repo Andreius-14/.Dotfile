@@ -26,6 +26,13 @@ local servers = {
   -- "eslint-lsp", Inservible
 
   -- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
+  -- ┃        Csharp         ┃
+  -- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
+  -- "omnisharp",
+  "harper_ls",
+  -- "csharp_ls",
+
+  -- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
   -- ┃       AVANZADO        ┃
   -- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 
@@ -61,3 +68,23 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
+-- ┃        Csharp         ┃
+-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
+
+lspconfig.omnisharp.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+  root_dir = function()
+    return require("lspconfig/util").root_pattern(
+      "*.sln",
+      "*.csproj",
+      "omnisharp.json",
+      "*.godot",
+      "function.json",
+      ".git"
+    )(vim.fn.expand "%:p:h") or vim.fn.expand "%:p:h"
+  end,
+}
