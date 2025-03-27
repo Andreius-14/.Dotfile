@@ -1,8 +1,5 @@
 return {
 
-	-- ═════════════════════════════════════
-	--      Colores - Sintaxis
-	-- ═════════════════════════════════════
 	{
 		-- Colores a Sintaxis
 		"nvim-treesitter/nvim-treesitter",
@@ -38,7 +35,6 @@ return {
 		cmd = { "Shades", "Huefy" },
 	},
 	-- ═════════════════════════════════════
-	--
 	--      NvChad - Extras
 	-- ═════════════════════════════════════
 	--
@@ -59,5 +55,12 @@ return {
 	--   build = function()
 	--     require("base46").load_all_highlights()
 	--   end,
+	-- },
+	-- ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+	-- ┃            SOBRE-ESCRIBIR             ┃
+	-- ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	opts = { view = { side = "right" } },
 	-- },
 }
