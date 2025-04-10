@@ -29,7 +29,7 @@ local servers = {
 	-- ┃        Csharp         ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	-- "omnisharp",
-	"harper_ls",
+	-- "harper_ls",  -- Muy Sucio
 	-- "csharp_ls",
 
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓

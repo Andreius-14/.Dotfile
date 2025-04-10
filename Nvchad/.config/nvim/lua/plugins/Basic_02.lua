@@ -18,6 +18,8 @@ return {
 				-- Lenguajes
 				"python",
 				"php",
+				"c_sharp",
+				"json",
 				-- low level
 				"c",
 				"zig",
