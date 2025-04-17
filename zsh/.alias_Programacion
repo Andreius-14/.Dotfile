@@ -98,7 +98,7 @@ alias pyNodemon='nodemon --exec python ' #NameFile
 #  JS
 #=============================
 
-alias jsEntornoWeb='pnpm create vite . --template vanilla'
+alias jsEntornoWeb='pnpm create vite . && pnpm install'
 
 alias jsEntornoNode='pnpm init && pnpm add standard -D  && jsEditJson'
 
