@@ -440,5 +440,42 @@
             "@Programacion"
         ],
         "_isTask": false
+    },
+    "42": {
+        "_id": 42,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630897908,
+        "description": "Task: Calcular Tiempo de Limpieza",
+        "isStarred": false,
+        "boards": [
+            "@Home"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "43": {
+        "_id": 43,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738631725078,
+        "description": "[06,07] Leer Mangas",
+        "isStarred": false,
+        "boards": [
+            "@Habit"
+        ],
+        "_isTask": false,
+        "priority": "1"
+    },
+    "44": {
+        "_id": 44,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738634011973,
+        "description": "[07,08] Leer epub,pdf,etc",
+        "isStarred": false,
+        "boards": [
+            "@Habit"
+        ],
+        "_isTask": false
     }
 }

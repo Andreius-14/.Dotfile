@@ -34,7 +34,7 @@
             "@Programacion"
         ],
         "_isTask": true,
-        "isComplete": false,
+        "isComplete": true,
         "inProgress": false,
         "priority": 1
     },
@@ -80,43 +80,6 @@
         "inProgress": false,
         "priority": 1
     },
-    "17": {
-        "_id": 17,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738630897908,
-        "description": "Task: Calcular Tiempo de Limpieza",
-        "isStarred": false,
-        "boards": [
-            "@Home"
-        ],
-        "_isTask": true,
-        "isComplete": false,
-        "inProgress": false,
-        "priority": 1
-    },
-    "19": {
-        "_id": 19,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738631725078,
-        "description": "[06,07] Leer Mangas",
-        "isStarred": false,
-        "boards": [
-            "@Habit"
-        ],
-        "_isTask": false,
-        "priority": "1"
-    },
-    "21": {
-        "_id": 21,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738634011973,
-        "description": "[07,08] Leer epub,pdf,etc",
-        "isStarred": false,
-        "boards": [
-            "@Habit"
-        ],
-        "_isTask": false
-    },
     "22": {
         "_id": 22,
         "_date": "Sun Feb 09 2025",
@@ -127,7 +90,7 @@
             "@Systematic"
         ],
         "_isTask": true,
-        "isComplete": false,
+        "isComplete": true,
         "inProgress": false,
         "priority": 1
     },
