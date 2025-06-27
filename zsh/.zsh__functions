@@ -15,41 +15,14 @@ Error() {
 
   
 #════════════════════════════════════════════════════════════════════════════════════════════╗ 
-# Linux -- Hooby's 
-#════════════════════════════════════════════════════════════════════════════════════════════╝
-
-spotdl_playlist() {
-
-  #Procura tener Instalado jq
-  if [[ -z "$1" ]]; then
-    echo "Ingrese la URL de la Playlist"
-    return 1
-  fi
-
-  local url=$1
-  local file="predeterminado.spotdl"
-  local ruta="{list-name}/{artist} - {title}.{output-ext}"
-
-  # Parte 1 - Descargar
-  spotdl sync "$url" --save-file "$file" --output "$ruta"
-
-  # Parte 2 - name
-  local name=$(ls -dt * | head -n 1)
-
-  # Parte 3 - sync File
-  mv "$file" "$name/Playlist_$name.spotdl"  # Renombro y Muevo
-
-}
-
-spotdl_pull(){
-  find . -name "*.spotdl" -print0 | while IFS= read -r -d $'\0' file; do
-    spotdl sync "$file"
-  done 
-}
-#════════════════════════════════════════════════════════════════════════════════════════════╗ 
 # Linux -- Automatizacion 
 #════════════════════════════════════════════════════════════════════════════════════════════╝
+enlace_soft(){
+    local ruta1="$1"
+    local ruta2="${2:-.}"
 
+   ln -s "$(realpath "$ruta1")" "$ruta2"
+}
 
 remove_path() {
   if [[ -z "$1" ]]; then  
@@ -89,10 +62,22 @@ habilitar-scripts() {
   fi
 }
 
-# habiliar-AppImages(){
-#   local directorio=""
-#
-# }
+habilitar-AppImages(){
+  local directorio="$HOME/Descargas/AppImages"
+  local permisos="+x"
+  if [[ -d "$directorio" ]]; then
+    echo "Buscando AppImages en $directorio..."
+    for archivo in "$directorio"/*.AppImage; do
+      if [[ -f "$archivo" ]]; then
+        chmod "$permisos" "$archivo"
+        echo "Se ha otorgado permiso de ejecución a: $archivo"
+      fi
+    done
+  else
+    echo "El directorio $directorio no existe."
+  fi
+
+}
 
 #=============================
 #  LINUX -- Matematica

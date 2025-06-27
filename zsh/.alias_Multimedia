@@ -21,6 +21,44 @@ alias ascii="ascii-image-converter"
 alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%-20-20'
 alias mpv_media='mpv --geometry=25%-20+20'
 
+
+#════════════════════════════════════════════════════════════════════════════════════════════╗ 
+# Linux -- Hooby's 
+#════════════════════════════════════════════════════════════════════════════════════════════╝
+
+spotdl_playlist() {
+
+  #Procura tener Instalado jq
+  if [[ -z "$1" ]]; then
+    echo "Ingrese la URL de la Playlist"
+    return 1
+  fi
+
+  local url=$1
+  local file="predeterminado.spotdl"
+  local ruta="{list-name}/{artist} - {title}.{output-ext}"
+
+  # Parte 1 - Descargar
+  spotdl sync "$url" --save-file "$file" --output "$ruta"
+
+  # Parte 2 - name
+  local name=$(ls -dt * | head -n 1)
+
+  # Parte 3 - sync File
+  mv "$file" "$name/Playlist_$name.spotdl"  # Renombro y Muevo
+
+}
+
+spotdl_pull(){
+  find . -name "*.spotdl" -print0 | while IFS= read -r -d $'\0' file; do
+    spotdl sync "$file"
+  done 
+}
+
+#════════════════════════════════════════════════════════════════════════════════════════════╗ 
+# Linux -- Hooby's 
+#════════════════════════════════════════════════════════════════════════════════════════════╝
+
 mpv_media_pl() {
   local url="$1"
   local start="${2:-1}"
