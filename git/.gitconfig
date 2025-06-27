@@ -10,6 +10,13 @@
 [safe]
   directory = /run/media/carlosa/Disco/*
 	directory = /mnt/d/*
+	directory = /mnt/Disco/**
+	directory = /mnt/Disco/101__Github/📁 Librerias/Libreria_JsGames
+	directory = /mnt/Disco/101__Github/📁 Librerias/Libreria_JsGames/ThreeJ\ns_Vanilla/JS-Shared
+	directory = /mnt/Disco/101__Github/📁 Librerias/Libreria_JsGames/ThreeJs_Vanilla/JS-Shared
+	directory = /mnt/Disco/101__Local/Local-PruebaDeCodigo-Git
+	directory = /mnt/Disco/101__Github/📁 Sintaxis/Sintaxis_Js
+	directory = /media/carlos/Personal/101__Github/📁 Script/404__Bookmarklets
 
 [alias]
     log = log --no-pager

@@ -49,7 +49,7 @@ alias t='eza -T --level=1 '
 alias t2='eza -T --level=2 '
 alias t3='eza -T --level=3 '
 
-# alias bat="bat --paging=never --theme='Dracula'"
+alias bat="bat --paging=never --theme='Dracula'"
 
 alias eza='eza --icons --sort=type '
 alias file1="eza -abghHlS --tree --level=1"

@@ -8,6 +8,7 @@ local options = {
 		html = { "prettier" },
 		-- javascript = { "standard_custom" },
 		javascript = { "prettier" },
+		typescript = { "prettier" },
 		python = { "black" },
 		bash = { "shfmt" },
 		cs = { "csharpier" },

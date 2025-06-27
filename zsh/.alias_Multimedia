@@ -42,6 +42,10 @@ sync_Android-Spotify-Playlist(){
     rsync -avz -e "ssh" "Android:$ruta_Android" "$ruta_Laptop"  
 }
 
+sync_MisLibros(){
+# 1LUG5-N2UJUZkXIRRAS-l4ihypwFog1f6
+}
+
 
 # [SHOW IMAGENES]
 
