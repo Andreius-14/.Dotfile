@@ -62,22 +62,7 @@ habilitar-scripts() {
   fi
 }
 
-habilitar-AppImages(){
-  local directorio="$HOME/Descargas/AppImages"
-  local permisos="+x"
-  if [[ -d "$directorio" ]]; then
-    echo "Buscando AppImages en $directorio..."
-    for archivo in "$directorio"/*.AppImage; do
-      if [[ -f "$archivo" ]]; then
-        chmod "$permisos" "$archivo"
-        echo "Se ha otorgado permiso de ejecución a: $archivo"
-      fi
-    done
-  else
-    echo "El directorio $directorio no existe."
-  fi
 
-}
 
 #=============================
 #  LINUX -- Matematica
