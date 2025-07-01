@@ -38,6 +38,7 @@ alias mkdir='mkdir -pv'
 alias wiki='wikit -l es '
 alias resumen='tldr'
 alias peso='dust -d 1 .'
+alias peso1="du -sh ./* | sort -rh"
 alias wifi='nmcli device wifi list'
 
 alias i-kernel='figlet $(uname -r) | lolcat '
