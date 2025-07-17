@@ -39,9 +39,13 @@ spotdl_playlist() {
   local ruta="{list-name}/{artist} - {title}.{output-ext}"
 
   # Parte 1 - Descargar
-  spotdl sync "$url" --save-file "$file" --output "$ruta"
+  # MP3
+  # spotdl sync "$url" --save-file "$file" --output "$ruta"
+  # OPUS
+  spotdl sync "$url" --format opus --bitrate "disable" --save-file "$file" --output "$ruta"
 
   # Parte 2 - name
+  # sleep 5
   local name=$(ls -dt * | head -n 1)
 
   # Parte 3 - sync File
