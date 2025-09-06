@@ -49,17 +49,14 @@ habilitar-scripts() {
   local directorio="$HOME/404__ShellScript"
   local permisos="755" # Ajusta los permisos según tus necesidades
 
-  if [[ -d "$directorio" ]]; then
+  [[ -d "$directorio" ]] || { echo "Ruta $directorio No existe."; return 1; }
+
     echo "Buscando archivos .sh en $directorio..."
-    for archivo in "$directorio"/*.sh; do
-      if [[ -f "$archivo" ]]; then
-        chmod "$permisos" "$archivo"
-        echo "Se ha otorgado permiso de ejecución a: $archivo"
-      fi
+
+    find "$directorio/" -type f -name "*.sh" -print0 | while IFS= read -r -d '' archivo; do
+            chmod "$permisos" "$archivo"
+            echo "Permiso Otorgado: [$permisos] $archivo "
     done
-  else
-    echo "El directorio $directorio no existe."
-  fi
 }
 
 
@@ -88,6 +85,61 @@ tabla_multiplicar() {
 
 
 
+bucle() {
+    if [ $# -lt 2 ]; then
+        echo "Uso: repeat <veces> <comando>"
+        echo "Ejemplo: repeat 4 spd-say \"hola\""
+        return 1
+    fi
+    
+    local times=$1
+    shift  # Remueve el primer argumento (el número)
+    local command="$@"
+    
+    for ((i=1; i<=times; i++)); do
+        eval "$command"
+    done
+}
+
+list_voices() {
+    echo "Voces disponibles en Google TTS:"
+    echo "es - Español España"
+    echo "es-ES - Español España"
+    echo "es-US - Español Estados Unidos"
+    echo "es-MX - Español México"
+    echo "es-AR - Español Argentina"
+    echo "es-CO - Español Colombia"
+    echo "en - Inglés"
+    echo "en-US - Inglés USA"
+    echo "en-GB - Inglés UK"
+    echo "fr - Francés"
+    echo "de - Alemán"
+    echo "it - Italiano"
+    echo "pt - Portugués"
+    echo "ru - Ruso"
+    echo "ja - Japonés"
+    echo "zh - Chino"
+}
+
+# Función mejorada de Google TTS con selección de voz
+googletts() {
+    local text="${1}"
+    local lang="${2:-es-ES}"  # Español España por defecto
+    
+    echo "Usando voz: $lang"
+    curl -s -G \
+        --data-urlencode "text=${text}" \
+        "https://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&client=tw-ob" \
+        | mpv - --no-video 2>/dev/null
+}
+
+info_Comandos-mas-usados(){
+
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a; }' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
+echo -e "\nGraficos: \n"
+history | tr -s ' ' | cut -d ' ' -f3 | sort | uniq -c | sort -n | tail | perl -lane 'print $F[1], "\t", $F[0], " ", "▄" x ($F[0] / 12)' 
+
+}
 #════════════════════════════════════════════════════════════════════════════════════════════╗ 
 #                                     INFORMACION
 #════════════════════════════════════════════════════════════════════════════════════════════╝

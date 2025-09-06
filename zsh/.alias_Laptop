@@ -58,6 +58,11 @@ alias file2="eza --long --tree --level=1 -bghliS "
 alias file3="eza --long --tree --level=1 -bghl --no-filesize"
 
 
+
+alias sudonvim='sudo HOME=$HOME XDG_CONFIG_HOME=$XDG_CONFIG_HOME nvim'
+alias snvim='sudo XDG_CONFIG_HOME=$HOME/.config HOME=$HOME nvim'
+
+
 # ═══════════════════════════════════════════════════════════════════════════════════════════════════════
 #  SOFTWARE - APP
 # ═══════════════════════════════════════════════════════════════════════════════════════════════════════

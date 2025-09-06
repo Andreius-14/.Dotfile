@@ -17,7 +17,7 @@ alias ascii="ascii-image-converter"
 
 
 # [MPV]
-
+alias _radio='mpv --no-video'
 alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%-20-20'
 alias mpv_media='mpv --geometry=25%-20+20'
 
@@ -28,36 +28,93 @@ alias mpv_media='mpv --geometry=25%-20+20'
 
 spotdl_playlist() {
 
-  #Procura tener Instalado jq
   if [[ -z "$1" ]]; then
     echo "Ingrese la URL de la Playlist"
     return 1
   fi
 
   local url=$1
+
+  local formato="mp3"
+
   local file="predeterminado.spotdl"
+
   local ruta="{list-name}/{artist} - {title}.{output-ext}"
 
-  # Parte 1 - Descargar
-  # MP3
-  # spotdl sync "$url" --save-file "$file" --output "$ruta"
-  # OPUS
-  spotdl sync "$url" --format opus --bitrate "disable" --save-file "$file" --output "$ruta"
 
-  # Parte 2 - name
-  # sleep 5
+    PS3="Selecciona formato [1-2]: "
+    local options=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
+
+    select opt in "${options[@]}"; do
+        case $REPLY in
+            1) 
+                spotdl sync "$url" --save-file "$file" --output "$ruta"
+
+                break 
+                ;;
+            2) 
+                spotdl sync "$url" --format opus --bitrate "disable" --save-file "$file" --output "$ruta"
+
+                break 
+                ;;
+            *) 
+                echo "Opción incorrecta, elija de nuevo." 
+                ;;
+        esac
+    done
+
+
   local name=$(ls -dt * | head -n 1)
 
-  # Parte 3 - sync File
   mv "$file" "$name/Playlist_$name.spotdl"  # Renombro y Muevo
 
 }
 
 spotdl_pull(){
+  
+  local formato=$(ls | grep -Eo "(opus|mp3|m4a|ogg)$"  | head -n 1 )
+
   find . -name "*.spotdl" -print0 | while IFS= read -r -d $'\0' file; do
-    spotdl sync "$file"
+    spotdl  --format "${formato}" sync "$file" --overwrite skip
   done 
 }
+
+spotdlD(){
+  if [[ -z "$1" ]]; then
+    echo "Ingrese la URL de la Playlist"
+    return 1
+  fi
+
+  spotdl  "$1" --format opus
+}
+# pule() {
+#     PS3="Selecciona formato [1-2]: "
+#     local options=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
+#     local formato
+#
+#     select opt in "${options[@]}"; do
+#         case $REPLY in
+#             1) 
+#                 formato="mp3"
+#                 break 
+#                 ;;
+#             2) 
+#                 formato="opus" 
+#                 break 
+#                 ;;
+#             *) 
+#                 echo "Opción incorrecta, elija de nuevo." 
+#                 ;;
+#         esac
+#     done
+#
+#
+#     # Retornar el formato seleccionado si es necesario
+#     echo "$formato"
+# }
+# Para usar la función:
+# pule
+
 
 #════════════════════════════════════════════════════════════════════════════════════════════╗ 
 # Linux -- Hooby's 

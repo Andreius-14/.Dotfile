@@ -202,6 +202,10 @@ fi
 # Sh
 export PATH="$HOME/404__ShellScript:$PATH"
 
+for dir in "$HOME/404__ShellScript"/*/; do
+  [ -d "$dir" ] && export PATH="$dir:$PATH"
+done
+
 # Pip
 export PATH="$HOME/.local/bin:$PATH"
 
