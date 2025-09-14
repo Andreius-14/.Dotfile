@@ -5,6 +5,18 @@ alias yt-audio='ytfzf -dm'
 alias dm="yt-dlp -x --audio-format mp3 "
 alias dmb="yt-dlp -x --audio-quality 0"
 
+ytD () {
+    if [ -z "$1" ]; then
+        echo "Uso: ytD <URL>"
+        return 1
+    fi
+
+    yt-dlp -F "$1"
+    echo -n "Ingrese el ID del formato de VIDEO: "
+    read videoID
+    yt-dlp -f "${videoID}+bestaudio" "$1"
+}
+
 alias ythd="yt-dlp -f bestvideo+bestaudio "
 alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
 alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
