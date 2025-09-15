@@ -1,26 +1,3 @@
-# [YOUTUBE]
-alias yt="ytfzf -t"
-alias yt-audio='ytfzf -dm'
-
-alias dm="yt-dlp -x --audio-format mp3 "
-alias dmb="yt-dlp -x --audio-quality 0"
-
-ytD () {
-    if [ -z "$1" ]; then
-        echo "Uso: ytD <URL>"
-        return 1
-    fi
-
-    yt-dlp -F "$1"
-    echo -n "Ingrese el ID del formato de VIDEO: "
-    read videoID
-    yt-dlp -f "${videoID}+bestaudio" "$1"
-}
-
-alias ythd="yt-dlp -f bestvideo+bestaudio "
-alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
-alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
-
 # [ASCII]
 alias ascii-real='ascii-image-converter -Cfg --color-bg '
 alias ascii1="ascii-image-converter -b -C"
@@ -28,58 +5,81 @@ alias ascii2="ascii-image-converter -b --dither -C"
 alias ascii="ascii-image-converter"
 
 
-# [MPV]
-alias _radio='mpv --no-video'
+#══════════════════════ 
+#         mpv
+#══════════════════════
+alias mpv_radio='mpv --no-video'
 alias mpv_playlist='mpv --shuffle --loop-playlist=inf --geometry=15%-20-20'
 alias mpv_media='mpv --geometry=25%-20+20'
 
+mpv_media_pl() {
+  local url="$1"
+  local start="${2:-1}"
+  mpv_media --save-position-on-quit --playlist-start="$start" "$url"
+}
 
-#════════════════════════════════════════════════════════════════════════════════════════════╗ 
-# Linux -- Hooby's 
-#════════════════════════════════════════════════════════════════════════════════════════════╝
+#══════════════════════ 
+#         ytfzf
+#══════════════════════
 
-spotdl_playlist() {
-
-  if [[ -z "$1" ]]; then
-    echo "Ingrese la URL de la Playlist"
-    return 1
-  fi
-
-  local url=$1
-
-  local formato="mp3"
-
-  local file="predeterminado.spotdl"
-
-  local ruta="{list-name}/{artist} - {title}.{output-ext}"
+# Descarga
+alias yt="ytfzf -t" 
+# Descarga Musica
+alias yt-audio='ytfzf -dm' 
 
 
-    PS3="Selecciona formato [1-2]: "
-    local options=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
+#══════════════════════ 
+#        yt-dlp
+#══════════════════════
 
-    select opt in "${options[@]}"; do
-        case $REPLY in
-            1) 
-                spotdl sync "$url" --save-file "$file" --output "$ruta"
+# Descarga 
+# Maxima Calidad Video 
+# Maxima Calidad Audio 
+alias ythd="yt-dlp -f bestvideo+bestaudio "
 
-                break 
-                ;;
-            2) 
-                spotdl sync "$url" --format opus --bitrate "disable" --save-file "$file" --output "$ruta"
+# Descarga Audio
+alias dm="yt-dlp -x --audio-format mp3 "
+alias dmb="yt-dlp -x --audio-quality 0"
 
-                break 
-                ;;
-            *) 
-                echo "Opción incorrecta, elija de nuevo." 
-                ;;
-        esac
-    done
+# Nombre Personalizado
+# alias yt-PlayList='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" '
+# alias yt-PlayList-Music='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "URL" -x'
+
+ytD () {
+
+    [[ -z "$1" ]] && { echo "No se ha ingresado URL"; return 1; }
+
+    # Mostrar formatos disponibles
+    yt-dlp -F "$1" || return 1
+
+    # Solicitar formato de video
+    echo -n "Ingrese el ID del formato de VIDEO: "
+    read videoID
+
+    # Descargar el video
+    yt-dlp -f "${videoID}+bestaudio" \
+    --embed-subs --write-auto-subs --sub-langs es,en \
+    -t sleep -i \
+    "$1"
+    
+    # Descargar subtítulos + Delay
+    # echo -n "Descargando Subtitulos: "
+    # yt-dlp --sub-lang "es,en" \
+    #        --write-sub \
+    #        --write-auto-sub \
+    #        --sub-format "json3" \
+    #        --convert-subs "srt" \
+    #        -t sleep
+}
 
 
-  local name=$(ls -dt * | head -n 1)
+#══════════════════════ 
+#        spotdl
+#══════════════════════
 
-  mv "$file" "$name/Playlist_$name.spotdl"  # Renombro y Muevo
-
+spotdlD(){
+  [[ -z "$1" ]] && { echo "No se ha ingresado URL"; return 1; }
+  spotdl  "$1" --format opus
 }
 
 spotdl_pull(){
@@ -91,52 +91,45 @@ spotdl_pull(){
   done 
 }
 
-spotdlD(){
-  if [[ -z "$1" ]]; then
-    echo "Ingrese la URL de la Playlist"
-    return 1
-  fi
+spotdl_playlist() {
 
-  spotdl  "$1" --format opus
+  [[ -z "$1" ]] && { echo "Ingrese la URL de la Playlist"; return 1; }
+
+  local url=$1
+  local file="predeterminado.spotdl"
+  local ruta="{list-name}/{artist} - {title}.{output-ext}"
+  local opts=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
+
+  PS3="Selecciona formato [1-2]: "
+  select opt in "${opts[@]}"; do
+      case $REPLY in
+          1) 
+              spotdl sync "$url" --save-file "$file" --output "$ruta"
+              break 
+              ;;
+          2) 
+              spotdl sync "$url" --format opus --bitrate "disable" --save-file "$file" --output "$ruta"
+              break 
+              ;;
+          *) 
+              echo "Opción incorrecta, elija de nuevo." 
+              ;;
+      esac
+  done
+
+
+  local name=$(ls -dt * | head -n 1)
+
+  mv "$file" "$name/Playlist_$name.spotdl"  # Renombro y Muevo
+
 }
-# pule() {
-#     PS3="Selecciona formato [1-2]: "
-#     local options=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
-#     local formato
-#
-#     select opt in "${options[@]}"; do
-#         case $REPLY in
-#             1) 
-#                 formato="mp3"
-#                 break 
-#                 ;;
-#             2) 
-#                 formato="opus" 
-#                 break 
-#                 ;;
-#             *) 
-#                 echo "Opción incorrecta, elija de nuevo." 
-#                 ;;
-#         esac
-#     done
-#
-#
-#     # Retornar el formato seleccionado si es necesario
-#     echo "$formato"
-# }
-# Para usar la función:
-# pule
 
 
 #════════════════════════════════════════════════════════════════════════════════════════════╗ 
-# Linux -- Hooby's 
+#                                   Dependientes
 #════════════════════════════════════════════════════════════════════════════════════════════╝
 
-mpv_media_pl() {
-  local url="$1"
-  local start="${2:-1}"
-  mpv_media --save-position-on-quit --playlist-start="$start" "$url"
-}
+
 
 # [ANIMES]
 alias Berserk="mpv_media_pl 'https://youtube.com/playlist?list=PLHaR5nU-RvtR3fx9t5h-cokPnxupdObxo&si=NFV-Xhu9Qw0vLqkm' "
@@ -151,17 +144,5 @@ sync_Android-Spotify-Playlist(){
     
     # Ejecucion
     rsync -avz -e "ssh" "Android:$ruta_Android" "$ruta_Laptop"  
-}
-
-sync_MisLibros(){
-# 1LUG5-N2UJUZkXIRRAS-l4ihypwFog1f6
-}
-
-
-# [SHOW IMAGENES]
-
-show_img(){
-
-    viu "$1"
 }
 
