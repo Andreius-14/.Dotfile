@@ -1,36 +1,11 @@
--- ┌───────────────────────────────────┐
--- │           FORMATTER               │
--- └───────────────────────────────────┘
 local options = {
-	formatters_by_ft = {
-		lua = { "stylua" },
-		css = { "prettier" },
-		html = { "prettier" },
-		-- javascript = { "standard_custom" },
-		javascript = { "prettier" },
-		typescript = { "prettier" },
-		python = { "black" },
-		bash = { "shfmt" },
-		cs = { "csharpier" },
-	},
+  formatters_by_ft = {
+    lua = { "stylua" },
+    -- css = { "prettier" },
+    -- html = { "prettier" },
+  },
 
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
 
-	-- ┌───────────────────────────────────┐
-	-- │    FORMATTER PERSONALIZADO        │
-	-- └───────────────────────────────────┘
-	formatters = {
-		standard_custom = {
-			-- Comando para ejecutar standard con --fix
-			command = "standard",
-			args = { "--fix", "$FILENAME" }, -- "$FILENAME" es el archivo actual
-			stdin = false, -- No usar stdin (standard necesita el archivo directamente)
-		},
-	},
 }
 
 return options

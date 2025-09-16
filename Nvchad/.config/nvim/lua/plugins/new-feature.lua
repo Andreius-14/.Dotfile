@@ -1,32 +1,21 @@
 return {
 
-	{
-		-- Colores a Sintaxis
-		"nvim-treesitter/nvim-treesitter",
-		opts = {
-			ensure_installed = {
-				-- defaults
-				"vim",
-				"lua",
-				"vimdoc",
-				-- web dev
-				"html",
-				"css",
-				"javascript",
-				"typescript",
-				"tsx",
-				-- Lenguajes
-				"python",
-				"php",
-				"c_sharp",
-				"json",
-				-- low level
-				"c",
-				"zig",
-			},
-		},
-	},
+	-- ═════════════════════════════════════
+	--            NEW FEATURES
+	-- ═════════════════════════════════════
 
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
+  -- },
 	-- ═════════════════════════════════════
 	--      NvChad - Features
 	-- ═════════════════════════════════════
