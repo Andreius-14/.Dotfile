@@ -1,7 +1,8 @@
--- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
+
+
 
 -- EXAMPLE
 local servers = {
@@ -50,6 +51,12 @@ local servers = {
 	"custom_elements_ls",
 	"jsonls",
 }
+
+
+-- vim.lsp.enable(servers)
+-- read :h vim.lsp.config for changing options of lsp servers 
+
+
 
 local nvlsp = require("nvchad.configs.lspconfig")
 
