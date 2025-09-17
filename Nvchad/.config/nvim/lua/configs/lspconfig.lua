@@ -2,8 +2,6 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
 
-
-
 -- EXAMPLE
 local servers = {
 
@@ -52,11 +50,8 @@ local servers = {
 	"jsonls",
 }
 
-
 vim.lsp.enable(servers)
--- read :h vim.lsp.config for changing options of lsp servers 
-
-
+-- read :h vim.lsp.config for changing options of lsp servers
 
 -- local nvlsp = require("nvchad.configs.lspconfig")
 
