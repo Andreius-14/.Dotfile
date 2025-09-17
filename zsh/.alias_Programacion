@@ -134,9 +134,9 @@ alias pyNodemon='nodemon --exec python ' #NameFile
 #  JS
 #=========
 
-alias jsEntornoWeb='pnpm create vite . && pnpm install'
+alias jsVite='pnpm create vite . && pnpm install'
 
-alias jsEntornoNode='pnpm init && pnpm add standard -D  && jsEditJson'
+alias jsNode='pnpm init && pnpm add standard -D  && jsEditJson'
 
 function jsEditJson() {
     local config='{"type": "module", "eslintConfig": {"extends": "standard"}}'
