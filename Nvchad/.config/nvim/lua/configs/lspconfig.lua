@@ -53,21 +53,21 @@ local servers = {
 }
 
 
--- vim.lsp.enable(servers)
+vim.lsp.enable(servers)
 -- read :h vim.lsp.config for changing options of lsp servers 
 
 
 
-local nvlsp = require("nvchad.configs.lspconfig")
+-- local nvlsp = require("nvchad.configs.lspconfig")
 
 -- lsps with default config
-for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = nvlsp.on_attach,
-		on_init = nvlsp.on_init,
-		capabilities = nvlsp.capabilities,
-	})
-end
+-- for _, lsp in ipairs(servers) do
+-- 	lspconfig[lsp].setup({
+-- 		on_attach = nvlsp.on_attach,
+-- 		on_init = nvlsp.on_init,
+-- 		capabilities = nvlsp.capabilities,
+-- 	})
+-- end
 
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
@@ -80,18 +80,18 @@ end
 -- ┃        Csharp         ┃
 -- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 
-lspconfig.omnisharp.setup({
-	on_attach = nvlsp.on_attach,
-	on_init = nvlsp.on_init,
-	cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
-	root_dir = function()
-		return require("lspconfig/util").root_pattern(
-			"*.sln",
-			"*.csproj",
-			"omnisharp.json",
-			"*.godot",
-			"function.json",
-			".git"
-		)(vim.fn.expand("%:p:h")) or vim.fn.expand("%:p:h")
-	end,
-})
+-- lspconfig.omnisharp.setup({
+-- 	on_attach = nvlsp.on_attach,
+-- 	on_init = nvlsp.on_init,
+-- 	cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+-- 	root_dir = function()
+-- 		return require("lspconfig/util").root_pattern(
+-- 			"*.sln",
+-- 			"*.csproj",
+-- 			"omnisharp.json",
+-- 			"*.godot",
+-- 			"function.json",
+-- 			".git"
+-- 		)(vim.fn.expand("%:p:h")) or vim.fn.expand("%:p:h")
+-- 	end,
+-- })

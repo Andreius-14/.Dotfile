@@ -9,34 +9,67 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 
 
-alias log1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+#=============================
+#  Git Log
+#=============================
 
-alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
-alias glmini="git log --graph --abbrev-commit --decorate --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
+alias atom_log="git log --graph --abbrev-commit --decorate"
+
+alias log1="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias log2="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+alias gitlog="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
+alias glmini="atom_log --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
+
+
 
 #=============================
+#  Git submodule
+#=============================
+
+
+
+
+#=======================================================================================
 #  GIT FUNCTION
-#=============================
+#=======================================================================================
 
+
+#====================
+#  Atomo
+#====================
 function g_GeneraCommit(){
     git add . && git commit -m "$1"
-}
-function github() {
-    g_GeneraCommit "$1" && git push
 }
 
 function g_inicio (){
   git init -b main
 }
 
-function init_Submodulo(){
+function submodule-Download(){
     git submodule init
     git submodule update
 
-    # Si podemos actualizar al hacer pull al repo Padre Ejecutar
-    # git pull --recurse-submodules
 }
+
+function submodule-Pull(){
+    git pull --recurse-submodules
+}
+
+
+#====================
+#  Molecula
+#====================
+
+function github() {
+    g_GeneraCommit "$1" && git push
+}
+
+
+
+#====================
+#  Celulas
+#====================
 
 function g_EnlaceRemoto(){
 
@@ -74,16 +107,19 @@ function g_EnlaceRemoto(){
   git push origin main || echo "Enpuje Fallido"
 }
 
+#=======================================================================================
+#  Lenguajes de Programacion
+#=======================================================================================
 
-#=============================
+#=========
 #  PHP
-#=============================
+#=========
 
 alias phpserver="php -S localhost:8000"
 
-#=============================
+#=========
 #  PY
-#=============================
+#=========
 
 alias pyEntorno='virtualenv venv && . venv/bin/activate'
 alias pyEnter='. venv/bin/activate'
@@ -94,9 +130,9 @@ alias pyRestaurar='pip install -r requirements.txt'
 alias pyNodemon='nodemon --exec python ' #NameFile 
 
 
-#=============================
+#=========
 #  JS
-#=============================
+#=========
 
 alias jsEntornoWeb='pnpm create vite . && pnpm install'
 
@@ -106,8 +142,8 @@ function jsEditJson() {
     local config='{"type": "module", "eslintConfig": {"extends": "standard"}}'
     jq ". + $config" package.json > temp.json && mv temp.json package.json
 }
-#=============================
+#========
 #  C#
-#=============================
+#========
 
 alias CsEntorno='dotnet new sln && dotnet new console -o Main && dotnet sln add */'
