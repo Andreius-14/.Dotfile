@@ -48,14 +48,14 @@
 
 
 
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "breadcrumbs.enabled": false,
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.cursorBlinking": "expand",
     "projectManager.git.baseFolders": [
         "/run/media/carlosa/Disco/Doc_Programacion"
     ],
-    "workbench.colorTheme": "Dracula Theme",
+    "workbench.colorTheme": "GitHub Dark",
 
 //=======================================================================================
 //  Lenguajes de Programacion

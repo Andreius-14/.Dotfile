@@ -168,7 +168,7 @@ fi
 if [ -n "$WSL_DISTRO_NAME" ]; then
     export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
-    source $HOME/.alias_WSL
+    source $HOME/.zsh_alias_WSL
 fi
 
 #═════════════════════════════════════════════════════════════════════╝
@@ -182,9 +182,9 @@ fi
 #=============================
 # ALIAS
 #=============================
-source $HOME/.alias_Laptop
-source $HOME/.alias_Programacion
-source $HOME/.alias_Multimedia
+source $HOME/.zsh_alias_Laptop
+source $HOME/.zsh_alias_Programacion
+source $HOME/.zsh_alias_Multimedia
 
 source $HOME/.zsh__functions
 
