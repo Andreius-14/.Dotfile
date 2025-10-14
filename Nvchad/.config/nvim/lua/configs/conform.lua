@@ -3,13 +3,14 @@ local options = {
 		lua = { "stylua" },
 		css = { "prettier" },
 		html = { "prettier" },
-    javascript={"prettier"}
+		javascript = { "prettier" },
 		-- javascript = { "standardjs" },
 		-- javascriptreact = { "standardjs" },
 		-- typescript = { "standardjs" },
 		-- typescriptreact = { "standardjs" },
+		python = { "black" },
+		bash = { "shfmt" },
 	},
-
 
 	-- formatters = {
 	-- 	standardjs = {

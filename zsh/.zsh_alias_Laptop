@@ -46,18 +46,60 @@ alias i-kernel='figlet $(uname -r) | lolcat '
 #=============================
 # ARCHIVOS
 #=============================
-alias t='eza -T --level=1 '
-alias t2='eza -T --level=2 '
-alias t3='eza -T --level=3 '
+
+
+
+#================
+#     [Eza]
+#================
+#--group-directories-first
+alias eza='eza --color=always --icons=always  --sort=type'
+
+arbol(){ eza -T --level="$1" "${@:2}"}
+alias t="t1"
+alias t1='arbol 1'      # Default nivel 1 via función
+alias t2='arbol 2'   # Fuerza nivel 2
+alias t3='arbol 3'   # Fuerza nivel 3
+
+t_peso="-lh -S --total-size --no-permissions --no-user --no-time"
+alias tp1=" t   $t_peso"
+alias tp2="t2  $t_peso"
+alias tp3="t3  $t_peso"
+
+
+t_time="-lh -Umu --changed"
+ft1(){ eval "t${1:-1} $t_time --time-style=relative ${@:2}" }
+ft2(){ eval "t${1:-1} $t_time --time-style=default ${@:2}" }
+ft3(){ eval "t${1:-1} $t_time --time-style=long-iso ${@:2}" }
+ft4(){ eval "t${1:-1} $t_time --time-style=full-iso ${@:2}" }
+
+# ${1:-1}
+
+alias fileAll="t -lh -g -Hio "
+alias fileAll2="fileAll -n "
+
+# (Grupo) -g group  [-n Id DE Grupo]  [--smart-group]
+
+# === Columnas ===
+# -H link
+# -i inode
+# -o octal persmisos
+
+# === Columnas Peso === 
+# (Peso) --total-size  [-b binario] [-B bytes]  
+# (Peso) -S Blocksize
+
+# === Columnas Time ===
+# (time) -t (modified, created, accessed)  
+# (Time) -U [created]
+# (Time) -m [modified] [default]
+# (Time) -u [accessed]
+# (Time) --changed
+# (Time) --time-style
+
+
 
 alias bat="bat --paging=never --theme='Dracula'"
-
-alias eza='eza --icons --sort=type '
-alias file1="eza -abghHlS --tree --level=1"
-alias file2="eza --long --tree --level=1 -bghliS "
-alias file3="eza --long --tree --level=1 -bghl --no-filesize"
-
-
 
 alias sudonvim='sudo HOME=$HOME XDG_CONFIG_HOME=$XDG_CONFIG_HOME nvim'
 alias snvim='sudo XDG_CONFIG_HOME=$HOME/.config HOME=$HOME nvim'

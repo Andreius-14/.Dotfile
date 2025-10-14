@@ -83,12 +83,22 @@ spotdlD(){
 }
 
 spotdl_pull(){
-  
-  local formato=$(ls | grep -Eo "(opus|mp3|m4a|ogg)$"  | head -n 1 )
 
-  find . -name "*.spotdl" -print0 | while IFS= read -r -d $'\0' file; do
-    spotdl  --format "${formato}" sync "$file" --overwrite skip
-  done 
+  # Bucle
+  while IFS= read -r -d '' ruta_File; do
+
+    # VAR
+    local ruta_Parent="$(dirname "$ruta_File")"
+    local formato=$(ls "$ruta_Parent" | grep -Eo "(opus|mp3|m4a|ogg)$" | sort | uniq -c | sort -nr | head -n1 | awk '{print $2}')
+
+    # Verificado
+    [[ -z "$formato" ]] && formato="opus"
+
+    # RUN
+    spotdl --format "$formato" sync "$ruta_File" --overwrite skip  --output "$ruta_Parent"
+
+  done < <(find . -name "*.spotdl" -print0)
+
 }
 
 spotdl_playlist() {
@@ -97,7 +107,7 @@ spotdl_playlist() {
 
   local url=$1
   local file="predeterminado.spotdl"
-  local ruta="{list-name}/{artist} - {title}.{output-ext}"
+  local ruta="{list-name}/{artists} - {title}.{output-ext}"
   local opts=("mp3 - Compatibilidad Total" "opus - Ligero Moderno Calidad")
 
   PS3="Selecciona formato [1-2]: "
