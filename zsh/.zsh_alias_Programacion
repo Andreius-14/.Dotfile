@@ -12,14 +12,39 @@ alias gp='git push origin master'
 #=============================
 #  Git Log
 #=============================
+#oneline
+_hash="%h"
+_autor="%an"
+_email="%ae"
 
+_time="%ar"
+_timel="%aD"
+_date="%as"
+
+_msm="%s"
+_branch="%d"
+
+#Base
 alias atom_log="git log --graph --abbrev-commit --decorate"
 
-alias log1="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias log2="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+atom_custom(){  atom_log --pretty=format:"$1" --all }
+gw() {printf "%s" "%C($1)$2%C(reset)"}
 
-alias gitlog="atom_log --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)[%ar]%C(reset) %C(cyan)[%ad]%C(reset)%C(bold)%d%C(reset)  %n''          %C(dim white)%an - %ae%C(reset)%n''          %C(dim white)Mensaje: \"%s\"%C(reset)' --all"
-alias glmini="atom_log --format=format:'%C(38)%h%C(reset) - %C(255)Autor: %an%C(reset)%C(39) [%ar]%C(reset) %C(bold)%d%C(reset)%n          %C(37)Mensaje: \"%s\"%C(reset)' --all"
+#Abreviaciones
+_glm="$(gw 'bold blue' $_hash) $(gw 'cyan' "- [$_date]") $(gw 'bold 42' "$_autor:") $(gw '229' $_msm) $(gw 'bold' $_branch) %n"
+_gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
+
+#Alias
+alias glm="atom_custom '$_glm' "
+alias gla="atom_custom '$_gla'"
+
+# atom_custom "%C(green)%T %n
+# ↳name:  [%an] %aN 
+# ↳email: [%ae] [%aE] [%al] 
+# ↳fecha: [%as] [%ar] [%ai] [%ad] [%aD] [%at]
+# ↳commit:%s %f %b %B "
+
+
 
 
 
