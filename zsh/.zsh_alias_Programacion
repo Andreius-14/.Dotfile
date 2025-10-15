@@ -25,9 +25,9 @@ _msm="%s"
 _branch="%d"
 
 #Base
-alias atom_log="git log --graph --abbrev-commit --decorate"
+alias atom_log="git log --graph --abbrev-commit --decorate --color=always"
 
-atom_custom(){  atom_log --pretty=format:"$1" --all }
+atom_custom(){  atom_log --pretty=format:"$1" --all  ${@:2}}
 gw() {printf "%s" "%C($1)$2%C(reset)"}
 
 #Abreviaciones
@@ -35,8 +35,14 @@ _glm="$(gw 'bold blue' $_hash) $(gw 'cyan' "- [$_date]") $(gw 'bold 42' "$_autor
 _gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
 
 #Alias
-alias glm="atom_custom '$_glm' "
+alias glm="atom_custom '$_glm'"
 alias gla="atom_custom '$_gla'"
+
+# alias glmn="glm | sed 's/\*//g' "
+# alias glan="gla | sed 's/\*//g' "
+
+glmn(){ glm "$@" | sed 's/\*//g'; }
+glan(){ gla "$@" | sed 's/\*//g'; }
 
 # atom_custom "%C(green)%T %n
 # ↳name:  [%an] %aN 
@@ -44,15 +50,13 @@ alias gla="atom_custom '$_gla'"
 # ↳fecha: [%as] [%ar] [%ai] [%ad] [%aD] [%at]
 # ↳commit:%s %f %b %B "
 
-
-
-
-
 #=============================
 #  Git submodule
 #=============================
 
-
+#=============================
+#  Git diff
+#=============================
 
 
 #=======================================================================================
@@ -71,13 +75,17 @@ function g_inicio (){
   git init -b main
 }
 
-function submodule-Download(){
+
+#=============================
+#  Git submodule
+#=============================
+function g_submodule-Download(){
     git submodule init
     git submodule update
 
 }
 
-function submodule-Pull(){
+function g_submodule-Pull(){
     git pull --recurse-submodules
 }
 
