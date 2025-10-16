@@ -12,43 +12,51 @@ alias gp='git push origin master'
 #=============================
 #  Git Log
 #=============================
-#oneline
-_hash="%h"
-_autor="%an"
-_email="%ae"
+# ↳name:  [%an] %aN 
+# ↳email: [%ae] [%aE] [%al] 
+# ↳fecha: [%as] [%ar] [%ai] [%aD] [%ad] [%at]
+# ↳commit:%s %f %b %B "
 
-_time="%ar"
-_timel="%aD"
-_date="%as"
+#Variables
+_hash="%h" ; _autor="%an"; _email="%ae";
+_time="%ar"; _timel="%aD"; _date="%as" ;
+_msm="%s"  ; _branch="%d";
 
-_msm="%s"
-_branch="%d"
+_glm="$(gw "(bold blue)$_hash" "(cyan) - [$_date]" "(bold 42) $_autor:" "(229) $_msm" "(bold) $_branch") %n"
+_glmm="$(gw "(bold cyan)$_hash" "(42) [$_time]" "(white)$_branch")"
+_gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
+
+#Funciones
+log_change(){ sed 's/\*//g' }
+log_custom(){ atom_log --pretty=format:"$1" --all  ${@:2}}
+log_nice()  { log_custom "$1" "${@:2}" | log_change }
 
 #Base
 alias atom_log="git log --graph --abbrev-commit --decorate --color=always"
-
-atom_custom(){  atom_log --pretty=format:"$1" --all  ${@:2}}
-gw() {printf "%s" "%C($1)$2%C(reset)"}
-
-#Abreviaciones
-_glm="$(gw 'bold blue' $_hash) $(gw 'cyan' "- [$_date]") $(gw 'bold 42' "$_autor:") $(gw '229' $_msm) $(gw 'bold' $_branch) %n"
-_gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
-
 #Alias
-alias glm="atom_custom '$_glm'"
-alias gla="atom_custom '$_gla'"
+alias glm="log_custom '$_glm'"
+alias gla="log_custom '$_gla'"
 
-# alias glmn="glm | sed 's/\*//g' "
-# alias glan="gla | sed 's/\*//g' "
+alias glmn="log_nice '$_glm'"
+alias glan="log_nice '$_gla'"
+alias glmm="log_nice '$_glmm'"
 
-glmn(){ glm "$@" | sed 's/\*//g'; }
-glan(){ gla "$@" | sed 's/\*//g'; }
+gw() {
+    local out=""
+    while [ $# -gt 0 ]; do
+        local color=$(echo "$1" | grep -oP '\(.*?\)')
+        local text=$(echo "$1" | sed -E 's/\(.*\)//')
 
-# atom_custom "%C(green)%T %n
-# ↳name:  [%an] %aN 
-# ↳email: [%ae] [%aE] [%al] 
-# ↳fecha: [%as] [%ar] [%ai] [%ad] [%aD] [%at]
-# ↳commit:%s %f %b %B "
+        # si hay color aplica
+        if [ -n "$color" ]; then
+            out+="%C${color}${text}%C(reset)"
+        else
+            out+="$1"
+        fi
+        shift
+    done
+    echo -n "$out"
+}
 
 #=============================
 #  Git submodule
