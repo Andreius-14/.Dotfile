@@ -76,7 +76,7 @@ alias tg3="t3  $eza_git "
 
 alias t="t1"
 
-ft1(){ eval "t${1:-1} $eza_time --time-style=relative ${@:2}" }
+ft(){ eval "t${1:-1} $eza_time --time-style=relative ${@:2}" }
 ft2(){ eval "t${1:-1} $eza_time --time-style=default ${@:2}" }
 ft3(){ eval "t${1:-1} $eza_time --time-style=long-iso ${@:2}" }
 ft4(){ eval "t${1:-1} $eza_time --time-style=full-iso ${@:2}" }

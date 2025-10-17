@@ -17,30 +17,6 @@ alias gp='git push origin master'
 # ↳fecha: [%as] [%ar] [%ai] [%aD] [%ad] [%at]
 # ↳commit:%s %f %b %B "
 
-#Variables
-_hash="%h" ; _autor="%an"; _email="%ae";
-_time="%ar"; _timel="%aD"; _date="%as" ;
-_msm="%s"  ; _branch="%d";
-
-_glm="$(gw "(bold blue)$_hash" "(cyan) - [$_date]" "(bold 42) $_autor:" "(229) $_msm" "(bold) $_branch") %n"
-_glmm="$(gw "(bold cyan)$_hash" "(42) [$_time]" "(white)$_branch")"
-_gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
-
-#Funciones
-log_change(){ sed 's/\*//g' }
-log_custom(){ atom_log --pretty=format:"$1" --all  ${@:2}}
-log_nice()  { log_custom "$1" "${@:2}" | log_change }
-
-#Base
-alias atom_log="git log --graph --abbrev-commit --decorate --color=always"
-#Alias
-alias glm="log_custom '$_glm'"
-alias gla="log_custom '$_gla'"
-
-alias glmn="log_nice '$_glm'"
-alias glan="log_nice '$_gla'"
-alias glmm="log_nice '$_glmm'"
-
 gw() {
     local out=""
     while [ $# -gt 0 ]; do
@@ -57,6 +33,36 @@ gw() {
     done
     echo -n "$out"
 }
+
+#Variables
+_hash="%h" ; _autor="%an"; _email="%ae";
+_time="%ar"; _timel="%aD"; _date="%as" ;
+_msm="%s"  ; _branch="%d";
+
+_glm="$(gw "(bold blue)$_hash" "(cyan) - [$_date]" "(bold 42) $_autor:" "(229) $_msm" "(bold) $_branch") %n"
+_glmm="$(gw "(bold cyan)$_hash" "(42) [$_time]" "(white)$_branch")"
+_gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
+
+#Funciones
+#'s/\*/#/ ; s/\| \*/\| #/'
+#'s/^\*/#/; s/\| \*/\| #/'
+
+#Base
+alias atom_log="git log --graph --abbrev-commit --decorate --color=always"
+
+log_change(){ sed  -e 's/\*// ; s/| \*/| /g' } 
+log_custom(){ atom_log --pretty=format:"$1" --all  ${@:2}}
+log_nice()  { log_custom "$1" "${@:2}" | log_change }
+
+#Alias
+alias glm="log_custom '$_glm'"
+alias gla="log_custom '$_gla'"
+
+alias glmn="log_nice '$_glm'"
+alias glan="log_nice '$_gla'"
+alias glmm="log_nice '$_glmm'"
+
+
 
 #=============================
 #  Git submodule
