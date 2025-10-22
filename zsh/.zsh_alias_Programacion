@@ -1,4 +1,20 @@
 #=============================
+#  GREP SED
+#=============================
+# --> Derecha   ^[[m   --> (.\[+m)
+# --> Izquierda ^[[25m -->  (.\[+[0-9;]+m)
+# --> izquierda y Derecha .... (.\[+[0-9;]*m)
+
+#=============================
+#  Git Log - Git Show - Git diff
+#=============================
+# ↳name:  [%an] %aN 
+# ↳email: [%ae] [%aE] [%al] 
+# ↳fecha: [%as] [%ar] [%ai] [%aD] [%ad] [%at]
+# ↳commit:%s %f %b %B "
+
+
+#=============================
 #  GIT
 #=============================
 
@@ -8,69 +24,53 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
-
-#=============================
-#  Git Log
-#=============================
-# ↳name:  [%an] %aN 
-# ↳email: [%ae] [%aE] [%al] 
-# ↳fecha: [%as] [%ar] [%ai] [%aD] [%ad] [%at]
-# ↳commit:%s %f %b %B "
-
-gw() {
-    local out=""
-    while [ $# -gt 0 ]; do
-        local color=$(echo "$1" | grep -oP '\(.*?\)')
-        local text=$(echo "$1" | sed -E 's/\(.*\)//')
-
-        # si hay color aplica
-        if [ -n "$color" ]; then
-            out+="%C${color}${text}%C(reset)"
-        else
-            out+="$1"
-        fi
-        shift
-    done
-    echo -n "$out"
-}
-
 #Variables
-_hash="%h" ; _autor="%an"; _email="%ae";
-_time="%ar"; _timel="%aD"; _date="%as" ;
-_msm="%s"  ; _branch="%d";
-
-_glm="$(gw "(bold blue)$_hash" "(cyan) - [$_date]" "(bold 42) $_autor:" "(229) $_msm" "(bold) $_branch") %n"
-_glmm="$(gw "(bold cyan)$_hash" "(42) [$_time]" "(white)$_branch")"
+_hash="%h" ; _autor="%an"; _email="%ae"; _time="%ar"; _timel="%aD"; _date="%as" ;   _msm="%s"  ; _branch="%d";
 _gla="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)[$_time]%C(reset) %C(229)[$_timel]%C(reset)%C(bold)$_branch%C(reset)  %n''          %C(dim white)$_autor - $_email%C(reset)%n''          %C(bold 141)Mensaje: \"$_msm\"%C(reset)%n"
+_glm="%C(bold blue)$_hash%C(reset) - %C(cyan)[$_date]%C(reset) %C(bold 42)$_autor:%C(reset) %C(229)$_msm%C(reset) %C(bold)$_branch%C(reset)%n"
+_glmm="%C(bold cyan)$_hash%C(reset) %C(42)[$_time]%C(reset)%C(white)$_branch%C(reset)"
 
-#Funciones
-#'s/\*/#/ ; s/\| \*/\| #/'
-#'s/^\*/#/; s/\| \*/\| #/'
+#=============================
+#  Git - (Log, Show, Diff)
+#=============================
 
 #Base
-alias atom_log="git log --graph --abbrev-commit --decorate --color=always"
+alias atom_log="git log --graph --abbrev-commit --decorate --color=always" #--all
+alias atom_diff="git diff --patch-with-stat  --color=always --no-prefix"
+alias atom_show="git show --patch-with-stat  --color=always --no-prefix" #--color-words 
 
-log_change(){ sed  -e 's/\*// ; s/| \*/| /g' } 
-log_custom(){ atom_log --pretty=format:"$1" --all  ${@:2}}
-log_nice()  { log_custom "$1" "${@:2}" | log_change }
+#Log
+alias glm="atom_log --pretty=format:'$_glm' "
+alias gla="atom_log --pretty=format:'$_gla' "
+alias glmm="atom_log --pretty=format:'$_glmm' "
+#Show
+alias gsm="atom_show --pretty=format:'$_glm' "
+alias gsa="atom_show --pretty=format:'$_gla' "
+#Diff
+alias gd="atom_diff "
 
-#Alias
-alias glm="log_custom '$_glm'"
-alias gla="log_custom '$_gla'"
+#Nice
+glmn() {  glm  "$@" | git_nice }
+glan() {  glan "$@" | git_nice }
+glmmn(){  glmm "$@" | git_nice }
+#Nice
+gsmn() {  gsm  "$@" | git_nice }
+gsan() {  gsa  "$@" | git_nice }
+#Nice
+gdn() {  gd  "$@"  | git_nice }
 
-alias glmn="log_nice '$_glm'"
-alias glan="log_nice '$_gla'"
-alias glmm="log_nice '$_glmm'"
-
-
-
-#=============================
-#  Git submodule
-#=============================
-
-#=============================
-#  Git diff
-#=============================
+git_nice(){
+    #Graph
+    sed -e 's/^\*//' -Ee 's/(\|.\[+m )\* /\1 /' -e 's/(^.*)/ \1/' | \
+    #Reemplazar
+    sed -E 's/(.\[+[0-9;]+m)\|(.\[+m)/\1\⎟\2/g'   | \
+    sed -E 's/(.\[+[0-9;]+m)\/(.\[+m)/\1\⟋\2/g'   | \
+    sed -E 's/(.\[+[0-9;]+m)\\(.\[+m)/\1\⟍\2/g'   | \
+    #MetaDatos
+    grep -Ev '(^| )(.\[+[0-9;]+m)*(\+\+\+ |--- |index )' | \
+    sed -E 's/(^| )(.\[+[0-9;]*m)*(diff --git)( .*)/ \x1b[36m┏━━(\3) [\4]\x1b[0m/' | \
+    sed -E 's/(^| )(.\[+[0-9;]*m)*@@ (.*) @@(.\[+m)*/ \2┗━━[ \3 ]\4/'
+}
 
 
 #=======================================================================================
