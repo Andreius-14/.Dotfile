@@ -51,7 +51,7 @@ alias gd="atom_diff "
 
 #Nice
 glmn() {  glm  "$@" | git_nice }
-glan() {  glan "$@" | git_nice }
+glan() {  gla "$@" | git_nice }
 glmmn(){  glmm "$@" | git_nice }
 #Nice
 gsmn() {  gsm  "$@" | git_nice }
