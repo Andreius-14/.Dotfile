@@ -1,55 +1,40 @@
 return {
-
-
--- ═════════════════════════════════════
---              DEFAULT
--- ═════════════════════════════════════
-  
-
-
--- ┌───────────────────────────────────┐
--- │            Formatter              │
--- └───────────────────────────────────┘
-
+	-- ┌───────────────────────────────────┐
+	-- │            Formatter              │
+	-- └───────────────────────────────────┘
 	{
 		"stevearc/conform.nvim",
-    event = { "BufWritePre" },-- uncomment for format on save
-    cmd = { "ConformInfo" },
-		opts = require("configs.conform"),
+		event = { "BufWritePre" }, -- uncomment for format on save
+		cmd = { "ConformInfo" },
+		opts = require("configs.formatter"),
 	},
 
--- ┌───────────────────────────────────┐
--- │                LSP                │
--- └───────────────────────────────────┘
+	-- ┌───────────────────────────────────┐
+	-- │                LSP                │
+	-- └───────────────────────────────────┘
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			require("configs.lspconfig")
+			require("configs.lsp")
 		end,
 	},
 
+	-- ┌───────────────────────────────────┐
+	-- │              Linter               │
+	-- └───────────────────────────────────┘
+	{
+		"mfussenegger/nvim-lint",
+		dependencies = { "rshkarin/mason-nvim-lint" },
+		event = { "BufReadPost", "BufNewFile" },
+		config = function()
+			require("configs.linter")
+		end,
+	},
 
--- ═════════════════════════════════════
---       CONFIGURACION PERSONAL
--- ═════════════════════════════════════
-
--- ┌───────────────────────────────────┐
--- │              Linter               │
--- └───────────────────────────────────┘
-
-	-- {
-	-- 	"mfussenegger/nvim-lint",
-	-- 	dependencies = { "rshkarin/mason-nvim-lint" },
-	-- 	event = { "BufReadPost", "BufNewFile" },
-	-- 	config = function()
-	-- 		require("configs.linter")
-	-- 	end,
-	-- },
-  
--- ┌───────────────────────────────────┐
--- │              Mason                │
--- └───────────────────────────────────┘
---   [LSP - Formatter - Linter - Dap]
+	-- ┌───────────────────────────────────┐
+	-- │              Mason                │
+	-- └───────────────────────────────────┘
+	--   [LSP - Formatter - Linter - Dap]
 	{
 		"williamboman/mason.nvim",
 		opts = {
@@ -59,30 +44,32 @@ return {
 				"html-lsp",
 				"css-lsp",
 				"prettier",
-
+				--Js
+				"biome",
+				"deno",
+				"standardjs",
+				"typescript-language-server",
+				--Py
+				"pylint",
+				"pyright",
+				"black",
 				--Extra
 				"bash-language-server",
-				"black",
 				"clang-format",
 				"clangd",
-				"deno",
 				"emmet-ls",
 				"eslint-lsp",
 				"jsonlint",
-				"pylint",
-				"pyright",
 				"shellharden",
 				"shfmt",
-				"standardjs",
 				"custom-elements-languageserver",
-				"typescript-language-server",
 			},
 		},
 	},
 
--- ┌───────────────────────────────────┐
--- │            Colores                │
--- └───────────────────────────────────┘
+	-- ┌───────────────────────────────────┐
+	-- │            Colores                │
+	-- └───────────────────────────────────┘
 
 	{
 		-- Colores a Sintaxis
@@ -111,5 +98,25 @@ return {
 		},
 	},
 
+	-- test new blink
+	-- { import = "nvchad.blink.lazyspec" },
 
+	-- {
+	--   "nvchad/ui",
+	--   config = function()
+	--     require "nvchad"
+	--   end,
+	-- },
+	--
+	{
+		"NvChad/base46",
+		branch = "v3.0",
+	},
+	-- {
+	--   "nvchad/base46",
+	--   lazy = true,
+	--   build = function()
+	--     require("base46").load_all_highlights()
+	--   end,
+	-- },
 }

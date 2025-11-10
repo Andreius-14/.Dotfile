@@ -1,7 +1,5 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require("lspconfig")
-
 -- EXAMPLE
 local servers = {
 
@@ -20,10 +18,9 @@ local servers = {
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃      JAVASCRIPT       ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
-	"denols",
 	"ts_ls",
-	-- "eslint-lsp", Inservible
-
+	"biome",
+	"vtsls",
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃        Csharp         ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -46,18 +43,20 @@ local servers = {
 	-- ┃      COMPLEMENTO      ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	-- "emmet-ls",
-	"custom_elements_ls",
+	-- "custom_elements_ls",
 	"jsonls",
 }
 
 vim.lsp.enable(servers)
--- read :h vim.lsp.config for changing options of lsp servers
 
 -- local nvlsp = require("nvchad.configs.lspconfig")
+-- local nvlsp = require("nvchad.configs.lspconfig").defaults()
 
--- lsps with default config
+-- nvlsp.defaults()- nvlsp.defaults()
+-- read :h vim.lsp.config for changing options of lsp servers
+
 -- for _, lsp in ipairs(servers) do
--- 	lspconfig[lsp].setup({
+-- 	vim.lsp.config(lsp, {
 -- 		on_attach = nvlsp.on_attach,
 -- 		on_init = nvlsp.on_init,
 -- 		capabilities = nvlsp.capabilities,
