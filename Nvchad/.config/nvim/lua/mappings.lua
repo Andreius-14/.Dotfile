@@ -1,5 +1,4 @@
-require "nvchad.mappings"
-
+require("nvchad.mappings")
 
 local map = vim.keymap.set
 
@@ -13,13 +12,12 @@ local map = vim.keymap.set
 -- vim.keymap.set("i", "jk", "<Esc>")  -- salir del modo inserción con jk
 -- vim.keymap.set({"n", "v"}, "<C-s>", ":w<CR>")  -- guardar en normal y visual
 
-
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- ═════════════════════════════════════
---            Code Runner
--- ═════════════════════════════════════
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                       Code Runner                       │
+--          ╰─────────────────────────────────────────────────────────╯
 map({ "n", "t" }, "<F9>", function()
 	require("nvchad.term").runner({
 
@@ -57,11 +55,11 @@ end)
 --            Pluggin - Menus Color
 -- ═════════════════════════════════════
 map("n", "m2", "<cmd>Huefy <cr>") -- Avanzado
-map("n", "m3", "<cmd>Shades <cr>")  -- Basico
+map("n", "m3", "<cmd>Shades <cr>") -- Basico
 
--- ═════════════════════════════════════
---            Pluggin Menu
--- ═════════════════════════════════════
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                      Pluggin Menu                       │
+--          ╰─────────────────────────────────────────────────────────╯
 
 -- Keyboard users
 map("n", "m1", function()
@@ -81,3 +79,41 @@ map({ "n", "v" }, "<RightMouse>", function()
 	require("menu").open(options, { mouse = true })
 end, {})
 
+-- ═════════════════════════════════════
+-- AÑADE WHICH-KEY AL FINAL
+-- ═════════════════════════════════════
+
+-- local wk = require "which-key"
+-- wk.register({
+--   -- Define el grupo del submenú
+--   { "<Leader>c", group = " □ Boxes" },
+--
+--   -- Define los mapeos dentro de ese grupo
+--   { "<Leader>cb", "<Cmd>CBccbox<CR>", desc = "Box Title" },
+--   { "<Leader>ct", "<Cmd>CBllline<CR>", desc = "Titled Line" },
+--   { "<Leader>cl", "<Cmd>CBline<CR>", desc = "Simple Line" },
+--   { "<Leader>cm", "<Cmd>CBllbox14<CR>", desc = "Marked" },
+--
+--   -- NOTA: El argumento final indica el modo y el prefijo
+-- }, { mode = { "n", "v" } }) -- Aplica en modo Normal y Visual
+--
+
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                         Comment                         │
+--          ╰─────────────────────────────────────────────────────────╯
+
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+-- Titles
+keymap({ "n", "v" }, "<Leader><Leader>cb", "<Cmd>CBccbox<CR>", opts)
+-- Named parts
+keymap({ "n", "v" }, "<Leader><Leader>ct", "<Cmd>CBllline<CR>", opts)
+-- Simple line
+keymap("n", "<Leader><Leader>cl", "<Cmd>CBline<CR>", opts)
+-- keymap("i", "<M-l>", "<Cmd>CBline<CR>", opts) -- To use in Insert Mode
+-- Marked comments
+keymap({ "n", "v" }, "<Leader><Leader>cm", "<Cmd>CBllbox14<CR>", opts)
+-- Removing a box is simple enough with the command (CBd), but if you
+-- use it a lot:
+-- keymap({ "n", "v" }, "<Leader>cd", "<Cmd>CBd<CR>", opts)

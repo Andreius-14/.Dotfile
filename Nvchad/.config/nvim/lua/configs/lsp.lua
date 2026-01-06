@@ -19,7 +19,7 @@ local servers = {
 	-- ┃      JAVASCRIPT       ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	"ts_ls",
-	"biome",
+	-- "biome",
 	"vtsls",
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃        Csharp         ┃
@@ -42,15 +42,71 @@ local servers = {
 	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃      COMPLEMENTO      ┃
 	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
-	-- "emmet-ls",
+	"emmet_language_server",
+	"emmet-ls",
 	-- "custom_elements_ls",
 	"jsonls",
 }
 
 vim.lsp.enable(servers)
 
--- local nvlsp = require("nvchad.configs.lspconfig")
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()
+
+-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
+-- ┃      EMMET LSP        ┃
+-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
+--
+-- local lspconfig = require("lspconfig")
+-- local configs = require("lspconfig/configs")
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+--
+-- lspconfig.emmet_ls.setup({
+-- 	-- on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	filetypes = {
+-- 		"css",
+-- 		"eruby",
+-- 		"html",
+-- 		"javascript",
+-- 		"javascriptreact",
+-- 		"less",
+-- 		"sass",
+-- 		"scss",
+-- 		"svelte",
+-- 		"pug",
+-- 		"typescriptreact",
+-- 		"vue",
+-- 	},
+-- 	init_options = {
+-- 		html = {
+-- 			options = {
+-- 				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+-- 				["bem.enabled"] = true,
+-- 			},
+-- 		},
+-- 	},
+-- })
+
+-- vim.lsp.config("emmet_language_server", {
+-- 	cmd = { "emmet-language-server", "--stdio" },
+-- 	filetypes = {
+-- 		"html",
+-- 		"css",
+-- 		"javascriptreact",
+-- 		"typescriptreact",
+-- 		"svelte",
+-- 		"vue",
+-- 		"astro",
+-- 		"xml",
+-- 		"php",
+-- 	},
+-- 	root_dir = function()
+-- 		return vim.loop.cwd()
+-- 	end,
+-- })
+
+-- local nvlsp = require("nvchad.configs.lspconfig")
 
 -- nvlsp.defaults()- nvlsp.defaults()
 -- read :h vim.lsp.config for changing options of lsp servers
