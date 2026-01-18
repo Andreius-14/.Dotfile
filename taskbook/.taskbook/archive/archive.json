@@ -477,5 +477,139 @@
             "@Habit"
         ],
         "_isTask": false
+    },
+    "45": {
+        "_id": 45,
+        "_date": "Mon Dec 23 2024",
+        "_timestamp": 1734937270609,
+        "description": "Aprender LUA",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "46": {
+        "_id": 46,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630727816,
+        "description": "Curso: Pc y Laptop",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "47": {
+        "_id": 47,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630754360,
+        "description": "Curso: Power BI",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "48": {
+        "_id": 48,
+        "_date": "Mon Feb 03 2025",
+        "_timestamp": 1738630811312,
+        "description": "Cita: Systematic Certificados",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "49": {
+        "_id": 49,
+        "_date": "Sun Feb 09 2025",
+        "_timestamp": 1739113343006,
+        "description": "Cita: Recibir Certificado 45d",
+        "isStarred": false,
+        "boards": [
+            "@Systematic"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "50": {
+        "_id": 50,
+        "_date": "Sat Dec 07 2024",
+        "_timestamp": 1733608710921,
+        "description": "SQL Basico - Repaso",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "51": {
+        "_id": 51,
+        "_date": "Sat Dec 07 2024",
+        "_timestamp": 1733609825765,
+        "description": "Rust vs C vs C++ vs Lua",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": false
+    },
+    "52": {
+        "_id": 52,
+        "_date": "Mon Feb 10 2025",
+        "_timestamp": 1739166396454,
+        "description": "Terminal - Habit Tracker",
+        "isStarred": false,
+        "boards": [
+            "@Programacion"
+        ],
+        "_isTask": false
+    },
+    "53": {
+        "_id": 53,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186281147,
+        "description": "leer - El futuro de Typescript",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "54": {
+        "_id": 54,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768231747784,
+        "description": "lavar mi ropa",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
     }
 }

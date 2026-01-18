@@ -1,108 +1,158 @@
 {
     "2": {
         "_id": 2,
-        "_date": "Sat Dec 07 2024",
-        "_timestamp": 1733608710921,
-        "description": "SQL Basico - Repaso",
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186359239,
+        "description": "El futuro movil - Kotlin",
         "isStarred": false,
         "boards": [
-            "@Programacion"
+            "@Recordatorio"
+        ],
+        "_isTask": false
+    },
+    "3": {
+        "_id": 3,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186384195,
+        "description": "El futuro Web - Typescript",
+        "isStarred": false,
+        "boards": [
+            "@Recordatorio"
+        ],
+        "_isTask": false
+    },
+    "4": {
+        "_id": 4,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186480273,
+        "description": "buscar games js",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "5": {
+        "_id": 5,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186554867,
+        "description": "Efectos visuales canvas JS",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "6": {
+        "_id": 6,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768188674013,
+        "description": "3D Algoritmo de Propagacion. En Threejs",
+        "isStarred": false,
+        "boards": [
+            "@Retos"
+        ],
+        "_isTask": false
+    },
+    "7": {
+        "_id": 7,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768188731759,
+        "description": "Tracker en ReactJs. Clean Look",
+        "isStarred": false,
+        "boards": [
+            "@Retos"
+        ],
+        "_isTask": false
+    },
+    "8": {
+        "_id": 8,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768241221934,
+        "description": "analizar Arkanoid. ",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "9": {
+        "_id": 9,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768241237939,
+        "description": "Empezar threejs. Analisis",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": true,
+        "priority": 1
+    },
+    "10": {
+        "_id": 10,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768261759026,
+        "description": "Ordenando github branch. game libreria",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "11": {
+        "_id": 11,
+        "_date": "Wed Jan 14 2026",
+        "_timestamp": 1768374745110,
+        "description": "Añadir bind(this) a World",
+        "isStarred": false,
+        "boards": [
+            "@Threejs"
         ],
         "_isTask": true,
         "isComplete": false,
         "inProgress": false,
         "priority": 1
     },
-    "4": {
-        "_id": 4,
-        "_date": "Sat Dec 07 2024",
-        "_timestamp": 1733609825765,
-        "description": "Rust vs C vs C++ vs Lua",
-        "isStarred": false,
-        "boards": [
-            "@Programacion"
-        ],
-        "_isTask": false
-    },
     "12": {
         "_id": 12,
-        "_date": "Mon Dec 23 2024",
-        "_timestamp": 1734937270609,
-        "description": "Aprender LUA",
+        "_date": "Thu Jan 15 2026",
+        "_timestamp": 1768509411094,
+        "description": "Añadir bind(this) a Light",
         "isStarred": false,
         "boards": [
-            "@Programacion"
+            "@Threejs"
         ],
         "_isTask": true,
-        "isComplete": true,
+        "isComplete": false,
         "inProgress": false,
         "priority": 1
     },
-    "14": {
-        "_id": 14,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738630727816,
-        "description": "Curso: Pc y Laptop",
+    "13": {
+        "_id": 13,
+        "_date": "Thu Jan 15 2026",
+        "_timestamp": 1768532656445,
+        "description": "que es import.meta.hot",
         "isStarred": false,
         "boards": [
-            "@Systematic"
+            "@Threejs"
         ],
         "_isTask": true,
-        "isComplete": true,
+        "isComplete": false,
         "inProgress": false,
         "priority": 1
-    },
-    "15": {
-        "_id": 15,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738630754360,
-        "description": "Curso: Power BI",
-        "isStarred": false,
-        "boards": [
-            "@Systematic"
-        ],
-        "_isTask": true,
-        "isComplete": true,
-        "inProgress": false,
-        "priority": 1
-    },
-    "16": {
-        "_id": 16,
-        "_date": "Mon Feb 03 2025",
-        "_timestamp": 1738630811312,
-        "description": "Cita: Systematic Certificados",
-        "isStarred": false,
-        "boards": [
-            "@Systematic"
-        ],
-        "_isTask": true,
-        "isComplete": true,
-        "inProgress": false,
-        "priority": 1
-    },
-    "22": {
-        "_id": 22,
-        "_date": "Sun Feb 09 2025",
-        "_timestamp": 1739113343006,
-        "description": "Cita: Recibir Certificado 45d",
-        "isStarred": false,
-        "boards": [
-            "@Systematic"
-        ],
-        "_isTask": true,
-        "isComplete": true,
-        "inProgress": false,
-        "priority": 1
-    },
-    "25": {
-        "_id": 25,
-        "_date": "Mon Feb 10 2025",
-        "_timestamp": 1739166396454,
-        "description": "Terminal - Habit Tracker",
-        "isStarred": false,
-        "boards": [
-            "@Programacion"
-        ],
-        "_isTask": false
     }
 }
