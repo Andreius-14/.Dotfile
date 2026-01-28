@@ -611,5 +611,159 @@
         "isComplete": true,
         "inProgress": false,
         "priority": 1
+    },
+    "55": {
+        "_id": 55,
+        "_date": "Wed Jan 14 2026",
+        "_timestamp": 1768374745110,
+        "description": "Añadir bind(this) a World",
+        "isStarred": false,
+        "boards": [
+            "@Threejs"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "56": {
+        "_id": 56,
+        "_date": "Thu Jan 15 2026",
+        "_timestamp": 1768509411094,
+        "description": "Añadir bind(this) a Light",
+        "isStarred": false,
+        "boards": [
+            "@Threejs"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "57": {
+        "_id": 57,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186480273,
+        "description": "buscar games js",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "58": {
+        "_id": 58,
+        "_date": "Sun Jan 11 2026",
+        "_timestamp": 1768186554867,
+        "description": "Efectos visuales canvas JS",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "59": {
+        "_id": 59,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768241221934,
+        "description": "analizar Arkanoid. ",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "60": {
+        "_id": 60,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768261759026,
+        "description": "Ordenando github branch. game libreria",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "61": {
+        "_id": 61,
+        "_date": "Thu Jan 15 2026",
+        "_timestamp": 1768532656445,
+        "description": "que es import.meta.hot",
+        "isStarred": false,
+        "boards": [
+            "@Threejs"
+        ],
+        "_isTask": true,
+        "isComplete": false,
+        "inProgress": false,
+        "priority": 1
+    },
+    "62": {
+        "_id": 62,
+        "_date": "Mon Jan 12 2026",
+        "_timestamp": 1768241237939,
+        "description": "Empezar threejs. Analisis",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "63": {
+        "_id": 63,
+        "_date": "Thu Jan 22 2026",
+        "_timestamp": 1769119645221,
+        "description": "Notion, Estractos en Software",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "64": {
+        "_id": 64,
+        "_date": "Fri Jan 23 2026",
+        "_timestamp": 1769199510450,
+        "description": "Notion, Añadir Citas en Investigacion",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
+    },
+    "65": {
+        "_id": 65,
+        "_date": "Fri Jan 23 2026",
+        "_timestamp": 1769215493099,
+        "description": "Notion, Objetos Flotantes Investigacion - Asignar",
+        "isStarred": false,
+        "boards": [
+            "My Board"
+        ],
+        "_isTask": true,
+        "isComplete": true,
+        "inProgress": false,
+        "priority": 1
     }
 }
