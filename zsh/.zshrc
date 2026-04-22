@@ -9,7 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 
 # Set list of themes to pick from when loading at random
@@ -131,7 +131,7 @@ plugins=(git
 # source ~/.nvm/nvm.sh
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 #                       CONTENEDORES
 #═════════════════════════════════════════════════════════════════════╗ 
@@ -192,9 +192,16 @@ source $HOME/.zsh__functions
 # EJECUTADOS
 #=============================
 
+source $ZSH/oh-my-zsh.sh
+
 if [ -d /home/linuxbrew/.linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
 
 # eval "$(fzf --zsh)"
 
