@@ -1,3 +1,17 @@
+# [Info]
+alias info_resolucion="xrandr | grep '*' | head -n1 | awk '{print \$1}'"
+
+
+# [Patallas] 
+
+tablet() {
+    xrandr --addmode HDMI-A-0  $(info_resolucion) && xrandr --output HDMI-A-0 --mode $(info_resolucion) --right-of eDP 
+
+notify-send -r 101 "Pantallas Resoluciones" "$(xrandr -q)"
+notify-send -r 102 "Pantallas disponibles" "$(xrandr --listactivemonitors)"
+
+} 
+
 # [ASCII]
 alias ascii-real='ascii-image-converter -Cfg --color-bg '
 alias ascii1="ascii-image-converter -b -C"
