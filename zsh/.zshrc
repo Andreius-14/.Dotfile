@@ -179,18 +179,18 @@ fi
 #                       CONFIGURACION PERSONAL
 #═════════════════════════════════════════════════════════════════════╗ 
 
-#=============================
+#==========
 # ALIAS
-#=============================
+#==========
 source $HOME/.zsh_alias_Laptop
 source $HOME/.zsh_alias_Programacion
 source $HOME/.zsh_alias_Multimedia
 
 source $HOME/.zsh__functions
 
-#=============================
-# EJECUTADOS
-#=============================
+#=========
+# RUN
+#=========
 
 source $ZSH/oh-my-zsh.sh
 
@@ -199,7 +199,9 @@ if [ -d /home/linuxbrew/.linuxbrew ]; then
 fi
 
 if command -v starship >/dev/null; then
-  eval "$(starship init zsh)"
+    eval "$(starship init zsh)"
+else 
+    ZSH_THEME="robbyrussell"
 fi
 
 
