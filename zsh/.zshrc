@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # eval "$(starship init zsh)"
-
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -192,7 +192,6 @@ source $HOME/.zsh__functions
 # RUN
 #=========
 
-source $ZSH/oh-my-zsh.sh
 
 if [ -d /home/linuxbrew/.linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -205,6 +204,7 @@ else
 fi
 
 
+source $ZSH/oh-my-zsh.sh
 # eval "$(fzf --zsh)"
 
 #═════════════════════════════════════════════════════════════════════╝
