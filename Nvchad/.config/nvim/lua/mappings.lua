@@ -19,34 +19,34 @@ map("i", "jk", "<ESC>")
 --          │                       Code Runner                       │
 --          ╰─────────────────────────────────────────────────────────╯
 map({ "n", "t" }, "<F9>", function()
-	require("nvchad.term").runner({
+require("nvchad.term").runner({
 
-		-- Modo [01] -- Post Colega
-		id = "code-runner",
-		-- pos = "sp",
-		pos = "vsp",
-		-- pos = "float",
+-- Modo [01] -- Post Colega
+id = "code-runner",
+-- pos = "sp",
+pos = "vsp",
+-- pos = "float",
 
-		cmd = function()
-			-- Variables [Rutas con Emogis o ASCII]
-			local file = vim.fn.shellescape(vim.fn.expand("%:p"))
-			local file_wo_ext = vim.fn.shellescape(vim.fn.expand("%:p:r"))
+cmd = function()
+  -- Variables [Rutas con Emogis o ASCII]
+  local file = vim.fn.shellescape(vim.fn.expand("%:p"))
+  local file_wo_ext = vim.fn.shellescape(vim.fn.expand("%:p:r"))
 
-			local ft_cmds = {
+  local ft_cmds = {
 
-				python = "python " .. file,
-				cpp = "g++ -std=c++17 -O2 -DHynDuf " .. file .. " -o " .. file_wo_ext,
-				lua = "lua " .. file,
-				cs = "dotnet script " .. file,
+    python = "python " .. file,
+    cpp = "g++ -std=c++17 -O2 -DHynDuf " .. file .. " -o " .. file_wo_ext,
+    lua = "lua " .. file,
+    cs = "dotnet script " .. file,
 
-				javascript = "node " .. file, -- Comando para JavaScript
-				java = "javac " .. file .. " && java " .. file_wo_ext, -- Comando para Java
-			}
+    javascript = "node " .. file, -- Comando para JavaScript
+    java = "javac " .. file .. " && java " .. file_wo_ext, -- Comando para Java
+  }
 
-			return ft_cmds[vim.bo.ft]
-		end,
-		-- clear_cmd = "",
-	})
+  return ft_cmds[vim.bo.ft]
+end,
+-- clear_cmd = "",
+})
 end)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
@@ -63,20 +63,20 @@ map("n", "m3", "<cmd>Shades <cr>") -- Basico
 
 -- Keyboard users
 map("n", "m1", function()
-	require("menu").open("default")
+require("menu").open("default")
 end, {})
 
 -- mouse users + nvimtree users!
 map({ "n", "v" }, "<RightMouse>", function()
-	require("menu.utils").delete_old_menus()
+require("menu.utils").delete_old_menus()
 
-	vim.cmd.exec('"normal! \\<RightMouse>"')
+vim.cmd.exec('"normal! \\<RightMouse>"')
 
-	-- clicked buf
-	local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
-	local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
+-- clicked buf
+local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
 
-	require("menu").open(options, { mouse = true })
+require("menu").open(options, { mouse = true })
 end, {})
 
 -- ═════════════════════════════════════
@@ -117,3 +117,62 @@ keymap({ "n", "v" }, "<Leader><Leader>cm", "<Cmd>CBllbox14<CR>", opts)
 -- Removing a box is simple enough with the command (CBd), but if you
 -- use it a lot:
 -- keymap({ "n", "v" }, "<Leader>cd", "<Cmd>CBd<CR>", opts)
+--
+--
+--
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                    Render Markdown                      │
+--          ╰─────────────────────────────────────────────────────────╯
+map("n", "<leader>tm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Markdown: Toggle preview" })
+
+
+-- Al presionar md1, md2 o md3 en modo Normal, se inserta el bloque
+keymap("n", "md1", "a" .. [[
+
+## punto
+├─◍ 
+├─◍ 
+╰─◍]] .. "<Esc>")
+
+keymap("n", "md2", "a" .. [[
+
+╭─◍
+├─◍
+├─◍
+╰─◍]] .. "<Esc>")
+
+keymap("n", "md3", "a" .. [[
+
+├─◍]] .. "<Esc>")
+
+
+keymap("n","mdd", "i" .. [[
+# Titulo: 
+
+## maldad
+├─◍ 
+├─◍ 
+╰─◍ 
+
+## bondad 
+├─◍  
+├─◍ 
+╰─◍ 
+
+╭─◍
+╰─◍
+
+```
+# keywork 
+#    
+#     
+```
+
+--- 
+
+✔ nota 
+✔ nota 
+✔ nota 
+✔ nota 
+
+]] .. "<Esc>")

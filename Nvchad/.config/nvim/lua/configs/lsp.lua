@@ -48,6 +48,10 @@ local servers = {
 	"jsonls",
 }
 
+require('render-markdown').setup({
+    completions = { lsp = { enabled = true } },
+})
+
 vim.lsp.enable(servers)
 
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()
