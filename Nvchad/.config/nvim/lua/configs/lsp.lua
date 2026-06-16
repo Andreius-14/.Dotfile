@@ -54,6 +54,8 @@ require('render-markdown').setup({
 
 vim.lsp.enable(servers)
 
+vim.lsp.enable('marksman')
+
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()
 
 -- ┏━━━━━━━━━━━━━━━━━━━━━━━┓

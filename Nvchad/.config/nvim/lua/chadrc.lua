@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "bearded-arc",
+	theme = "chadracula-evondev",
 
 	-- changed_themes = {
 	-- 	oxocarbon = {
