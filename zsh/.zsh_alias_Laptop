@@ -53,7 +53,7 @@ alias i-kernel='figlet $(uname -r) | lolcat '
 #     [Eza]
 #================
 #--group-directories-first
-alias eza='eza --color=always --icons=always  --sort=type'
+alias eza='eza --color=always --icons=always --group-directories-first'
 
 #Flag
 eza_git=" -lh --no-permissions --no-filesize --no-user --no-time  --git --git-repos "
