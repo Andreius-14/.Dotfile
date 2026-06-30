@@ -63,6 +63,8 @@ return {
 				"shellharden",
 				"shfmt",
 				"custom-elements-languageserver",
+        --Editores
+        "marksman",
 			},
 		},
 	},
@@ -99,7 +101,7 @@ return {
 	},
 
 	-- test new blink
-	{ import = "nvchad.blink.lazyspec" },
+	-- { import = "nvchad.blink.lazyspec" },
 
 	-- {
 	--   "nvchad/ui",
