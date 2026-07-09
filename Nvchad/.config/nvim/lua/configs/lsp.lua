@@ -46,7 +46,7 @@ local servers = {
 	"emmet-ls",
 	-- "custom_elements_ls",
 	"jsonls",
-  "marksman"
+  "marksman",
 }
 
 require('render-markdown').setup({

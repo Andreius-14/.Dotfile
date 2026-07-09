@@ -238,3 +238,6 @@ PATH=~/.console-ninja/.bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Carga NVM
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Carga autocompletado (opcional)
+
+export GIT_PAGER="bat -l diff"
+
