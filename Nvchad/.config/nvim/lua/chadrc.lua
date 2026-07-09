@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "chadracula-evondev",
+	theme = "gatekeeper",
 
 	-- changed_themes = {
 	-- 	oxocarbon = {
