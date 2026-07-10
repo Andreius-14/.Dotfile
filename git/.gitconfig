@@ -3,6 +3,7 @@
 	email = Andreius_14@outlook.com
 [core]
 	editor = nvim
+	pager = delta
 [commit]
 	gpgsign = false
 [gpg]
@@ -24,3 +25,10 @@
 	branch = false
 	log = false
 	diff = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true
+[merge]
+	conflictStyle = zdiff3
