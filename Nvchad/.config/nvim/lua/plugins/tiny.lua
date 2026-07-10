@@ -1,4 +1,10 @@
 return {
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │                        Minisculo                        │
+	--          ╰─────────────────────────────────────────────────────────╯
+	-- ── showkeys.nvim ───────────────────────────────────────────────────
+	-- Muestra las teclas Pesionadas (https://github.com/nvzone/showkeys)
+	-- ──────────────────────────────────────────────────────────────────────
 	{
 		"nvzone/showkeys",
 		event = "VimEnter", -- ← Carga al iniciar Neovim (con o sin archivo)
@@ -13,42 +19,17 @@ return {
 		},
 	},
 
+	-- ── incline.nvim ────────────────────────────────────────────────────
+	-- fileName sobre ventana dividida (https://github.com/b0o/incline.nvim)
+	-- ────────────────────────────────────────────────────────────────────
 	{
-		"LudoPinelli/comment-box.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
+		"b0o/incline.nvim",
 		config = function()
-			require("comment-box").setup()
-			-- Solo agregar keybindings
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bb",
-			-- 	"<cmd>lua require('comment-box').accbox()<cr>",
-			-- 	{ desc = "Comment box centered" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bc",
-			-- 	"<cmd>lua require('comment-box').ccbox()<cr>",
-			-- 	{ desc = "Comment box left" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bl",
-			-- 	"<cmd>lua require('comment-box').lbox()<cr>",
-			-- 	{ desc = "Left comment" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>br",
-			-- 	"<cmd>lua require('comment-box').rbox()<cr>",
-			-- 	{ desc = "Right comment" }
-			-- )
+			require("incline").setup()
 		end,
+		-- Optional: Lazy load Incline
+		event = "VeryLazy",
 	},
-
 	-- {
 	-- 	"romgrk/barbar.nvim",
 	-- 	dependencies = {
@@ -59,11 +40,52 @@ return {
 	-- 		require("barbar").setup() -- ¡Eso es todo!
 	-- 	end,
 	-- },
-  --
+	--
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │                       Efecto Cool                       │
+	--          ╰─────────────────────────────────────────────────────────╯
 
+	-- ── smear-cursor.nvim ───────────────────────────────────────────────
+	-- Efecto al mouse al moverse (https://github.com/sphamba/smear-cursor.nvim)
+	-- ──────────────────────────────────────────────────────────────────────
+	{
+		"sphamba/smear-cursor.nvim",
+		event = "VimEnter", -- ← Carga al iniciar Neovim (con o sin archivo)
+		-- config = function()
+		-- 	-- Activa showkeys automáticamente
+		-- 	vim.cmd("ShowkeysToggle")
+		-- end,
+		opts = {
+			stiffness = 0.5,
+			trailing_stiffness = 0.49,
+			never_draw_over_target = false,
+		},
+	},
 
+	-- ── fidget.nvim ─────────────────────────────────────────────────────
+	-- Barra de carga y detalles en la esquina (https://github.com/j-hui/fidget.nvim)
+	-- ──────────────────────────────────────────────────────────────────────
 
-  
+	-- ── nvim-notify.nvim ────────────────────────────────────────────────
+	-- Muestra las notificaciones de neovim como pop (https://github.com/rcarriga/nvim-notify)
+	-- psdt: Se encuentra en snack
+	-- ──────────────────────────────────────────────────────────────────────
 
-
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │                COmplemento EDitar Texto                 │
+	--          ╰─────────────────────────────────────────────────────────╯
+	-- ── nvim-surround ───────────────────────────────────────────────────
+	-- Edita corchetes en paralelo (https://github.com/kylechui/nvim-surround)
+	-- ──────────────────────────────────────────────────────────────────────
+	{
+		"kylechui/nvim-surround",
+		version = "^4.0.0", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		-- Optional: See `:h nvim-surround.configuration` and `:h nvim-surround.setup` for details
+		-- config = function()
+		--     require("nvim-surround").setup({
+		--         -- Put your configuration here
+		--     })
+		-- end
+	},
 }

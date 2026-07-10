@@ -218,3 +218,8 @@ keymap("n","mdd", "i" .. [[
 -- ╰─○
 --
 -- ├─○○○
+
+-- Hover de imagen con Snacks (funciona en cualquier filetype)
+vim.keymap.set("n", "<leader>ih", function()
+  Snacks.image.hover()
+end, { desc = "Image Hover (Snacks)" })

@@ -54,7 +54,7 @@ return {
 					backdrop = false,
 					-- row = 1,
 					-- col = 1,
-          row = 2,
+					row = 2,
 					col = vim.o.columns - 105, -- Se adapta dinámicamente al ancho de tu pantalla
 					--   					integrations = {
 					-- markdown = {
