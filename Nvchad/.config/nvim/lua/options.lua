@@ -22,6 +22,16 @@ o.foldlevelstart = 99 -- Nivel de plegado inicial (abierto por defecto)
 
 o.wrap = false
 
+vim.api.nvim_create_autocmd('FileType', {
+    group = vim.api.nvim_create_augroup('markdown.fold', {}),
+    pattern = 'markdown',
+    callback = function()
+        -- sets local folding options for markdown
+        vim.opt_local.foldmethod = 'expr'
+        vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    end,
+})
+
 -- ┌───────────────────────────────────┐
 -- │             Indentación           │
 -- └───────────────────────────────────┘

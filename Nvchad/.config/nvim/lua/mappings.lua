@@ -2,6 +2,9 @@ require("nvchad.mappings")
 
 local map = vim.keymap.set
 
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
 -- ═════════════════════════════════════
 --            Sintaxis
 -- ═════════════════════════════════════
@@ -19,34 +22,35 @@ map("i", "jk", "<ESC>")
 --          │                       Code Runner                       │
 --          ╰─────────────────────────────────────────────────────────╯
 map({ "n", "t" }, "<F9>", function()
-require("nvchad.term").runner({
+	require("nvchad.term").runner({
 
--- Modo [01] -- Post Colega
-id = "code-runner",
--- pos = "sp",
-pos = "vsp",
--- pos = "float",
+		-- Modo [01] -- Post Colega
+		id = "code-runner",
+		-- pos = "sp",
+		pos = "vsp",
+		-- pos = "float",
 
-cmd = function()
-  -- Variables [Rutas con Emogis o ASCII]
-  local file = vim.fn.shellescape(vim.fn.expand("%:p"))
-  local file_wo_ext = vim.fn.shellescape(vim.fn.expand("%:p:r"))
+		cmd = function()
 
-  local ft_cmds = {
+			-- Variables [Rutas con Emogis o ASCII]
+			local file = vim.fn.shellescape(vim.fn.expand("%:p"))
+			local file_wo_ext = vim.fn.shellescape(vim.fn.expand("%:p:r"))
 
-    python = "python " .. file,
-    cpp = "g++ -std=c++17 -O2 -DHynDuf " .. file .. " -o " .. file_wo_ext,
-    lua = "lua " .. file,
-    cs = "dotnet script " .. file,
+			local ft_cmds = {
 
-    javascript = "node " .. file, -- Comando para JavaScript
-    java = "javac " .. file .. " && java " .. file_wo_ext, -- Comando para Java
-  }
+				python = "python " .. file,
+				cpp = "g++ -std=c++17 -O2 -DHynDuf " .. file .. " -o " .. file_wo_ext,
+				lua = "lua " .. file,
+				cs = "dotnet script " .. file,
 
-  return ft_cmds[vim.bo.ft]
-end,
--- clear_cmd = "",
-})
+				javascript = "node " .. file, -- Comando para JavaScript
+				java = "javac " .. file .. " && java " .. file_wo_ext, -- Comando para Java
+			}
+
+			return ft_cmds[vim.bo.ft]
+		end,
+		-- clear_cmd = "",
+	})
 end)
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
@@ -63,20 +67,20 @@ map("n", "m3", "<cmd>Shades <cr>") -- Basico
 
 -- Keyboard users
 map("n", "m1", function()
-require("menu").open("default")
+	require("menu").open("default")
 end, {})
 
 -- mouse users + nvimtree users!
 map({ "n", "v" }, "<RightMouse>", function()
-require("menu.utils").delete_old_menus()
+	require("menu.utils").delete_old_menus()
 
-vim.cmd.exec('"normal! \\<RightMouse>"')
+	vim.cmd.exec('"normal! \\<RightMouse>"')
 
--- clicked buf
-local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
-local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
+	-- clicked buf
+	local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+	local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
 
-require("menu").open(options, { mouse = true })
+	require("menu").open(options, { mouse = true })
 end, {})
 
 -- ═════════════════════════════════════
@@ -102,8 +106,6 @@ end, {})
 --          │                         Comment                         │
 --          ╰─────────────────────────────────────────────────────────╯
 
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
 -- Titles
 keymap({ "n", "v" }, "<Leader><Leader>cb", "<Cmd>CBccbox<CR>", opts)
@@ -129,97 +131,47 @@ map("n", "<leader>tm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Markdown: Tog
 --          │                         unicode                         │
 --          ╰─────────────────────────────────────────────────────────╯
 
-keymap("n","_0", "i" .. "●○◍")
--- Al presionar md1, md2 o md3 en modo Normal, se inserta el bloque
-keymap("n", "md1", "o" .. [[
+-- Raíces (Inicio de bloque)
+keymap("n", "-1", "I╭─○ <Esc>", opts)
+keymap("n", "_1", "I╭─◍ <Esc>", opts)
 
-## punto
-├─◍ 
-├─◍ 
-╰─◍]] .. "<Esc>")
+-- Nodos Medios (Cuerpo del árbol)
+keymap("n", "-2", "I├─○ <Esc>", opts)
+keymap("n", "_2", "I├─◍ <Esc>", opts)
 
-keymap("n", "md2", "o" .. [[
-
-╭─◍
-├─◍
-├─◍
-╰─◍]] .. "<Esc>")
-
-keymap("n", "md3", "o" .. [[
-
-├─◍]] .. "<Esc>")
-
--- insert iconos - circulares
---
-keymap("n", "_1", "o" .. [[
-
-○
-├─○ 
-├─○ 
-╰─○]] .. "<Esc>")
-
-keymap("n", "_2", "o" .. [[
-
-╭─○
-├─○
-├─○
-╰─○]] .. "<Esc>")
-
-keymap("n", "_3", "o" .. [[
-
-├─○]] .. "<Esc>")
-
+-- Nodos Finales (Cierre de bloque)
+keymap("n", "-3", "I╰─○ <Esc>", opts)
+keymap("n", "_3", "I╰─◍ <Esc>", opts)
 
 --          ╭─────────────────────────────────────────────────────────╮
 --          │                       Plantillas                        │
 --          ╰─────────────────────────────────────────────────────────╯
 
-keymap("n","mdd", "i" .. [[
-# Titulo: 
+keymap("n", "__1", "o" .. [[
+○
+├─○ 
+├─○ 
+╰─○]] .. "<Esc>")
 
-## maldad
+keymap("n", "__2", "o" .. [[
+╭─○
+├─○
+├─○
+╰─○]] .. "<Esc>")
+
+keymap("n", "__11", "o" .. [[
+◍ punto
 ├─◍ 
 ├─◍ 
-╰─◍ 
+╰─◍]] .. "<Esc>")
 
-## bondad 
-├─◍  
-├─◍ 
-╰─◍ 
-
+keymap("n", "__22", "o" .. [[
 ╭─◍
-╰─◍
-
----
-
-```
-# keywork 
-#    
-#     
-```
-
---- 
-
-✔ nota 
-✔ nota 
-✔ nota 
-✔ nota 
-
-]] .. "<Esc>")
-
--- ○ 
--- ├─○
--- ├─○
--- ╰─○
---
--- ╭─○
--- ├─○
--- ├─○
--- ╰─○
---
--- ├─○○○
+├─◍
+├─◍
+╰─◍]] .. "<Esc>")
 
 -- Hover de imagen con Snacks (funciona en cualquier filetype)
 vim.keymap.set("n", "<leader>ih", function()
-  Snacks.image.hover()
+	Snacks.image.hover()
 end, { desc = "Image Hover (Snacks)" })
