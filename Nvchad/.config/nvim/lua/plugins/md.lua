@@ -56,10 +56,10 @@ return {
 					name = "__Zettelkasten",
 					path = "/media/carlos/Personal/__Vault/__Zettelkasten",
 				},
-				-- {
-				-- 	name = "work",
-				-- 	path = "~/vaults/work",
-				-- },
+				{
+					name = "Termux-tablet",
+					path = "~/TarjetaSD/__Zettelkasten",
+				},
 			},
 		},
 	},
