@@ -180,6 +180,15 @@ fi
 #═════════════════════════════════════════════════════════════════════╗ 
 
 #==========
+# ENV
+#==========
+if [ -d $HOME/.local-Dotfile-Env ]; then
+    source $HOME/.local-Dotfile-Env
+else 
+    echo "Analizar => .Plantilla_Dotfile_ENV"
+fi
+
+#==========
 # ALIAS
 #==========
 source $HOME/.zsh_alias_Laptop

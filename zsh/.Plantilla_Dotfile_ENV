@@ -1,0 +1,20 @@
+# ==============================================================================
+# PLANTILLA DE VARIABLES DE ENTORNO
+# - Duplica este archivo 
+# - Renombrar ~/.local-Dotfile-Env 
+# - rellena tus datos locales
+# ==============================================================================
+
+# --- Identificación del Dispositivo ---
+# export DEVICE_NAME="nombre-dispositivo" # p.ej. "laptop-thinkpad", "galaxy-s24", "tablet-s9"
+# export DEVICE_TYPE="laptop"             # "laptop" o "termux"
+
+# --- Configuración del Sistema ---
+# export EDITOR=""
+# export BROWSER=""                       # Ruta o comando del navegador (dejar vacío en Termux)
+
+# --- Rutas Locales ---
+export RUTA_VAULT=""                   # Ruta local a tu bóveda de Obsidian (útil para obsidian.nvim)
+export RUTA_EXCALIDRAW=""                    # Ruta para respaldos locales
+
+
