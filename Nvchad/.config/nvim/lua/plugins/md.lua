@@ -54,12 +54,12 @@ return {
 			workspaces = {
 				{
 					name = "__Zettelkasten",
-					path = "/media/carlos/Personal/__Vault/__Zettelkasten",
+					path = vim.env.RUTA_VAULT,
 				},
-				{
-					name = "Termux-tablet",
-					path = "~/TarjetaSD/__Zettelkasten",
-				},
+				-- {
+				-- 	name = "Termux-tablet",
+				-- 	path = "~/TarjetaSD/__Zettelkasten",
+				-- },
 			},
 		},
 	},
@@ -72,7 +72,7 @@ return {
   config = function()
     require("excalidraw").setup({
       -- Directorio global donde se guardarán tus dibujos de Excalidraw
-      storage_dir = "~/.excalidraw", 
+      storage_dir = vim.env.RUTA_EXCALIDRAW, 
       
       -- Directorio para tus plantillas personalizadas
       templates_dir = "~/.excalidraw/templates", 
