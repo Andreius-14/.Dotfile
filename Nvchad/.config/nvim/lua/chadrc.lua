@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "gatekeeper",
+	theme = "bearded-arc",
 
 	-- changed_themes = {
 	-- 	oxocarbon = {
