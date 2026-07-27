@@ -67,7 +67,7 @@ return {
 				-- time_format = "%H:%M",
 				customizations = {
 					Bibliografica = {
-						notes_subdir = "002-Bibliograficos/",
+						notes_subdir = "02-Bibliograficos/",
 					},
 				},
 			},
