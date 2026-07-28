@@ -1,13 +1,4 @@
 return {
-	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-		dependencies = "nvim-lua/plenary.nvim",
-		config = function()
-			require("diffview").setup({})
-		end,
-	},
-
 	-- ── lazygit.nvim ────────────────────────────────────────────────────
 	-- git en paneles (https://github.com/kdheepak/lazygit.nvim)
 	-- ──────────────────────────────────────────────────────────────────────
@@ -32,11 +23,4 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 	},
-	-- ╓
-	-- ║ codediff.nvim (https://github.com/esmuellert/codediff.nvim)
-	-- ║ A Neovim plugin that provides VSCode-style diff
-	-- ║ rendering with two-tier highlighting (line + character
-	-- ║ level) in side-by-side and inline layouts, using
-	-- ║ VSCode's algorithm implemented in C.
-	-- ╙
 }

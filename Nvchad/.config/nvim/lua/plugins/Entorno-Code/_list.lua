@@ -1,0 +1,42 @@
+return {
+	-- https://github.com/hedyhli/outline.nvim
+
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │                           Zen                           │
+	--          ╰─────────────────────────────────────────────────────────╯
+	-- FUerad de mantenimiento
+	-- {
+	-- 	"Pocco81/true-zen.nvim",
+	-- 	config = function()
+	-- 		require("true-zen").setup({
+	-- 			-- your config goes here
+	-- 			-- or just leave it empty :)
+	-- 		})
+	-- 	end,
+	-- },
+	--
+
+	-- ╓
+	-- ║ 🧘 Distraction-free coding for Neovim [https://github.com/folke/zen-mode.nvim]
+	-- ╙
+	-- {
+	--   "folke/zen-mode.nvim",
+	--   opts = {
+	--     -- your configuration comes here
+	--     -- or leave it empty to use the default settings
+	--     -- refer to the configuration section below
+	--   }
+	-- },
+	-- ╓
+	-- ║ twilight.nvim  [https://github.com/folke/twilight.nvim]
+	-- ║ 🌅 Opaca las funcion no selecccionada bajo el cursor
+	-- ╙
+	-- {
+	--   "folke/twilight.nvim",
+	--   opts = {
+	--     -- your configuration comes here
+	--     -- or leave it empty to use the default settings
+	--     -- refer to the configuration section below
+	--   }
+	-- },
+}
