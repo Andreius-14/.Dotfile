@@ -7,7 +7,7 @@ require "nvchad.options"
 
 
 local o = vim.o
-
+vim.opt.conceallevel = 2
 -- ┌───────────────────────────────────┐
 -- │           Línea del cursor        │
 -- └───────────────────────────────────┘
