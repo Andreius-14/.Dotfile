@@ -5,9 +5,15 @@
 ruta_today="$RUTA_VAULT/90-Bitacoras/"
 
 journal() {
-  local mes=$1
-  
-  grep --color=always "destacable" "$ruta_today"$(date +%Y-%m)-*.md 2>/dev/null | sed "s|.*/||"
+  local mes="${1:-$(date +%Y-%m)}"
+  local patron="$ruta_today$mes-*.md"
+
+  # K.I.S.S. Corregido: Usamos bash/zsh para quitar la ruta antes de grep,
+  # y luego sed para colorear el nombre del archivo resultante.
+  # Como el patrón ya expande a los archivos específicos, grep -H funcionará
+  # y mostrará el nombre base de cada archivo.
+  eval grep --color=always "destacable" "$patron" 2>/dev/null | \
+  sed "s|.*/||" |  sed -E 's/^([^:]+):/\x1b[1;34m\1\x1b[0m:/'
 }
 
 today() {
