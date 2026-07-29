@@ -1,3 +1,21 @@
+
+#          ╭──────────────────────────────────────────────────────────╮
+#          │                         Personal                         │
+#          ╰──────────────────────────────────────────────────────────╯
+ruta_today="$RUTA_VAULT/90-Bitacoras/"
+
+journal() {
+  local mes=$1
+  
+  grep --color=always "destacable" "$ruta_today"$(date +%Y-%m)-*.md 2>/dev/null | sed "s|.*/||"
+}
+
+today() {
+  nvim -c "e /tmp/obsidian-temp.md" -c "Obsidian today" -c "bwipeout! /tmp/obsidian-temp.md"
+}
+
+
+alias zett="cd $RUTA_VAULT && today"
 #=============================
 # RIESGO
 #=============================
