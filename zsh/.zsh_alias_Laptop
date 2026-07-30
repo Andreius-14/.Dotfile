@@ -18,7 +18,8 @@ today() {
 
 
 alias zett="cd $RUTA_VAULT && today"
-alias todo="cd $RUTA_VAULT && nvim 000/*ToDo*.md"
+# alias todo="cd $RUTA_VAULT && nvim 000/*ToDo*.md"
+alias todo="cd $RUTA_VAULT && find . -type f -iname '*todo*.md' -exec nvim {} +"
 #=============================
 # RIESGO
 #=============================

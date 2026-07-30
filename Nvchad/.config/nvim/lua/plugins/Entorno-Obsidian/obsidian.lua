@@ -41,15 +41,15 @@ return {
 				-- },
 			},
 			daily_notes = {
-				folder = "90-Bitacoras",
+				folder = "Dailies",
 				template = "Bitacora",
 			},
 
 			templates = {
-				folder = "90-Plantillas",
+				folder = "Plantillas",
 				customizations = {
 					Bibliografica = {
-						notes_subdir = "02-Bibliograficos/",
+						notes_subdir = "40 Medios/",
 					},
 				},
 			},
