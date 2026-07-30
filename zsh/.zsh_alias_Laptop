@@ -13,7 +13,7 @@ journal() {
 }
 
 today() {
-  nvim -c "e /tmp/obsidian-temp.md" -c "Obsidian today" -c "bwipeout! /tmp/obsidian-temp.md"
+  nvim -c "e $HOME/obsidian-temp.md" -c "Obsidian today" -c "bwipeout! $HOME/obsidian-temp.md"
 }
 
 
