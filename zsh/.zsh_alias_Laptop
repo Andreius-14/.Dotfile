@@ -2,7 +2,7 @@
 #          ╭──────────────────────────────────────────────────────────╮
 #          │                         Personal                         │
 #          ╰──────────────────────────────────────────────────────────╯
-ruta_today="$RUTA_VAULT/90-Bitacoras/"
+ruta_today="$RUTA_VAULT/Dailies/"
 
 journal() {
   local mes="${1:-$(date +%Y-%m)}"
