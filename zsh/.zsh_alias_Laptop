@@ -47,7 +47,7 @@ alias update='sudo pacman -Syu'
 
 # alias leer='speak-ng -ves '
 alias calculadora='expr'
-alias copiar='xclip -sel clip || termux-clipboard-set'
+alias copiar='xclip -sel clip'
 alias basura='gio trash'
 alias open='xdg-open'
 alias mkdir='mkdir -pv'  
