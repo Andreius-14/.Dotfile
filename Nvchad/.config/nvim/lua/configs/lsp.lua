@@ -46,7 +46,7 @@ local servers = {
 	"emmet-ls",
 	-- "custom_elements_ls",
 	"jsonls",
-  "marksman",
+  -- "marksman",
 }
 
 require('render-markdown').setup({
@@ -55,7 +55,7 @@ require('render-markdown').setup({
 
 vim.lsp.enable(servers)
 
-vim.lsp.enable('marksman')
+-- vim.lsp.enable('marksman')
 
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()
 

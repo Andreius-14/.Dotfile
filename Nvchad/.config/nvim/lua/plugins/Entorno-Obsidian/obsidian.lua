@@ -49,9 +49,13 @@ return {
 				folder = "Plantillas",
 				customizations = {
 					Bibliografica = {
-						notes_subdir = "40 Medios/",
+						notes_subdir = "02 Notas Permanentes/",
 					},
-				},
+			    Basico = {
+              notes_subdir = "01 Notas Rapidaz",
+          }	
+      },
+
 			},
 		},
 	},
