@@ -9,6 +9,7 @@ return {
 		end,
 
 		version = "*", -- use latest release, remove to use latest commit
+    lazy = true,
 		ft = "markdown",
 		---@module 'obsidian'
 		---@type obsidian.config
@@ -40,6 +41,7 @@ return {
 				-- 	path = "~/TarjetaSD/__Zettelkasten",
 				-- },
 			},
+      picker = {name="telescope.nvim"},
 			daily_notes = {
 				folder = "Dailies",
 				template = "Bitacora",
