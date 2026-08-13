@@ -51,7 +51,7 @@ return {
 				folder = "Plantillas",
 				customizations = {
 					Bibliografica = {
-						notes_subdir = "02 Notas Permanentes/",
+						notes_subdir = "02 Notas Bibliograficas/",
 					},
 			    Basico = {
               notes_subdir = "01 Notas Rapidaz",
