@@ -9,7 +9,7 @@ return {
 		end,
 
 		version = "*", -- use latest release, remove to use latest commit
-    lazy = true,
+		lazy = true,
 		ft = "markdown",
 		---@module 'obsidian'
 		---@type obsidian.config
@@ -20,14 +20,16 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
+			-- Normal
 			{ "_oN", "<cmd> Obsidian new_from_template<CR>", desc = "New template" },
 			{ "_oi", "<cmd> Obsidian template<CR>", desc = "Inserta Template" },
 			{ "_ob", "<cmd> Obsidian backlinks<CR>", desc = "Backlinks/s" },
 			{ "_of", "<cmd> Obsidian follow_link<CR>", desc = "Seguir link" },
+			{ "_od", "<cmd> Obsidian today <CR>", desc = "file Today" },
+			{ "_oy", "<cmd> Obsidian yesterday <CR>", desc = "file Yesterday" },
+			{ "_ot", "<cmd> Obsidian tomorrow <CR>", desc = "file Tomorrow" },
+			-- Visual
 			{ "_oE", "<cmd> Obsidian extract_note <CR>", mode = "x", desc = "Extraer + New" },
-      { "_od", "<cmd> Obsidian today <CR>", desc="file Today"},
-      { "_oy", "<cmd> Obsidian yesterday <CR>", desc="file Yesterday"},
-      { "_ot", "<cmd> Obsidian tomorrow <CR>", desc="file Tomorrow"}
 		},
 		opts = {
 			legacy_commands = false, -- this will be removed in 4.0.0
@@ -41,23 +43,26 @@ return {
 				-- 	path = "~/TarjetaSD/__Zettelkasten",
 				-- },
 			},
-      picker = {name="telescope.nvim"},
+			picker = { name = "telescope.nvim" },
 			daily_notes = {
-				folder = "Dailies",
+				folder = "10. Dailies/",
 				template = "Bitacora",
 			},
 
 			templates = {
+				-- main
 				folder = "Plantillas",
+				-- config
 				customizations = {
+					-- tem.
 					Bibliografica = {
-						notes_subdir = "02 Notas Bibliograficas/",
+						notes_subdir = "00. Medios/",
 					},
-			    Basico = {
-              notes_subdir = "01 Notas Rapidaz",
-          }	
-      },
-
+					-- tem.
+					Basico = {
+						notes_subdir = "+",
+					},
+				},
 			},
 		},
 	},

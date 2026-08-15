@@ -221,7 +221,8 @@ fi
 source $ZSH/oh-my-zsh.sh
 # eval "$(fzf --zsh)"
 
-#═════════════════════════════════════════════════════════════════════╝
+#                   EXPORT .. GESTOR DE PAQUETES
+#═════════════════════════════════════════════════════════════════════
 # Sh
 export PATH="$HOME/404__ShellScript:$PATH"
 
@@ -244,6 +245,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# rust 
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# ----------
 PATH=~/.console-ninja/.bin:$PATH
 # export PATH=$PATH:/usr/lib/node_modules/.bin
 # export PATH=$PATH:/usr/local/lib/node_modules/.bin/
