@@ -3,7 +3,7 @@ return {
 	-- │            Formatter              │
 	-- └───────────────────────────────────┘
 	{
-		   "stevearc/conform.nvim",
+		"stevearc/conform.nvim",
 		-- event = { "BufWritePre" }, -- uncomment for format on save
 		cmd = { "ConformInfo" },
 		opts = require("configs.formatter"),
@@ -30,6 +30,4 @@ return {
 			require("configs.linter")
 		end,
 	},
-
-
 }

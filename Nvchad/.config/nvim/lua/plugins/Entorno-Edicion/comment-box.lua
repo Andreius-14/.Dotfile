@@ -9,34 +9,21 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},
-		config = function()
-			require("comment-box").setup()
-			-- Solo agregar keybindings
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bb",
-			-- 	"<cmd>lua require('comment-box').accbox()<cr>",
-			-- 	{ desc = "Comment box centered" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bc",
-			-- 	"<cmd>lua require('comment-box').ccbox()<cr>",
-			-- 	{ desc = "Comment box left" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>bl",
-			-- 	"<cmd>lua require('comment-box').lbox()<cr>",
-			-- 	{ desc = "Left comment" }
-			-- )
-			-- vim.keymap.set(
-			-- 	{ "n", "v" },
-			-- 	"<leader>br",
-			-- 	"<cmd>lua require('comment-box').rbox()<cr>",
-			-- 	{ desc = "Right comment" }
-			-- )
-		end,
+
+		opts = {}, -- Equivale a require("comment-box").setup()
+		keys = {
+			-- Titles (Caja centrada)
+			{ "<leader><leader>cb", "<cmd>CBccbox<cr>", mode = { "n", "v" }, desc = "Comment box centered" },
+
+			-- Named parts (Línea con texto a la izquierda)
+			{ "<leader><leader>ct", "<cmd>CBllline<cr>", mode = { "n", "v" }, desc = "Comment line left text" },
+
+			-- Simple line (Línea simple)
+			{ "<leader><leader>cl", "<cmd>CBline<cr>", mode = "n", desc = "Comment simple line" },
+
+			-- Marked comments (Caja adaptada con estilo)
+			{ "<leader><leader>cm", "<cmd>CBllbox14<cr>", mode = { "n", "v" }, desc = "Comment box style 14" },
+		},
 	},
 
 	-- Hacer Diagramas facil con ascii
