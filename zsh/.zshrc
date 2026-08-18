@@ -141,20 +141,22 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #=========
 if echo $HOME | grep -q termux; then
   
-  # Variables de Entorno - Termux
-  PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"
-  LINK="https://github.com/mayTermux"
-  LINK_SSH="git@github.com:mayTermux"
 
-  export PATH
-  export LINK_SSH
-  export LINK
-  export TERM=xterm-256color 
-
-  # Archivos a Ejecutarse - Termux
-  source $HOME/.config/lf/icons
-  source $HOME/.aliases
-  source $HOME/.autostart
+  #   ulimit -n 65536
+  # # Variables de Entorno - Termux
+  # PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"
+  # LINK="https://github.com/mayTermux"
+  # LINK_SSH="git@github.com:mayTermux"
+  #
+  # export PATH
+  # export LINK_SSH
+  # export LINK
+  # export TERM=xterm-256color 
+  #
+  # # Archivos a Ejecutarse - Termux
+  # source $HOME/.config/lf/icons
+  # source $HOME/.aliases
+  # source $HOME/.autostart
   
   # export PNPM_HOME=$HOME/.pnpm
   # export PATH=$PNPM_HOME/bin:$PATH
