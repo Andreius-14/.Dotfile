@@ -64,6 +64,24 @@ return {
 					},
 				},
 			},
+
+			-- ========== Optimizaciones para Termux / vault grande ==========
+			ui = {
+				enable = false, -- Desactiva iconos y resaltados visuales (recomendado)
+			},
+
+			footer = {
+				enabled = false, -- Evita jobs constantes de backlinks
+			},
+
+			search = {
+				max_lines = 300, -- Reduce carga al buscar (default 1000)
+				-- sort_by = false, -- Descomenta si quieres aún más velocidad
+			},
+
+			cache = {
+				enabled = true, -- Mejora el rendimiento de quick_switch y búsquedas
+			},
 		},
 	},
 }
