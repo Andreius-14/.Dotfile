@@ -14,6 +14,7 @@ local options = {
 		-- typescriptreact = { "standardjs" },
 		python = { "black" },
 		bash = { "shfmt" },
+    markdown={"prettier"}
 	},
 
 	formatters = {

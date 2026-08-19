@@ -28,6 +28,7 @@ return {
 			{ "_od", "<cmd> Obsidian today <CR>", desc = "file Today" },
 			{ "_oy", "<cmd> Obsidian yesterday <CR>", desc = "file Yesterday" },
 			{ "_ot", "<cmd> Obsidian tomorrow <CR>", desc = "file Tomorrow" },
+			{ "_oo", "<cmd> Obsidian open <CR>", desc = "Open App" },
 			-- Visual
 			{ "_oE", "<cmd> Obsidian extract_note <CR>", mode = "x", desc = "Extraer + New" },
 		},
