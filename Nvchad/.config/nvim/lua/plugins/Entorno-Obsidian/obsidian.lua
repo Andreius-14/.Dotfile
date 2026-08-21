@@ -44,7 +44,7 @@ return {
 				-- 	path = "~/TarjetaSD/__Zettelkasten",
 				-- },
 			},
-			picker = { name = "telescope.nvim" },
+			-- picker = { name = "telescope.nvim" },
 			daily_notes = {
 				folder = "10. Dailies/",
 				template = "Bitacora",
