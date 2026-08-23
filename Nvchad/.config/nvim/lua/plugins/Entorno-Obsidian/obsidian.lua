@@ -29,6 +29,7 @@ return {
 			{ "_oy", "<cmd> Obsidian yesterday <CR>", desc = "file Yesterday" },
 			{ "_ot", "<cmd> Obsidian tomorrow <CR>", desc = "file Tomorrow" },
 			{ "_oo", "<cmd> Obsidian open <CR>", desc = "Open App" },
+			{ "_oq", "<cmd> Obsidian quick_switch <CR>", desc = "Busqueda" },
 			-- Visual
 			{ "_oE", "<cmd> Obsidian extract_note <CR>", mode = "x", desc = "Extraer + New" },
 		},
@@ -67,16 +68,16 @@ return {
 			},
 
 			-- ========== Optimizaciones para Termux / vault grande ==========
-			ui = {
-				enable = false, -- Desactiva iconos y resaltados visuales (recomendado)
-			},
+			-- ui = {
+			-- 	enable = false, -- Desactiva iconos y resaltados visuales (recomendado)
+			-- },
 
 			footer = {
 				enabled = false, -- Evita jobs constantes de backlinks
 			},
 
 			search = {
-				max_lines = 300, -- Reduce carga al buscar (default 1000)
+				max_lines = 400, -- Reduce carga al buscar (default 1000)
 				-- sort_by = false, -- Descomenta si quieres aún más velocidad
 			},
 
