@@ -31,7 +31,7 @@ return {
 			{ "_oo", "<cmd> Obsidian open <CR>", desc = "Open App" },
 			{ "_oq", "<cmd> Obsidian quick_switch <CR>", desc = "Busqueda" },
 			-- Visual
-			{ "_oE", "<cmd> Obsidian extract_note <CR>", mode = "x", desc = "Extraer + New" },
+			{ "_oE", "<cmd> Obsidian extract_note<cr>", mode = "x", desc = "Extraer + New" },
 		},
 		opts = {
 			legacy_commands = false, -- this will be removed in 4.0.0
@@ -61,9 +61,9 @@ return {
 						notes_subdir = "00. Medios/",
 					},
 					-- tem.
-					Basico = {
-						notes_subdir = "+",
-					},
+				-- 	Basico = {
+				-- 		notes_subdir = "+",
+				-- 	},
 				},
 			},
 

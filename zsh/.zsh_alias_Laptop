@@ -52,7 +52,7 @@ alias basura='gio trash'
 alias open='xdg-open'
 alias mkdir='mkdir -pv'  
 
-
+alias nvimf='nvim "$(fzf)"'
 
 #=============================
 # INFORMACION
