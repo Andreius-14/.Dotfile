@@ -50,3 +50,6 @@ M.ui = {
 	},
 }
 return M
+
+
+-- refencia (https://github.com/NvChad/ui/blob/v2.5/lua%2Fnvconfig.lua)
