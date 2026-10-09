@@ -45,25 +45,28 @@ return {
 				-- 	path = "~/TarjetaSD/__Zettelkasten",
 				-- },
 			},
+			-- Directorio predeterminado para notas nuevas generales o rápidas
+			notes_subdir = "+",
 			-- picker = { name = "telescope.nvim" },
 			daily_notes = {
-				folder = "10. Dailies/",
-				template = "Bitacora",
+				folder = "Dailies/",
+				template = "Day",
 			},
 
 			templates = {
+				default = "Basico",
 				-- main
 				folder = "Plantillas",
 				-- config
 				customizations = {
 					-- tem.
-					Bibliografica = {
+					Medio = {
 						notes_subdir = "00. Medios/",
 					},
 					-- tem.
-				-- 	Basico = {
-				-- 		notes_subdir = "+",
-				-- 	},
+					-- 	Basico = {
+					-- 		notes_subdir = "+",
+					-- 	},
 				},
 			},
 
@@ -85,5 +88,32 @@ return {
 				enabled = true, -- Mejora el rendimiento de quick_switch y búsquedas
 			},
 		},
+		-- Extendemos el comportamiento usando la función config
+		config = function(_, opts)
+			-- 1. Ejecuta el setup oficial pasando la tabla 'opts' definida arriba
+			require("obsidian").setup(opts)
+
+			-- 2. Inyecta el código o función de la discusión #489
+			local obsidian = require("obsidian")
+			local client = obsidian.get_client()
+
+			-- Código extraído de la discusión (ejemplo de extensión del cliente local):
+			-- client.mi_nueva_funcion = function(self) ... end
+
+			local function add_property()
+				local note = assert(obsidian.api.current_note(0))
+
+				local key = obsidian.api.input("key: ")
+				local value = obsidian.api.input("value: ")
+
+				if not key or not value then
+					return obsidian.log("Aborted")
+				end
+
+				note:add_field(key, value)
+				note:update_frontmatter(0)
+			end
+		end,
 	},
+ 
 }

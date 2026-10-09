@@ -1,5 +1,8 @@
-require("nvchad.configs.lspconfig").defaults()
+-- require("nvchad.configs.lspconfig").defaults()
 
+local nvlsp = require("nvchad.configs.lspconfig")
+
+nvlsp.defaults()
 -- EXAMPLE
 local servers = {
 
@@ -46,15 +49,41 @@ local servers = {
 	"emmet-ls",
 	-- "custom_elements_ls",
 	"jsonls",
-  -- "marksman",
+	-- "marksman",
 }
 
-require('render-markdown').setup({
-    completions = { lsp = { enabled = true } },
+require("render-markdown").setup({
+	completions = { lsp = { enabled = true } },
 })
 
-vim.lsp.enable(servers)
+-- vim.lsp.enable(servers)
 
+for _, lsp in ipairs(servers) do
+	vim.lsp.config(lsp, {
+		on_attach = nvlsp.on_attach,
+		on_init = nvlsp.on_init,
+		capabilities = nvlsp.capabilities,
+	})
+end
+
+-- Configuración especial para yamlls (Frontmatter de Obsidian en Markdown)
+vim.lsp.config("yamlls", {
+	on_attach = nvlsp.on_attach,
+	on_init = nvlsp.on_init,
+	capabilities = nvlsp.capabilities,
+	filetypes = { "yaml", "markdown" },
+	settings = {
+		yaml = {
+			schemas = {
+				["https://json.schemastore.org/obsidian-frontmatter.json"] = "*.md",
+			},
+			completion = true,
+		},
+	},
+})
+
+table.insert(servers, "yamlls")
+vim.lsp.enable(servers)
 -- vim.lsp.enable('marksman')
 
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()

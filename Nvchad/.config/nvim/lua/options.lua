@@ -22,16 +22,30 @@ o.foldlevelstart = 99 -- Nivel de plegado inicial (abierto por defecto)
 
 o.wrap = false
 
-vim.api.nvim_create_autocmd('FileType', {
-    group = vim.api.nvim_create_augroup('markdown.fold', {}),
-    pattern = 'markdown',
-    callback = function()
-        -- sets local folding options for markdown
-        vim.opt_local.foldmethod = 'expr'
-        vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--     group = vim.api.nvim_create_augroup('markdown.fold', {}),
+--     pattern = 'markdown',
+--     callback = function()
+--         -- sets local folding options for markdown
+--         vim.opt_local.foldmethod = 'expr'
+--         vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+--     end,
+-- })
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if not (client and client.name == "obsidian-ls") then
+      return
+    end
+
+    for _, win in ipairs(vim.fn.win_findbuf(ev.buf)) do
+      vim.wo[win][0].foldmethod = "expr"
+      vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+      vim.wo[win][0].foldtext = "v:lua.vim.lsp.foldtext()"
+    end
+  end,
+})
 -- ┌───────────────────────────────────┐
 -- │             Indentación           │
 -- └───────────────────────────────────┘
