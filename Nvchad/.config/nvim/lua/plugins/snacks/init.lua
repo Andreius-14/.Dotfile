@@ -120,7 +120,20 @@ return {
 					"heic",
 					"avif",
 				},
-
+				sbled = true,tyles = {
+					snacks_image = {
+						relative = "editor", -- ← esto es lo importante
+						border = "rounded", -- o true
+						focusable = false,
+						backdrop = false,
+						-- Posición centrada:
+						row = 0.5, -- 0.5 = centro vertical
+						col = 0.5, -- 0.5 = centro horizontal
+						-- O si prefieres arriba a la derecha:
+						-- row = 1,
+						-- col = -1,
+					},
+				},
 				doc = {
 					enabled = true,
 					inline = false,
@@ -131,6 +144,8 @@ return {
 					border = true,
 					focusable = false,
 					backdrop = false,
+					-- position = "center",
+
 				},
 			},
 		},
