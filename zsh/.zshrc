@@ -141,7 +141,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #=========
 if echo $HOME | grep -q termux; then
   
-
+export IS_TABLET=true
   #   ulimit -n 65536
   # # Variables de Entorno - Termux
   # PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"

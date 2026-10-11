@@ -39,30 +39,98 @@ return {
 
 			image = {
 				enabled = true,
-				doc = {
 
+				-- resolve = function(path, src)
+				-- 	local api = require("obsidian.api")
+				--
+				-- 	if api.path_is_note(path) then
+				-- 		return api.resolve_attachment_path(src)
+				-- 	end
+				--
+				-- 	-- Para archivos fuera del vault, dejar la resolución
+				-- 	-- predeterminada de Snacks.
+				-- 	return nil
+				-- end,
+
+				--          ╭─────────────────────────────────────────────────────────╮
+				--          │                      timeout 1000                       │
+				--          ╰─────────────────────────────────────────────────────────╯
+				-- resolve = function(path, src)
+				-- 	local api = require("obsidian.api")
+				-- 	if not api.path_is_note(path) then
+				-- 		return nil
+				-- 	end
+				--
+				-- 	local attachment = require("obsidian.attachment")
+				-- 	local resolved = attachment._resolve(src, { filename = path })
+				--
+				-- 	if resolved then
+				-- 		return resolved
+				-- 	end
+				--
+				-- 	-- fallback
+				-- 	return api.resolve_attachment_path(src)
+				-- end,
+				--          ╭─────────────────────────────────────────────────────────╮
+				--          │                   Solucion Recursiva.                   │
+				--          ╰─────────────────────────────────────────────────────────╯
+				resolve = function(path, src)
+					local api = require("obsidian.api")
+					if not api.path_is_note(path) then
+						return nil
+					end
+
+					local workspace = tostring(api.resolve_workspace_dir(path))
+					local basename = vim.fs.basename(src)
+
+					-- 1. ruta tal cual (si el markdown ya trae subcarpeta)
+					local direct = vim.fs.joinpath(workspace, src)
+					if vim.uv.fs_stat(direct) then
+						return direct
+					end
+
+					-- 2. carpeta de attachments configurada
+					local configured = api.resolve_attachment_path(src)
+					if configured and vim.uv.fs_stat(configured) then
+						return configured
+					end
+
+					-- 3. buscar solo bajo attachments/ (incluye subcarpetas)
+					local attachments_root = vim.fs.joinpath(workspace, "attachments")
+					local found = vim.fs.find(basename, {
+						path = attachments_root,
+						type = "file",
+						limit = 1,
+					})
+
+					if found and found[1] then
+						return found[1]
+					end
+
+					return configured
+				end,
+				formats = {
+					"png",
+					"jpg",
+					"jpeg",
+					"gif",
+					"bmp",
+					"webp",
+					"tiff",
+					"heic",
+					"avif",
+				},
+
+				doc = {
 					enabled = true,
 					inline = false,
-					-- Paquete flotante
 					float = true,
-					max_width = 480, -- Subido de 80 a 120
-					max_height = 240,
-					only_render_image_at_cursor = true,
-					relative = "editor",
+					max_width = 80,
+					max_height = 40,
+					only_render_image_at_cursor = false,
 					border = true,
 					focusable = false,
 					backdrop = false,
-					-- row = 1,
-					-- col = 1,
-					row = 2,
-					col = vim.o.columns - 105, -- Se adapta dinámicamente al ancho de tu pantalla
-					--   					integrations = {
-					-- markdown = {
-					-- 	only_render_image_at_cursor = true, -- defaults to false
-					-- 	only_render_image_at_cursor_mode = "popup", -- "popup" or "inline", defaults to "popup"
-					-- },
-					-- },
-					-- width/height are automatically set by the image size unless specified below
 				},
 			},
 		},

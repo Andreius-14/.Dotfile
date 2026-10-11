@@ -188,6 +188,18 @@ keymap("n", "__22", "o" .. [[
 ╰─◍]] .. "<Esc>")
 
 -- Hover de imagen con Snacks (funciona en cualquier filetype)
-vim.keymap.set("n", "<leader>ih", function()
-	Snacks.image.hover()
-end, { desc = "Image Hover (Snacks)" })
+-- vim.keymap.set("n", "<leader>ih", function()
+-- 	Snacks.image.hover()
+-- end, { desc = "Image Hover (Snacks)" })
+--
+-- vim.keymap.set("n", "<leader>it", function()
+-- 	-- Accedemos al módulo de imágenes de snacks de forma segura
+-- 	local img = require("snacks.image")
+--
+-- 	-- Alternamos el estado de renderizado inline actual
+-- 	img.config.doc.inline = not img.config.doc.inline
+--
+-- 	-- Notificación visual del estado actual (sintaxis correcta en Lua con and / or)
+-- 	local status = img.config.doc.inline and "Activado (Todas visibles)" or "Desactivado (Solo hover)"
+-- 	vim.notify("Images: " .. status, vim.log.levels.INFO)
+-- end, { desc = "Toggle inline images" })

@@ -1,3 +1,4 @@
+local is_tablet = vim.env.IS_TABLET == "true"
 return {
 	{
 		"obsidian-nvim/obsidian.nvim",
@@ -25,11 +26,14 @@ return {
 			{ "_oi", "<cmd> Obsidian template<CR>", desc = "Inserta Template" },
 			{ "_ob", "<cmd> Obsidian backlinks<CR>", desc = "Backlinks/s" },
 			{ "_of", "<cmd> Obsidian follow_link<CR>", desc = "Seguir link" },
+			{ "_oo", "<cmd> Obsidian open <CR>", desc = "Open App" },
+			{ "_oq", "<cmd> Obsidian quick_switch <CR>", desc = "Busqueda" },
+			{ "_op", "<cmd> Obsidian paste_img <CR>", desc = "Paste Img" },
+			-- Dailies
 			{ "_od", "<cmd> Obsidian today <CR>", desc = "file Today" },
 			{ "_oy", "<cmd> Obsidian yesterday <CR>", desc = "file Yesterday" },
 			{ "_ot", "<cmd> Obsidian tomorrow <CR>", desc = "file Tomorrow" },
-			{ "_oo", "<cmd> Obsidian open <CR>", desc = "Open App" },
-			{ "_oq", "<cmd> Obsidian quick_switch <CR>", desc = "Busqueda" },
+
 			-- Visual
 			{ "_oE", "<cmd> Obsidian extract_note<cr>", mode = "x", desc = "Extraer + New" },
 		},
@@ -71,16 +75,17 @@ return {
 			},
 
 			-- ========== Optimizaciones para Termux / vault grande ==========
-			-- ui = {
-			-- 	enable = false, -- Desactiva iconos y resaltados visuales (recomendado)
-			-- },
+			ui = {
+				enable = not is_tablet, -- Desactiva iconos y resaltados visuales (recomendado)
+			},
 
 			footer = {
-				enabled = false, -- Evita jobs constantes de backlinks
+				enabled = not is_tablet, -- Evita jobs constantes de backlinks
 			},
 
 			search = {
-				max_lines = 400, -- Reduce carga al buscar (default 1000)
+				max_lines = is_tablet and 300 or 1000,
+				-- max_lines = 400, -- Reduce carga al buscar (default 1000)
 				-- sort_by = false, -- Descomenta si quieres aún más velocidad
 			},
 
@@ -99,21 +104,6 @@ return {
 
 			-- Código extraído de la discusión (ejemplo de extensión del cliente local):
 			-- client.mi_nueva_funcion = function(self) ... end
-
-			local function add_property()
-				local note = assert(obsidian.api.current_note(0))
-
-				local key = obsidian.api.input("key: ")
-				local value = obsidian.api.input("value: ")
-
-				if not key or not value then
-					return obsidian.log("Aborted")
-				end
-
-				note:add_field(key, value)
-				note:update_frontmatter(0)
-			end
 		end,
 	},
- 
 }

@@ -411,6 +411,11 @@ M.keys = {
 		end,
 		desc = "LSP Workspace Symbols",
 	},
+
+	--          ╭─────────────────────────────────────────────────────────╮
+	--          │                  Personalizacion Extra                  │
+	--          ╰─────────────────────────────────────────────────────────╯
+	--
 }
 
 -- Opcional: una función setup si necesitas config extra para image

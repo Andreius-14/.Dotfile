@@ -6,34 +6,23 @@ nvlsp.defaults()
 -- EXAMPLE
 local servers = {
 
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃          WEB          ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 
 	"html",
 	"cssls",
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃        PYTHON         ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	-- "pyright",
 	"pylsp",
 
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃      JAVASCRIPT       ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	"ts_ls",
 	-- "biome",
 	"vtsls",
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃        Csharp         ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	-- "omnisharp",
 	-- "harper_ls",  -- Muy Sucio
 	-- "csharp_ls",
-
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃       AVANZADO        ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 
 	-- C C++
 	"clangd",
@@ -42,9 +31,7 @@ local servers = {
 	-- Lua
 	"lua_ls",
 
-	-- ┏━━━━━━━━━━━━━━━━━━━━━━━┓
 	-- ┃      COMPLEMENTO      ┃
-	-- ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 	"emmet_language_server",
 	"emmet-ls",
 	-- "custom_elements_ls",
@@ -66,24 +53,25 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
--- Configuración especial para yamlls (Frontmatter de Obsidian en Markdown)
-vim.lsp.config("yamlls", {
-	on_attach = nvlsp.on_attach,
-	on_init = nvlsp.on_init,
-	capabilities = nvlsp.capabilities,
-	filetypes = { "yaml", "markdown" },
-	settings = {
-		yaml = {
-			schemas = {
-				["https://json.schemastore.org/obsidian-frontmatter.json"] = "*.md",
-			},
-			completion = true,
-		},
-	},
-})
-
-table.insert(servers, "yamlls")
-vim.lsp.enable(servers)
+-- 2. Configura yamlls por separado para que lea Markdown / Obsidian
+-- vim.lsp.config("yamlls", {
+-- 	on_attach = nvlsp.on_attach,
+-- 	on_init = nvlsp.on_init,
+-- 	capabilities = nvlsp.capabilities,
+-- 	filetypes = { "yaml", "markdown" },
+-- 	settings = {
+-- 		yaml = {
+-- 			schemas = {
+-- 				["https://json.schemastore.org/obsidian-frontmatter.json"] = "*.md",
+-- 			},
+-- 			completion = true,
+-- 		},
+-- 	},
+-- })
+-- 3. Habilita todo junto al final
+local all_servers = vim.deepcopy(servers)
+table.insert(all_servers, "yamlls")
+vim.lsp.enable(all_servers)
 -- vim.lsp.enable('marksman')
 
 -- local nvlsp = require("nvchad.configs.lspconfig").defaults()
