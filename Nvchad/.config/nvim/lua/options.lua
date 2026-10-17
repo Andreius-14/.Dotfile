@@ -17,7 +17,12 @@ o.cursorlineopt = "both"
 -- ┌───────────────────────────────────┐
 -- │              Toggle               │
 -- └───────────────────────────────────┘
-o.foldmethod = "indent" -- Método de plegado (indentación)
+-- o.foldmethod = "indent" -- Método de plegado (indentación)
+
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldenable = true
+
 o.foldlevelstart = 99 -- Nivel de plegado inicial (abierto por defecto)
 
 o.wrap = false
