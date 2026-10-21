@@ -89,10 +89,58 @@ local function run_code()
 		cmd = "python3 -c " .. vim.fn.shellescape(selection)
 	elseif ft == "lua" then
 		cmd = "lua -e " .. vim.fn.shellescape(selection)
+	elseif ft == "rust" then
+		-- === RUST ===
+		local file = vim.fn.expand("%:p")
+		local file_wo_ext = vim.fn.expand("%:p:r")
+		local exe = file_wo_ext
+
+		if is_selection then
+			-- Selección → archivo temporal
+			local tmp = vim.fn.tempname() .. ".rs"
+			vim.fn.writefile(vim.split(selection, "\n"), tmp)
+			exe = vim.fn.tempname() -- binario temporal
+
+			cmd = string.format(
+				"rustc %s -o %s && %s",
+				vim.fn.shellescape(tmp),
+				vim.fn.shellescape(exe),
+				vim.fn.shellescape(exe)
+			)
+		else
+			-- Archivo completo
+			cmd = string.format(
+				"rustc %s -o %s && %s",
+				vim.fn.shellescape(file),
+				vim.fn.shellescape(exe),
+				vim.fn.shellescape(exe)
+			)
+		end
 	elseif ft == "bash" or ft == "sh" or ft == "zsh" then
 		cmd = selection
-	elseif ft == "javascript" or ft == "typescript" then
+	elseif ft == "javascript" then
 		cmd = "node -e " .. vim.fn.shellescape(selection)
+	elseif ft == "typescript" then
+		-- === TYPESCRIPT ===
+		if is_selection then
+			-- Selección → archivo temporal .ts, compila a .js temporal y ejecuta con node
+			local tmp_ts = vim.fn.tempname() .. ".ts"
+			local tmp_js = vim.fn.fnamemodify(tmp_ts, ":r") .. ".js"
+			vim.fn.writefile(vim.split(selection, "\n"), tmp_ts)
+
+			cmd = string.format(
+				"tsc %s --outDir %s && node %s",
+				vim.fn.shellescape(tmp_ts),
+				vim.fn.shellescape(vim.fn.fnamemodify(tmp_js, ":h")),
+				vim.fn.shellescape(tmp_js)
+			)
+		else
+			-- Archivo completo → compila usando tsc global y ejecuta el .js resultante
+			local file = vim.fn.expand("%:p")
+			local file_js = vim.fn.expand("%:p:r") .. ".js"
+
+			cmd = string.format("tsc %s && node %s", vim.fn.shellescape(file), vim.fn.shellescape(file_js))
+		end
 	elseif ft == "cpp" then
 		-- === C / C++ ===
 		local file = vim.fn.expand("%:p")

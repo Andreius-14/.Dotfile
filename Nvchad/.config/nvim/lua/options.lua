@@ -56,8 +56,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- └───────────────────────────────────┘
 -- o.tabstop = 4            -- Un TAB se ve como 4 espacios
 o.expandtab = true -- Inserta espacios en lugar de TAB
-o.softtabstop = 4 -- Espacios insertados en lugar de TAB
-o.shiftwidth = 4 -- Tamaño de la indentación automática
+-- o.softtabstop = 4 -- Espacios insertados en lugar de TAB
+-- o.shiftwidth = 4 -- Tamaño de la indentación automática
 o.smartindent = true -- Indentación inteligente
 o.autoindent = true -- Mantiene la indentación al crear nuevas líneas
 

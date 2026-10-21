@@ -5,7 +5,7 @@ local nvlsp = require("nvchad.configs.lspconfig")
 nvlsp.defaults()
 -- EXAMPLE
 local servers = {
-
+	"rust_analyzer",
 	-- ┃          WEB          ┃
 
 	"html",
@@ -16,6 +16,7 @@ local servers = {
 
 	-- ┃      JAVASCRIPT       ┃
 	"ts_ls",
+	"tsserver",
 	-- "biome",
 	"vtsls",
 	-- ┃        Csharp         ┃

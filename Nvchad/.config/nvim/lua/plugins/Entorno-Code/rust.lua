@@ -1,0 +1,101 @@
+-- return {
+-- 	{
+-- 		"mrcjkb/rustaceanvim",
+-- 		version = "^6",
+-- 		ft = { "rust" }, -- Se cargará únicamente al abrir archivos .rs
+--
+-- 		init = function()
+-- 			-- Registramos el grupo en Which-Key
+-- 			require("which-key").add({
+-- 				{ "<leader>r", group = "Rust", icon = "🦀" },
+-- 			})
+-- 		end,
+--
+-- 		keys = {
+-- 			-- Hover acciones (puedes cambiarlo a "K" si prefieres no presionar <leader>rK)
+-- 			{
+-- 				"<leader>rK",
+-- 				function()
+-- 					vim.cmd.RustLsp({ "hover", "actions" })
+-- 				end,
+-- 				desc = "Hover Actions",
+-- 				ft = "rust",
+-- 			},
+--
+-- 			-- Code Action
+-- 			{
+-- 				"<leader>ra",
+-- 				function()
+-- 					vim.cmd.RustLsp("codeAction")
+-- 				end,
+-- 				desc = "Code Action",
+-- 				ft = "rust",
+-- 			},
+--
+-- 			-- Debuggables
+-- 			{
+-- 				"<leader>rd",
+-- 				function()
+-- 					vim.cmd.RustLsp("debuggables")
+-- 				end,
+-- 				desc = "Debuggables",
+-- 				ft = "rust",
+-- 			},
+--
+-- 			-- Explain Error
+-- 			{
+-- 				"<leader>re",
+-- 				function()
+-- 					vim.cmd.RustLsp("explainError")
+-- 				end,
+-- 				desc = "Explain Error",
+-- 				ft = "rust",
+-- 			},
+--
+-- 			-- Expand Macro
+-- 			{
+-- 				"<leader>rm",
+-- 				function()
+-- 					vim.cmd.RustLsp("expandMacro")
+-- 				end,
+-- 				desc = "Expand Macro",
+-- 				ft = "rust",
+-- 			},
+--
+-- 			-- Runnables
+-- 			{
+-- 				"<leader>rr",
+-- 				function()
+-- 					vim.cmd.RustLsp("runnables")
+-- 				end,
+-- 				desc = "Runnables",
+-- 				ft = "rust",
+-- 			},
+-- 		},
+--
+-- 		config = function()
+-- 			local nvlsp = require("nvchad.configs.lspconfig")
+--
+-- 			vim.g.rustaceanvim = {
+-- 				server = {
+-- 					on_attach = nvlsp.on_attach, -- Mantiene atajos nativos de NvChad (gd, gr, etc.)
+-- 					capabilities = nvlsp.capabilities,
+-- 					default_settings = {
+-- 						["rust-analyzer"] = {
+-- 							cargo = {
+-- 								allFeatures = true,
+-- 							},
+-- 							checkOnSave = true, -- ← ahora es boolean
+-- 							check = {
+-- 								command = "clippy", -- ← aquí va el comando
+-- 							},
+-- 							procMacro = {
+-- 								enable = true,
+-- 							},
+-- 						},
+-- 					},
+-- 				},
+-- 			}
+-- 		end,
+-- 	},
+-- }
