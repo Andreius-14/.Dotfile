@@ -2,7 +2,25 @@ local is_tablet = vim.env.IS_TABLET == "true"
 return {
 	{
 		"obsidian-nvim/obsidian.nvim",
+		-- Ejecutar solo en mi vault
+		-- ──────────────────────────────────────────────────────────────────────
+		Cond = function()
+			local vault = vim.env.RUTA_VAULT
+			if not vault or vault == "" then
+				return false
+			end
+			-- Expandimos la ruta de manera segura
+			local expanded_vault = vim.fn.expand(vault)
+			local current_file = vim.api.nvim_buf_get_name(0)
 
+			-- Si el búfer no tiene nombre, devolvemos false para evitar errores
+			if current_file == "" then
+				return false
+			end
+
+			return current_file:find(expanded_vault, 1, true) ~= nil
+		end,
+		-- ──────────────────────────────────────────────────────────────────────
 		init = function()
 			require("which-key").add({
 				{ "_o", group = "Obsidian", icon = "🪨" },
