@@ -1,3 +1,5 @@
+
+local is_tablet = vim.env.IS_TABLET == "true"
 --  ╭─────────────────────────────────────────────────────────╮
 --  │                   Habilitar Shortcut                    │
 --  ╰─────────────────────────────────────────────────────────╯
@@ -38,7 +40,7 @@ return {
 			rename = { enabled = true }, -- Asegúrate de agregar esto si no lo tienes
 
 			image = {
-				enabled = true,
+				enabled = not is_tablet,
 
 				-- resolve = function(path, src)
 				-- 	local api = require("obsidian.api")
