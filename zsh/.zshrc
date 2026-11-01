@@ -179,11 +179,21 @@ fi
 #==========
 # ALIAS
 #==========
-source $HOME/.zsh_alias_Laptop
-source $HOME/.zsh_alias_Programacion
-source $HOME/.zsh_alias_Multimedia
 
-source $HOME/.zsh__functions
+ruta_alias="$HOME/.alias"
+
+if [[ -d "$ruta_alias" ]]; then
+  for file in "$ruta_alias"/*(N-D); do
+    [ -f "$file" ] && source "$file"
+  done
+else 
+  cat << 'EOF'
+          ╭──────────────────────────────────────────────────────────╮
+          │               No Encontrada Carpeta .alias               │
+          ╰──────────────────────────────────────────────────────────╯
+EOF
+fi
+
 
 #=========
 # RUN
