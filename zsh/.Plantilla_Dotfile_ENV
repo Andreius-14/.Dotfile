@@ -1,3 +1,18 @@
+Export_Ruta() {
+    local nombre="$1"
+    local ruta="${(P)nombre}"
+
+    if [[ -d "$ruta" ]]; then
+        export "$nombre"
+    else
+        echo "  ╭──────────────────╮"
+        echo "  │   Ruta Fallido   │"
+        echo "  ╰──────────────────╯"
+        echo "  -> $nombre"
+        echo "  -> $ruta" >&2
+        return 1
+    fi
+}
 # ==============================================================================
 # PLANTILLA DE VARIABLES DE ENTORNO
 # - Duplica este archivo 
@@ -14,7 +29,12 @@
 # export BROWSER=""                       # Ruta o comando del navegador (dejar vacío en Termux)
 
 # --- Rutas Locales ---
-export RUTA_VAULT=""                   # Ruta local a tu bóveda de Obsidian (útil para obsidian.nvim)
-export RUTA_EXCALIDRAW=""                    # Ruta para respaldos locales
+DISCO=""
 
+# Ruta local a tu bóveda de Obsidian (útil para obsidian.nvim)
+RUTA_VAULT=""                        
+# Ruta para respaldos locales
+RUTA_EXCALIDRAW=""
 
+# Export_Ruta RUTA_VAULT 
+# Export_Ruta RUTA_EXCALIDRAW
