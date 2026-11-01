@@ -116,8 +116,18 @@ local function run_code()
 				vim.fn.shellescape(exe)
 			)
 		end
-	elseif ft == "bash" or ft == "sh" or ft == "zsh" then
-		cmd = selection
+
+  elseif ft == "bash" or ft == "sh" or ft == "zsh" then
+    local shell = (ft == "zsh") and "zsh" or "bash"
+
+    if is_selection then
+        local tmp = vim.fn.tempname() .. ".sh"
+        vim.fn.writefile(vim.split(selection, "\n"), tmp)
+        cmd = shell .. " " .. vim.fn.shellescape(tmp)
+    else
+        vim.cmd("silent write") -- guarda el archivo
+        cmd = shell .. " " .. vim.fn.shellescape(vim.fn.expand("%:p"))
+    end
 	elseif ft == "javascript" then
 		cmd = "node -e " .. vim.fn.shellescape(selection)
 	elseif ft == "typescript" then

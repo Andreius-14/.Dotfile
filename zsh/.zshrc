@@ -133,39 +133,17 @@ plugins=(git
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # source $ZSH/oh-my-zsh.sh
 
-#                       CONTENEDORES
+#                       DISTRO ACTUAL
 #═════════════════════════════════════════════════════════════════════╗ 
 
-#=========
 # TERMUX 
-#=========
+# ──────────────────────────────────────────────────────────────────────
 if echo $HOME | grep -q termux; then
-  
-export IS_TABLET=true
-  #   ulimit -n 65536
-  # # Variables de Entorno - Termux
-  # PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"
-  # LINK="https://github.com/mayTermux"
-  # LINK_SSH="git@github.com:mayTermux"
-  #
-  # export PATH
-  # export LINK_SSH
-  # export LINK
-  # export TERM=xterm-256color 
-  #
-  # # Archivos a Ejecutarse - Termux
-  # source $HOME/.config/lf/icons
-  # source $HOME/.aliases
-  # source $HOME/.autostart
-  
-  # export PNPM_HOME=$HOME/.pnpm
-  # export PATH=$PNPM_HOME/bin:$PATH
-
+  export IS_TABLET=true
 fi
 
-#=========
 # WSL
-#=========
+# ──────────────────────────────────────────────────────────────────────
 
 if [ -n "$WSL_DISTRO_NAME" ]; then
     export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
@@ -173,28 +151,31 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
     source $HOME/.zsh_alias_WSL
 fi
 
-#═════════════════════════════════════════════════════════════════════╝
-
-
-
-
 #                       CONFIGURACION PERSONAL
 #═════════════════════════════════════════════════════════════════════╗ 
-
-
-#  ╭──────────────────────────────────────────────────────────╮
-#  │              corrobora si existe y Ejecuta               │
-#  ╰──────────────────────────────────────────────────────────╯
-
 #==========
 # ENV
 #==========
-if [ -f $HOME/.local-Dotfile-Env ]; then
-    source $HOME/.local-Dotfile-Env
-else 
-    echo "Analizar => .Plantilla_Dotfile_ENV"
-fi
+NAME_ENV=".zsh-local-Dotfile-Env"
 
+if [[ -f "$HOME/${NAME_ENV}" ]]; then
+    source "$HOME/${NAME_ENV}"
+else
+    cat << EOF
+
+          ╭──────────────────────────────────────────────────────────╮
+          │             Variables de Entorno - Personal              │
+          │                                                          │
+          │        1. Inicializa                                     │
+          │        2. Usa la plantilla                               │
+          │        3. Rellena                                        │
+          │        4. Guarda                                         │
+          │                                                          │
+          │        Archivo a crear → ${NAME_ENV}
+          ╰──────────────────────────────────────────────────────────╯
+
+EOF
+fi
 #==========
 # ALIAS
 #==========
