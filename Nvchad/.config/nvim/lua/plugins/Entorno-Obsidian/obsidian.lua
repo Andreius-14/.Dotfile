@@ -71,7 +71,7 @@ return {
 			notes_subdir = "+",
 			-- picker = { name = "telescope.nvim" },
 			daily_notes = {
-				folder = "Dailies/",
+				folder = "10. Dailies/",
 				template = "Day",
 			},
 

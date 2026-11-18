@@ -70,3 +70,9 @@ o.smartcase = true -- Búsqueda sensible a mayúsculas si la consulta las incluy
 
 -- o.guifont = "JetBrainsMono Nerd Font:h14"  -- Cambia el tamaño según lo que prefiera
 -- o.guifont = "JetbrainsMono Nerd Font:h9"
+--          ╭─────────────────────────────────────────────────────────╮
+--          │                 Personal Configuracion                  │
+--          ╰─────────────────────────────────────────────────────────╯
+o.relativenumber = true
+o.shiftwidth = 4
+    
