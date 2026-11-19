@@ -68,7 +68,7 @@ return {
 				-- },
 			},
 			-- Directorio predeterminado para notas nuevas generales o rápidas
-			notes_subdir = "+",
+			notes_subdir = "+/",
 			-- picker = { name = "telescope.nvim" },
 			daily_notes = {
 				folder = "10. Dailies/",

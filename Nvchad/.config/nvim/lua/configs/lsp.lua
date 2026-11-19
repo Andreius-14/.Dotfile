@@ -54,6 +54,16 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+
+vim.lsp.config("markdown_oxide", {
+	cmd = { "markdown-oxide" },
+	filetypes = { "markdown" },
+	root_markers = { ".git", ".obsidian", ".moxide.toml" },
+	capabilities = capabilities,
+})
+vim.lsp.enable("markdown_oxide")
 -- 2. Configura yamlls por separado para que lea Markdown / Obsidian
 -- vim.lsp.config("yamlls", {
 -- 	on_attach = nvlsp.on_attach,
